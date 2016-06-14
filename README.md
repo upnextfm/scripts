@@ -13,10 +13,10 @@ Applies a color gradient to the messages you send.
 Adds a new user option under the Options menu, where users can specify a comma separated list of words that will be highlighted in the chat buffer.
 
 ### [Lucky](https://raw.githubusercontent.com/upnextfm/scripts/master/lucky.js)
-Creates a /lucky command, which searches YouTube using the query following the command, and queues the first video found.
+Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.
 
 ### [React](https://raw.githubusercontent.com/upnextfm/scripts/master/react.js)
-Displays a random image from replygif.net based on your search term.
+Creates a `/react` command, which displays a random image from replygif.net based on your search term.
 
 ### [Troll Protection](https://raw.githubusercontent.com/upnextfm/scripts/master/troll-protection.js)
 Prevents trolls from showing images and emotes in the channel, and converts their messages to lower case letters.
