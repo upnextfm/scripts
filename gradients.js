@@ -59,7 +59,6 @@
                 );
                 $api.trigger("gradient_change");
             });
-            
         });
     };
     
@@ -97,6 +96,7 @@
         } else if (data.msg.indexOf("Gradients: ") === 0) {
             return;
         }
+        
         if (!is_on) {
             return;
         }
