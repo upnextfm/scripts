@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 1.6
+ * Version: 1.6.1
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -39,31 +39,28 @@
     
     // Adds the color pickers to the page.
     var setUp = function() {
-        for(var k in gradients) {
-            if (gradients.hasOwnProperty(k)) {
-                (function(key) {
-                    if (key == "last") return;
-                    
-                    var picker = $('<input/>')
-                        .attr("id", "chat-color-" + key)
-                        .attr("type", "color");
-                    picker.insertBefore(chatcolor);
-                    picker.spectrum({
-                        color: gradients[key],
-                        preferredFormat: "hex",
-                        showInput: true,
-                        clickoutFiresChange: true
-                    }).on("change", function () {
-                        gradients[key] = $(this).val();
-                        $api.setStorage(
-                            "chat_gradient_color_" + key,
-                            gradients[key]
-                        );
-                        $api.trigger("gradient_change");
-                    });
-                })(k);
-            }
-        }
+        $api.each(gradients, function(value, key) {
+            if (key == "last") return;
+    
+            var picker = $('<input/>')
+                .attr("id", "chat-color-" + key)
+                .attr("type", "color");
+            picker.insertBefore(chatcolor);
+            picker.spectrum({
+                color: value,
+                preferredFormat: "hex",
+                showInput: true,
+                clickoutFiresChange: true
+            }).on("change", function () {
+                gradients[key] = $(this).val();
+                $api.setStorage(
+                    "chat_gradient_color_" + key,
+                    gradients[key]
+                );
+                $api.trigger("gradient_change");
+            });
+            
+        });
     };
     
     // Removes the color pickers from the page.
