@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 1.5
+ * Version: 1.6
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -13,6 +13,8 @@
  * Five color pictures are displayed below the chat area when colors are
  * turned on. Use the pickers to create your gradient colors from left to
  * right. http://i.imgur.com/v0JFjO8.png
+ * 
+ * To share your colors with the channel, type the command "/colors publish".
  */
 (function() {
     var is_on   = false;
