@@ -77,11 +77,25 @@
     
     // Event where we add color codes the outgoing messages.
     $api.on("send", function(e, data) {
-        if (data.msg.indexOf("/colors") === 0 || data.msg.indexOf("/colours") === 0) {
-            $api.trigger("gradient_on_toggle");
+        if (data.msg.match(/^\/colou?rs/i)) {
+            var args = data.msg.replace(/^\/colou?rs\s+/i, '');
+            if (args.toLowerCase() == "publish") {
+                $api.send(
+                    "Gradients: " +
+                    "[" + gradients.last + "]" + gradients.last + "[/#] " +
+                    "[" + gradients.right + "]" + gradients.right + "[/#] " +
+                    "[" + gradients.middle + "]" + gradients.middle + "[/#] " +
+                    "[" + gradients.left + "]" + gradients.left + "[/#] " +
+                    "[" + gradients.first + "]" + gradients.first + "[/#]"
+                );
+            } else {
+                $api.trigger("gradient_on_toggle");
+            }
             e.cancel();
             return;
         } else if (data.msg[0] == "/" || data.msg[0] == "$" || data.msg.match(/:([^:]+):/) || data.msg.match(/https?:\/\//)) {
+            return;
+        } else if (data.msg.indexOf("Gradients: ") === 0) {
             return;
         }
         if (!is_on) {
