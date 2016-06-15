@@ -9,6 +9,8 @@ Automatically queues one of the songs from your favorites every 30 minutes.
 ### [Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
 
+![Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients.png)
+
 ### [Hide Bots](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
 Hides channel bots from the users list.
 
@@ -21,7 +23,7 @@ Creates a `/lucky` command, which searches YouTube using the query following the
 ### [Protection](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
 Provides protection against trolls and other nasty users.
 
-![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/user_options.png)
+![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/protection_options.png)
 
 ### [React](https://raw.githubusercontent.com/upnextfm/scripts/master/react.js)
 Creates a `/react` command, which displays a random image from replygif.net based on your search term.
