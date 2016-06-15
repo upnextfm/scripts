@@ -21,5 +21,7 @@ Creates a `/lucky` command, which searches YouTube using the query following the
 ### [Protection](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
 Provides protection against trolls and other nasty users.
 
+![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/user_options.png)
+
 ### [React](https://raw.githubusercontent.com/upnextfm/scripts/master/react.js)
 Creates a `/react` command, which displays a random image from replygif.net based on your search term.
