@@ -4,10 +4,13 @@
  * Author: headzoo
  * 
  * Hides channel bots from the users list. Refresh your page after
- * installing.
+ * installing. Note: This only hides the bots run by the site. Bots
+ * run by individual users are not hidden.
  */
 (function() {
-    var bots = [];
+    var bots = [
+        "PieNudesBot"
+    ];
     
     $api.on("user_count", function(e, data) {
         data.count = data.count - bots.length;
