@@ -9,6 +9,9 @@ Automatically queues one of the songs from your favorites every 30 minutes.
 ### [Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
 
+### [Hide Bots](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
+Hides channel bots from the users list.
+
 ### [Highlighter](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
 Adds a new user option under the Options menu, where users can specify a comma separated list of words that will be highlighted in the chat buffer.
 
