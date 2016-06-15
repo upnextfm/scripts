@@ -1,6 +1,6 @@
 /**
  * Script: Hide Bots
- * Version: 1.0
+ * Version: 1.1
  * Author: headzoo
  * 
  * Hides channel bots from the users list. Refresh your page after
@@ -32,5 +32,6 @@
     
     $api.on("loaded", function() {
         $(".userlist_item_is_bot").remove();
+        $(".userlist_item_PieNudesBot").remove();
     });
 })();
