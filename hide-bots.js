@@ -3,9 +3,12 @@
  * Version: 1.1
  * Author: headzoo
  * 
- * Hides channel bots from the users list. Refresh your page after
- * installing. Note: This only hides the bots run by the site. Bots
- * run by individual users are not hidden.
+ * Hides site bots from the users list. Refresh your page after
+ * installing.
+ * 
+ * Note: This only hides the bots run by the site. Bots run by
+ * individual users are not hidden, but you can add their name
+ * to the `bots` array to hide them too.
  */
 (function() {
     var bots = [
@@ -32,6 +35,8 @@
     
     $api.on("loaded", function() {
         $(".userlist_item_is_bot").remove();
-        $(".userlist_item_PieNudesBot").remove();
+        $api.each(bots, function(bot) {
+            $(".userlist_item_" + bot).remove();
+        });
     });
 })();
