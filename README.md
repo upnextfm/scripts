@@ -16,7 +16,7 @@ Hides channel bots from the users list.
 
 ### [Highlighter](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
 Highlights messages which contain any of the phrases you configure. Useful to highlight messages
-containing your nickname.
+containing your nickname or other words of interest.
 
 ![Highlighter Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/highlighter_options.png)
 
