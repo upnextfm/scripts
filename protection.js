@@ -49,7 +49,8 @@
         form.addClass("form-horizontal");
         pane.append(form);
         
-        form.append($('<h5>Troll Settings</h5>'));
+        form.append($('<h4 style="margin-bottom:0;color:#fff;">Troll Settings</h4>'));
+        form.append($('<p>Applies to users flagged as trolls.</p>'));
         $(
             '<div class="form-group">' +
                 '<div class="col-sm-8 col-sm-offset-4">' +
@@ -89,7 +90,8 @@
             '</div>'
         ).appendTo(form);
     
-        form.append($('<h5>General Settings</h5>'));
+        form.append($('<h4 style="margin-bottom:0;color:#fff;">General Settings</h4>'));
+        form.append($('<p>Applies to all users.</p>'));
         $(
             '<div class="form-group">' +
                 '<label class="control-label col-sm-4" for="us-protection-settings-blocked-phrases">' +
