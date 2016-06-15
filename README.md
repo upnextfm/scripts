@@ -15,7 +15,8 @@ Applies a color gradient to the messages you send.
 Hides channel bots from the users list.
 
 ### [Highlighter](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
-Adds a new user option under the Options menu, where users can specify a comma separated list of words that will be highlighted in the chat buffer.
+Highlights messages which contain any of the phrases you configure. Useful to highlight messages
+containing your nickname.
 
 ![Highlighter Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/highlighter_options.png)
 

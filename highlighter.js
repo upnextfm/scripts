@@ -1,12 +1,10 @@
 /**
- * Script: Highlight Words
- * Version: 1.0
+ * Script: Highlighter
+ * Version: 1.1
  * Author: headzoo
  *
- * Adds a new user option under the Options menu, where users can specify
- * a comma separated list of words that will be highlighted in the chat
- * buffer. Commonly used to specify a list of alternative names people use
- * for the user.
+ * Highlights messages which contain any of the phrases you configure. Useful to highlight messages
+ * containing your nickname.
  */
 (function() {
     // Add our setting to the Options menu.
