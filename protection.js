@@ -28,13 +28,15 @@
             }
             
             if (settings.no_images) {
-                var regex = /<img src="([^"]+)".*\/>/g;
+                var regex = /<img.+?src=[\"'](.+?)[\"'].*?>/g;
                 var match = regex.exec(data.msg);
                 while(match != null) {
                     if (match[1].indexOf("/proxy/image?u=") === 0) {
                         match[1] = match[1].replace("/proxy/image?u=", "")
                     }
-                    data.msg = data.msg.replace(match[0], match[1]);
+                    
+                    var replacement = '<a href="' + match[1] + '" target="_blank">' + match[1] + '</a>';
+                    data.msg = data.msg.replace(match[0], replacement);
                     match = regex.exec(data.msg);
                 }
             }
