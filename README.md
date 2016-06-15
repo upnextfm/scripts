@@ -17,6 +17,8 @@ Hides channel bots from the users list.
 ### [Highlighter](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
 Adds a new user option under the Options menu, where users can specify a comma separated list of words that will be highlighted in the chat buffer.
 
+![Highlighter Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/highlighter_options.png)
+
 ### [Lucky](https://raw.githubusercontent.com/upnextfm/scripts/master/lucky.js)
 Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.
 
