@@ -397,6 +397,14 @@
                 importColors(target.find(".chat-msg-line:first").text());
             }
         });
+        
+        $(".sp-input").on("click", function() {
+            var target = $(this);
+            var val = prompt("Color", target.val());
+            if (val && val[0] == "#") {
+                target.data("element").spectrum("set", val);
+            }
+        });
     });
     
     $api.on("user_options_save", function() {
