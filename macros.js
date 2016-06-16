@@ -1,6 +1,6 @@
 /**
  * Script: Macros
- * Version: 1.0
+ * Version: 1.1
  *
  * Gives users the option to create macros, or "shortcuts" for long messages.
  *
@@ -22,6 +22,12 @@
     var trigger_regex  = new RegExp("^@[a-z0-9\\s{}]+@$", "i");
     var variable_regex = new RegExp("{([^\\s]+)}", "g");
     
+    /**
+     * Converts the given trigger into a regular expression group
+     * 
+     * @param trigger
+     * @returns {{regex: RegExp, groups: {}}}
+     */
     var createRegexGroup = function(trigger) {
         var groups  = {};
         var counter = 1;
@@ -43,24 +49,40 @@
         };
     };
     
-    var parseMessage = function(group, value, message) {
+    /**
+     * Parses the given message using the given regex group
+     * 
+     * @param group
+     * @param replacement
+     * @param message
+     * @returns {*}
+     */
+    var parseMessage = function(group, replacement, message) {
         var matches = group.regex.exec(message);
         if (matches === null) {
             return message;
         }
         
         $api.each(group.groups, function(index, name) {
-            value = value.replace("{" + name + "}", matches[index]);
+            replacement = replacement.replace("{" + name + "}", matches[index]);
         });
         
-        return message.replace(group.regex, value);
+        return message.replace(group.regex, replacement);
     };
     
+    /**
+     * Deletes the macro with the given trigger
+     * 
+     * @param trigger
+     */
     var deleteMacro = function(trigger) {
         delete macros[trigger];
         $api.setStorage("chat-macros", macros);
     };
     
+    /**
+     * Adds the "Macros" tab/pane to the Options dialog
+     */
     var addOptions = function() {
         var tab  = $options.makeTab("Macros", "us-macros-tab");
         var pane = $options.makePane("us-macros-pane", tab);
@@ -74,12 +96,12 @@
         pane.form.on("submit", function(e) {
             e.preventDefault();
         });
-        var input = $options.makeInput("us-macros-input-trigger", "Trigger", "text");
-        pane.form.append(input);
-        
-        input = $options.makeInput("us-macros-input-replacement", "Replacement", "text");
-        pane.form.append(input);
-        
+        pane.form.append(
+            $options.makeInput("us-macros-input-trigger", "Trigger")
+        );
+        pane.form.append(
+            $options.makeInput("us-macros-input-replacement", "Replacement")
+        );
         pane.form.append($options.makeButtonGroup([
             {
                 id: "us-macros-button-add",
@@ -96,32 +118,8 @@
         
         var tbody = $('<tbody id="us-macros-tbody"/>');
         table.append(tbody);
-        
         $api.each(macros, function(replacement, trigger) {
-            var row = $('<tr/>');
-            tbody.append(row);
-            
-            var button = $(
-                '<button class="btn btn-xs btn-danger" title="Delete">' +
-                '<span class="glyphicon glyphicon-trash"></span>' +
-                '</button>'
-            );
-            button.on("click", function() {
-                deleteMacro(trigger);
-                row.fadeOut();
-            });
-            
-            var td = $('<td/>');
-            td.append(button);
-            row.append(td);
-            
-            td = $('<td/>');
-            td.text(trigger);
-            row.append(td);
-            
-            td = $('<td/>');
-            td.text(replacement);
-            row.append(td);
+            appendRow(replacement, trigger, tbody);
         });
         
         // Export & Import
@@ -133,9 +131,20 @@
         pane.form.append(textarea);
     };
     
-    var appendRow = function(value, trigger) {
+    /**
+     * Appends a macro to the macros table
+     * 
+     * @param replacement
+     * @param trigger
+     * @param [tbody]
+     */
+    var appendRow = function(replacement, trigger, tbody) {
         var row = $('<tr/>');
-        $("#us-macros-tbody").append(row);
+        if (tbody) {
+            tbody.append(row);
+        } else {
+            $("#us-macros-tbody").append(row);
+        }
         
         var delete_button = $('<button class="btn btn-xs btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>');
         delete_button.on("click", function() {
@@ -152,10 +161,13 @@
         row.append(td);
         
         td = $('<td/>');
-        td.text(value);
+        td.text(replacement);
         row.append(td);
     };
     
+    /**
+     * Called when the "Add" button is clicked in the macros dialog
+     */
     var addMacro = function() {
         var trigger         = $("#us-macros-input-trigger");
         var trigger_val     = trigger.val().trim();
@@ -179,10 +191,16 @@
         replacement.val("");
     };
     
+    /**
+     * Exports the macros as a JSON string
+     */
     var exportMacros = function() {
         $("#us-macros-export-textarea").text(JSON.stringify(macros, null, 2));
     };
     
+    /**
+     * Imports a JSON string as macros
+     */
     var importMacros = function() {
         var text = $("#us-macros-export-textarea").val().trim();
         if (!text) {
@@ -206,6 +224,7 @@
         });
     };
     
+    // Converts each of the user's macros into regex groups.
     $api.each(macros, function(replacement, trigger) {
         if (!trigger_regex.test(trigger)) {
             console.error('Trigger not delimited with @ character or using special characters. Got "' + trigger + '"');
@@ -217,6 +236,7 @@
         });
     });
     
+    // Called when the chat api is loaded.
     $api.on("loaded", function() {
         addOptions();
         $("#us-macros-button-add").on("click", addMacro);
@@ -224,6 +244,8 @@
         $("#us-macros-import-btn").on("click", importMacros);
     });
     
+    // Called when the user sends a message. Process any macros found in
+    // the message.
     $api.on("send", function(e, data) {
         $api.each(handlers, function(handler) {
             data.msg = parseMessage(handler.group, handler.value, data.msg);
