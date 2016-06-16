@@ -10,6 +10,7 @@ Automatically queues one of the songs from your favorites every 30 minutes.
 Applies a color gradient to the messages you send.
 
 ![Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients.png)
+![Gradients Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients_options.png)
 
 ### [Hide Bots](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
 Hides channel bots from the users list.
