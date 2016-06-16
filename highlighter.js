@@ -1,6 +1,6 @@
 /**
  * Script: Highlighter
- * Version: 1.1
+ * Version: 1.2
  * Author: headzoo
  *
  * Highlights messages which contain any of the phrases you configure. Useful to highlight messages
@@ -43,7 +43,7 @@
     
     // Highlight the chat when the regex matches.
     $api.on("receive", function(e, data) {
-        if (regex.test(data.msg)) {
+        if (regex.test(data.msg_clean)) {
             data.meta.highlight = true;
         }
     });
