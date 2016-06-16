@@ -28,9 +28,13 @@ Creates a `/lucky` command, which searches YouTube using the query following the
 Gives users the option to create macros, or "shortcuts" for long messages.
 
 Once the script is installed go to Options -> Macros to define macros. Macros have two parts: a trigger
-and a replacement. An example trigger is "@fire@" and the replacement is ":fire: :fire: :fire:". Once
+and a replacement. An example trigger is `@fire@` and the replacement is `:fire: :fire: :fire:`. Once
 a macro has been added using the trigger, you can type the trigger (e.g. "@fire@") and it will be replaced
 by the replacement value.
+
+Macros also allow for simple variable interpolation. As an example, you can create a trigger with the
+value `@choose {first} {second}@` and the replacement as `Choose one: {first} or {second}`. To use
+the macro, type "@choose cake pie@" which will be replaced by "Choose one: cake or pie".
 
 ![Macro Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/macros_options.png)
 
