@@ -27,7 +27,7 @@ Creates a `/lucky` command, which searches YouTube using the query following the
 #### [Macros 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
 Gives users the option to create macros, or "shortcuts" for long messages.
 
-Once the script is installed go to Options -> Macros to define macros. Macros have two parts: a trigger
+Once the script is installed go to Options -> Macros to define and edit macros. Macros have two parts: a trigger
 and a replacement. An example trigger is `"@fire@"` with the replacement `":fire: :fire: :fire:"`. Once
 a macro has been added you can type it into the chat box (e.g. "@fire@") and it will be replaced
 by the replacement.
