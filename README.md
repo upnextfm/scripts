@@ -32,8 +32,8 @@ and a replacement. An example trigger is `"@fire@"` with the replacement `":fire
 the macro has been added you can type it into the chat box (e.g. `"@fire@"`) and it will be replaced
 by the replacement.
 
-Macros also allow for simple variable interpolation. As an example, you can create a trigger with the
-value `"@which {first} {second}@"` and the replacement as `"Choose one: {first} or {second}"`. To use
+Macros also allow for simple variable interpolation. As an example, you can create a macro with the trigger
+`"@which {first} {second}@"` and the replacement `"Choose one: {first} or {second}"`. To use
 the macro, type `"@which cake pie@"` into the chat box, and it will be replaced with `"Choose one: cake or pie"`.
 
 ![Macro Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/macros_options.png)
