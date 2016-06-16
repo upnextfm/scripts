@@ -12,6 +12,9 @@
  * To share your colors with the channel, type the command "/colors share".
  * Your colors will be published to the channel. Other users running this
  * script can click those colors to import them.
+ * 
+ * Known Bugs:
+ *  - Cannot enter color codes manually
  */
 (function() {
     var DEFAULT_COLORS = [
