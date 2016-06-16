@@ -262,7 +262,7 @@
     };
     
     var isNonColorMessage = function(msg) {
-        if (msg[0] == "/" || msg[0] == "$" || msg.match(/:([^:]+):/) || msg.match(/https?:\/\//)) {
+        if (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.match(/:([^:]+):/) || msg.match(/https?:\/\//)) {
             return true;
         } else if (msg.indexOf(MARK) !== -1) {
             return true;
