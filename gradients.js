@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 2.0 Beta
+ * Version: 2.0
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
