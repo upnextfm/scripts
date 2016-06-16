@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 2.0
+ * Version: 2.1
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -27,20 +27,24 @@
         "#242424",
         "#000000"
     ];
+    
     var DEFAULT_COLOR_COUNT = 5;
-    var DEFAULT_MODE = "stretch";
-    var MARK = "Gradients Script 2.0";
+    var DEFAULT_MODE        = "stretch";
+    var MARK                = "Gradients Script 2.1";
+    var REGEX_EMOTE         = new RegExp(':([^:]+):', "g");
+    var REGEX_URL           = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:/~+#-]*[\\w@?^=%&amp;/~+#-])?', "gi");
+    var REGEX_MACRO         = new RegExp('@([^@]+)@', "g");
     
     var Colorizer = {
-        colors: DEFAULT_COLORS,
-        color_count: DEFAULT_COLOR_COUNT,
-        is_on: true,
-        mode: DEFAULT_MODE,
-        rainbow: new Rainbow(),
-        working: [],
-        range: 0,
-        index: 0,
-        length: 0,
+        colors      : DEFAULT_COLORS,
+        color_count : DEFAULT_COLOR_COUNT,
+        is_on       : true,
+        mode        : DEFAULT_MODE,
+        rainbow     : new Rainbow(),
+        working     : [],
+        range       : 0,
+        index       : 0,
+        length      : 0,
         
         reset: function(range) {
             this.working = Array.prototype.slice.call(this.colors);
@@ -76,14 +80,17 @@
             if (!this.is_on) {
                 return msg;
             }
-    
+            
             var parsed = "";
             var len    = msg.length;
             var chars  = msg.split('');
+            var ig_pos = this.getIgnoredPositions(msg);
             this.reset(len);
     
             for (var i = 0; i < len; i++) {
-                if (chars[i] != " ") {
+                if (this.isIgnoredPosition(ig_pos, i)) {
+                    parsed = parsed + chars[i];
+                } else if (chars[i] != " ") {
                     parsed = parsed + "[" + this.next() + "]" + chars[i] + "[/#]";
                 } else {
                     parsed = parsed + " ";
@@ -91,6 +98,49 @@
             }
     
             return parsed;
+        },
+        
+        getIgnoredPositions: function(msg) {
+            var ig_pos = [], matches;
+    
+            matches = REGEX_URL.exec(msg);
+            while(matches !== null) {
+                ig_pos.push({
+                    start: matches.index,
+                    end: REGEX_URL.lastIndex
+                });
+                matches = REGEX_URL.exec(msg);
+            }
+            
+            matches = REGEX_EMOTE.exec(msg);
+            while(matches !== null) {
+                ig_pos.push({
+                    start: matches.index,
+                    end: REGEX_EMOTE.lastIndex
+                });
+                matches = REGEX_EMOTE.exec(msg);
+            }
+            
+            matches = REGEX_MACRO.exec(msg);
+            while(matches !== null) {
+                ig_pos.push({
+                    start: matches.index,
+                    end: REGEX_MACRO.lastIndex
+                });
+                matches = REGEX_MACRO.exec(msg);
+            }
+            
+            return ig_pos;
+        },
+        
+        isIgnoredPosition: function(ig_pos, i) {
+            for(var y = 0; y < ig_pos.length; y++) {
+                if (i >= ig_pos[y].start && i < ig_pos[y].end) {
+                    return true;
+                }
+            }
+            
+            return false;
         }
     };
     
@@ -262,7 +312,7 @@
     };
     
     var isNonColorMessage = function(msg) {
-        if (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.match(/:([^:]+):/) || msg.match(/https?:\/\//)) {
+        if (msg[0] == "/" || msg[0] == "$") {
             return true;
         } else if (msg.indexOf(MARK) !== -1) {
             return true;
