@@ -13,7 +13,7 @@
 (function() {
     var macros = $api.getStorage("chat-macros", {
         "@fire@"            : ":fire: :fire: :fire: :fire: :fire:",
-        "@west"             : "West coast is best coast.",
+        "@west@"            : "West coast is best coast.",
         "@bye@"             : "See ya! :taeyang:",
         "@love {username}@" : "<3 <3 <3 {username} <3 <3 <3"
     });
