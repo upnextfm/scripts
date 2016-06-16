@@ -29,7 +29,7 @@ Gives users the option to create macros, or "shortcuts" for long messages.
 
 Once the script is installed go to Options -> Macros to define and edit macros. Macros have two parts: a trigger
 and a replacement. An example trigger is `"@fire@"` with the replacement `":fire: :fire: :fire:"`. Once
-a macro has been added you can type it into the chat box (e.g. "@fire@") and it will be replaced
+the macro has been added you can type it into the chat box (e.g. `"@fire@"`) and it will be replaced
 by the replacement.
 
 Macros also allow for simple variable interpolation. As an example, you can create a trigger with the
