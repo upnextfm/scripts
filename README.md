@@ -6,7 +6,7 @@ the code into your scripts box.
 #### [Auto Queue Favorites 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/auto-queue-favorites.js)
 Automatically queues one of the songs from your favorites every 30 minutes.
 
-#### [Gradients 2.0](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
+#### [Gradients 2.1](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
 
 ![Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients.png)
