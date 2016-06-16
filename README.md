@@ -15,7 +15,7 @@ Applies a color gradient to the messages you send.
 #### [Hide Bots 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
 Hides channel bots from the users list.
 
-#### [Highlighter 1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
+#### [Highlighter 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
 Highlights messages which contain any of the phrases you configure. Useful to highlight messages
 containing your nickname or other words of interest.
 
