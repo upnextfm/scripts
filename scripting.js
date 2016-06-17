@@ -33,6 +33,7 @@
             editor.resize();
         });
     });
+    
     scripting_box.on("shrunk.scripting", function() {
         $api.each(editors, function(editor) {
             editor.resize();
@@ -49,20 +50,40 @@
         });
     });
     
-    $(".user-scripting-textarea").each(function() {
-        var target = $(this),
-            value  = target.val(),
-            name   = target.data("name");
+    $api.on("reloading", function() {
+        $(".user-scripting-pre").each(function() {
+            var target = $(this),
+                name   = target.data("name");
+            
+            var textarea = $('<textarea/>');
+            textarea.addClass('form-control user-scripting-textarea');
+            textarea.attr("rows", 20);
+            textarea.data("name", name);
+            textarea.val(editors[name].getValue());
+            
+            editors[name] = null;
+            target.replaceWith(textarea);
+        });
         
-        var pre = $('<pre/>');
-        pre.addClass("user-scripting-pre");
-        pre.data("name", name);
-        pre.text(value);
+        editors = {};
+    });
+    
+    $api.on("loaded", function() {
+        $(".user-scripting-textarea").each(function() {
+            var target = $(this),
+                value  = target.val(),
+                name   = target.data("name");
+
+            var pre = $('<pre/>');
+            pre.addClass("user-scripting-pre");
+            pre.data("name", name);
+            pre.text(value);
         
-        editors[name] = ace.edit(pre[0]);
-        editors[name].setTheme("ace/theme/monokai");
-        editors[name].getSession().setMode("ace/mode/javascript");
+            editors[name] = ace.edit(pre[0]);
+            editors[name].setTheme("ace/theme/monokai");
+            editors[name].getSession().setMode("ace/mode/javascript");
         
-        target.replaceWith(pre);
+            target.replaceWith(pre);
+        });
     });
 })();
