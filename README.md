@@ -43,5 +43,8 @@ Provides protection against trolls and other nasty users.
 
 ![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/protection_options.png)
 
-#### [React 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/react.js)
-Creates a `/react` command, which displays a random image from [replygif.net](http://replygif.net) based on your search term.
+#### [React 1.5](https://raw.githubusercontent.com/upnextfm/scripts/master/react.js)
+Creates a `/react` command, which displays a random image from [replygif.net](http://replygif.net) based on
+your search term. Now includes auto complete suggestions.
+
+![React Autocomplete](https://raw.githubusercontent.com/upnextfm/scripts/master/images/react_autocomplete.png)
