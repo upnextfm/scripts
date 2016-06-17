@@ -21,7 +21,7 @@ containing your nickname or other words of interest.
 
 ![Highlighter Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/highlighter_options.png)
 
-#### [Lucky 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/lucky.js)
+#### [Lucky 1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/lucky.js)
 Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.
 
 #### [Macros 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
