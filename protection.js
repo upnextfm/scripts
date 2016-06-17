@@ -1,6 +1,6 @@
 /**
  * Script: Protection
- * Version: 1.7
+ * Version: 1.8
  *
  * Provides protection against trolls and other nasty users.
  * 
@@ -11,12 +11,21 @@
  * REFRESH THE PAGE AFTER INSTALLING.
  */
 (function() {
-    var settings = $api.getStorage("protection-settings", {
+    var DEFAULTS = {
         no_images:     true,
         no_emotes:     true,
+        no_colors:     true,
         no_upper_case: true,
         blocked_phrases: ""
+    };
+    
+    var settings = $api.getStorage("protection-settings");
+    $api.each(DEFAULTS, function(val, key) {
+        if (settings[key] == undefined) {
+            settings[key] = val;
+        }
     });
+    
     var trolls    = $api.getStorage("protection-trolls", []);
     var no_queue  = $api.getStorage("protection-no-queue", []);
     var img_regex = /<img.+?src=[\"'](.+?)[\"'].*?>/g;
@@ -50,14 +59,14 @@
         pane.append(form);
         
         form.append($('<h4 style="margin-bottom:0;color:#fff;">Troll Settings</h4>'));
-        form.append($('<p>Applies to users flagged as trolls.</p>'));
+        form.append($('<p>Applies to users flagged as trolls (Protection On).</p>'));
         $(
             '<div class="form-group">' +
                 '<div class="col-sm-8 col-sm-offset-4">' +
                     '<div class="checkbox">' +
                         '<label for="us-protection-settings-no-images">' +
                             '<input type="checkbox" id="us-protection-settings-no-images" />' +
-                            'Do not show inline images from trolls.' +
+                            'Do not show inline images.' +
                         '</label>' +
                     '</div>' +
                 '</div>' +
@@ -70,7 +79,20 @@
                     '<div class="checkbox">' +
                         '<label for="us-protection-settings-no-emotes">' +
                             '<input type="checkbox" id="us-protection-settings-no-emotes" />' +
-                            'Do not show emotes from trolls.' +
+                            'Do not show emotes.' +
+                        '</label>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+        ).appendTo(form);
+    
+        $(
+            '<div class="form-group">' +
+                '<div class="col-sm-8 col-sm-offset-4">' +
+                    '<div class="checkbox">' +
+                        '<label for="us-protection-settings-no-colors">' +
+                            '<input type="checkbox" id="us-protection-settings-no-colors" />' +
+                            'Do not show colors.' +
                         '</label>' +
                     '</div>' +
                 '</div>' +
@@ -83,7 +105,7 @@
                     '<div class="checkbox">' +
                         '<label for="us-protection-settings-no-upper-case">' +
                             '<input type="checkbox" id="us-protection-settings-no-upper-case" />' +
-                            'Do not show UPPER CASE text from trolls.' +
+                            'Do not show UPPER CASE text.' +
                         '</label>' +
                     '</div>' +
                 '</div>' +
@@ -115,6 +137,7 @@
     var updateSettings = function() {
         settings.no_images       = $("#us-protection-settings-no-images").is(":checked");
         settings.no_emotes       = $("#us-protection-settings-no-emotes").is(":checked");
+        settings.no_colors       = $("#us-protection-settings-no-colors").is(":checked");
         settings.no_upper_case   = $("#us-protection-settings-no-upper-case").is(":checked");
         settings.blocked_phrases = $("#us-protection-settings-blocked-phrases").val().trim();
         splitBlockedPhrases();
@@ -124,6 +147,7 @@
     var updateForm = function() {
         $("#us-protection-settings-no-images").prop("checked", settings.no_images);
         $("#us-protection-settings-no-emotes").prop("checked", settings.no_emotes);
+        $("#us-protection-settings-no-colors").prop("checked", settings.no_colors);
         $("#us-protection-settings-no-upper-case").prop("checked", settings.no_upper_case);
         $("#us-protection-settings-blocked-phrases").val(settings.blocked_phrases);
     };
@@ -155,6 +179,14 @@
         return msg;
     };
     
+    // Removes color codes from the message.
+    var filterColors = function(msg) {
+        msg = msg.replace(/\[color (#[a-f0-9]{3,6})\](.*?)\[\/color\]/gi, '$2');
+        msg = msg.replace(/\[(#[a-f0-9]{3,6})\](.*?)\[\/#\]/gi, '$2');
+    
+        return msg;
+    };
+    
     // Returns whether the message contains a blocked phrase.
     var hasBlockedPhrase = function(msg) {
         var found = false;
@@ -177,11 +209,13 @@
         
         if (trolls.indexOf(data.username.toLowerCase()) !== -1) {
             data.meta.no_emotes = settings.no_emotes;
+            if (settings.no_colors) {
+                data.msg = filterColors(data.msg);
+            }
             if (settings.no_upper_case) {
                 data.msg = data.msg.toLowerCase();
             }
             if (settings.no_images) {
-                console.log(data.msg);
                 data.msg = filterImages(data.msg);
             }
         }

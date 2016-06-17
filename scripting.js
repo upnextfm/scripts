@@ -139,6 +139,13 @@
                 script: editor.getValue()
             });
         });
+        $(".user-scripting-textarea").each(function(i, textarea) {
+            var target = $(textarea);
+            scripts.push({
+                name: target.data("name"),
+                script: target.val()
+            });
+        });
     });
     
     $api.on("reloading", function() {
