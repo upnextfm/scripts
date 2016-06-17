@@ -142,7 +142,6 @@
     });
     
     $api.on("reloading", function() {
-        
         $(".user-scripting-pre").each(function() {
             var target = $(this),
                 name   = target.data("name");
