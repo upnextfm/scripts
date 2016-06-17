@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 2.1
+ * Version: 2.1.1
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -151,6 +151,8 @@
                 '#gradients-indicator { display: inline-block; cursor: pointer; } ' +
                 '#gradients-reset { color: #5bc0de; text-decoration: underline; cursor: pointer; } ' +
                 '.gradient-color-picker { float: left; } ' +
+                '.gradient-indicator-active::after { content: "\\2022"; margin-left: 8px; color: #00FF00; } ' +
+                '.gradient-indicator-inactive::after { content: "\\2022"; margin-left: 8px; color: #aaa; } ' +
             '</style>'
         ).appendTo($("head"));
     };
@@ -224,7 +226,7 @@
     
     var addToggleButton = function() {
         $("#gradients-indicator").remove();
-        var indicator = $('<button class="btn btn-default btn-sm" id="gradients-indicator">Gradient Off</button>');
+        var indicator = $('<button class="btn btn-default btn-sm gradient-indicator-active" id="gradients-indicator" title="Gradients are active. Click to disable.">Gradient</button>');
         indicator.on("click", function() {
             toggleColorizer();
         });
@@ -321,9 +323,15 @@
     var toggleColorizer = function() {
         Colorizer.is_on = !Colorizer.is_on;
         if (Colorizer.is_on) {
-            $("#gradients-indicator").text("Gradient Off");
+            $("#gradients-indicator")
+                .attr("title", "Gradients are active. Click to disable.")
+                .removeClass("gradient-indicator-inactive")
+                .addClass("gradient-indicator-active");
         } else {
-            $("#gradients-indicator").text("Gradient On");
+            $("#gradients-indicator")
+                .attr("title", "Gradients are not activated. Click to enable.")
+                .removeClass("gradient-indicator-active")
+                .addClass("gradient-indicator-inactive");
         }
     };
     
