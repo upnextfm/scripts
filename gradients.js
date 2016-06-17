@@ -33,9 +33,9 @@
     var REGEX_MACRO         = new RegExp('@([^@]+)@', "g");
     
     var Colorizer = {
+        is_on       : true,
         colors      : DEFAULT_COLORS,
         color_count : DEFAULT_COLOR_COUNT,
-        is_on       : true,
         mode        : DEFAULT_MODE,
         rainbow     : new Rainbow(),
         working     : [],
