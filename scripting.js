@@ -1,6 +1,6 @@
 /**
  * Script: Scripting Utils
- * Version: 1.0
+ * Version: 1.1
  * Import: https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js
  * 
  * Turns each script editor into a full IDE, and adds a "Scripting" button
@@ -56,6 +56,30 @@
         );
     };
     
+    var createFindOptions = function() {
+        return $(
+            '<div class="form-group">' +
+                '<input type="text" class="form-control" id="script-utils-find-input">' +
+                '<button class="btn btn-default" id="script-utils-find-button">Find</button>' +
+            '</div>'
+        );
+    };
+    
+    var createSeparator = function() {
+        return $(
+            '<div style="display:inline-block;height: 10px;margin: 0 9px;border-right: 1px solid #ffffff;"/>'
+        );
+    };
+    
+    var findInActiveEditor = function(needle) {
+        $(".user-scripting-pre").each(function(i, pre) {
+            var name = $(pre).data("name");
+            if (editors[name] != undefined) {
+                editors[name].find(needle);
+            }
+        });
+    };
+    
     $("#nav-tab-scripting").remove();
     var tab  = $('<li/>');
     $("#navbar-primary").append(tab);
@@ -83,11 +107,15 @@
         $("#scripting-utils-theme-select").off("change.scripting_utils");
         $("#script-utils-font-size-select").off("change.scripting_utils");
         $("#script-utils-tab-size-input").off("change.scripting_utils");
+        $("#script-utils-find-input").off("keyup.scripting_utils");
+        $("#script-utils-find-button").off("click.scripting_utils");
         
         var form = createOptionsForm();
         form.append(createThemeOptions());
         form.append(createFontOptions());
         form.append(createTabOptions());
+        form.append(createSeparator());
+        form.append(createFindOptions());
         $("#user-scripting-modal-footer").prepend(form);
         
         var theme_select = $("#scripting-utils-theme-select");
@@ -123,29 +151,24 @@
             $api.setStorage("scripting_utils_tab_size", t);
             tab_size = t;
         });
+        
+        var find_input = $("#script-utils-find-input");
+        find_input.on("keyup.scripting_utils", function(e) {
+            if (e.keyCode == 13) {
+                findInActiveEditor(find_input.val());
+            }
+        });
+        
+        var find_button = $("#script-utils-find-button");
+        find_button.on("click.scripting_utils", function(e) {
+            findInActiveEditor(find_input.val());
+            e.preventDefault();
+        });
     });
     
     scripting_box.on("shrunk.scripting", function() {
         $api.each(editors, function(editor) {
             editor.resize();
-        });
-    });
-    
-    $api.on("save_scripts", function(e, data) {
-        data.scripts = [];
-        $api.each(editors, function(editor, name) {
-            data.scripts.push({
-                name: name,
-                script: editor.getValue()
-            });
-        });
-        $api.each($api._scripts, function(cb, name) {
-            if (editors[name] == undefined) {
-                data.scripts.push({
-                    name: name,
-                    script: cb()
-                });
-            }
         });
     });
     
@@ -178,13 +201,17 @@
             pre.data("name", name);
             pre.css("font-size", font_size + "px");
             pre.text(value);
-        
+            
             editors[name] = ace.edit(pre[0]);
             editors[name].setTheme(theme);
             editors[name].getSession().setMode("ace/mode/javascript");
             editors[name].getSession().setTabSize(tab_size);
             editors[name].getSession().on("change", function() {
                 $api._scripts_changed = true;
+            });
+    
+            $api._scripts[name] = new UserScript(name, function() {
+                return editors[name].getValue();
             });
         
             target.replaceWith(pre);

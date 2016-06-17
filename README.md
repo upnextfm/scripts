@@ -49,7 +49,7 @@ your search term. Now includes auto complete suggestions.
 
 ![React Autocomplete](https://raw.githubusercontent.com/upnextfm/scripts/master/images/react_autocomplete.png)
 
-#### [Scripting Utils 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/scripting.js)
+#### [Scripting Utils 1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/scripting.js)
 Turns each script editor into a full IDE, and adds a "Scripting" button to the site navigation bar.
 
 ![Scripting Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/scripting_options.png)
