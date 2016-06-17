@@ -139,12 +139,13 @@
                 script: editor.getValue()
             });
         });
-        $(".user-scripting-textarea").each(function(i, textarea) {
-            var target = $(textarea);
-            scripts.push({
-                name: target.data("name"),
-                script: target.val()
-            });
+        $api.each($api._scripts, function(cb, name) {
+            if (editors[name] == undefined) {
+                data.scripts.push({
+                    name: name,
+                    script: cb()
+                });
+            }
         });
     });
     
@@ -182,6 +183,9 @@
             editors[name].setTheme(theme);
             editors[name].getSession().setMode("ace/mode/javascript");
             editors[name].getSession().setTabSize(tab_size);
+            editors[name].getSession().on("change", function() {
+                $api._scripts_changed = true;
+            });
         
             target.replaceWith(pre);
         });
