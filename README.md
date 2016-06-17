@@ -48,3 +48,6 @@ Creates a `/react` command, which displays a random image from [replygif.net](ht
 your search term. Now includes auto complete suggestions.
 
 ![React Autocomplete](https://raw.githubusercontent.com/upnextfm/scripts/master/images/react_autocomplete.png)
+
+#### [Scripting Utils 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/scripting.js)
+Currently only adds a "Scripting" button in the site navigation bar, which options up the scripting pane in full screen.
