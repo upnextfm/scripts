@@ -1,7 +1,24 @@
 /**
+ * Script: Greentext
+ * Version: 1.A
+ * Author az4521
+ * lets you do greentext
+ * >tfw no gf
+ *
+ * probably super shit
+ */
+$api.on("send", function(e, data) {
+    if(data.msg[0]==">"){
+        var green = '[#789922]' + data.msg + '[/#]'
+        data.msg = green
+    }
+}); 
+/**
  * Script: Gradients
  * Version: 2.2
  * Author: headzoo
+ * Edited by:az4521
+ * Edit: added support for greentext script
  * Import: https://upnext.fm/js/rainbowvis.js
  *
  * Applies a color gradient to the messages you send.
@@ -197,7 +214,7 @@
             '<form id="us-chat-gradient-settings" class="form-horizontal">' +
                 '<h4 style="text-align: right;color:#FFF;margin-bottom:2px;">' + MARK + ' ' + MARK_VERSION + '</h4>' +
                 '<p id="gradients-credits">' +
-                    'Credits: headzoo, az4521.' +
+                    'Credits: headzoo.' +
                 '</p>' +
                 
                 '<div class="form-group">' +
@@ -461,7 +478,7 @@
     };
     
     var isNonColorMessage = function(msg) {
-        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9);
+        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9 || (msg.indexOf("[#789922]>") == 0 && msg.indexOf("[/#]") == msg.length-4));
     };
     
     var importColors = function(line) {
