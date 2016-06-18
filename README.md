@@ -1,6 +1,6 @@
 upnext.fm user scripts
 ======================
-Click the name of the script to get the code. From upnext.fm, click on `Options` and then `Scripting`. Paste
+Click the name of the script from the list below to get the code. From upnext.fm, click on `Options` and then `Scripting`. Paste
 the code into your scripts box.
 
 ![Scripting Box Screenshot](https://raw.githubusercontent.com/upnextfm/scripts/master/images/scripting_box.png)
