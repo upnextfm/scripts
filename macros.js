@@ -84,8 +84,7 @@
      * Adds the "Macros" tab/pane to the Options dialog
      */
     var addOptions = function() {
-        var tab  = $options.makeTab("Macros", "us-macros-tab");
-        tab.anchor.html('<span class="glyphicon glyphicon-book"></span> Macros');
+        var tab  = $options.makeTab("Macros", "us-macros-tab", "book");
         var pane = $options.makePane("us-macros-pane", tab);
         $options.tabs().append(tab);
         $options.panes().append(pane);
