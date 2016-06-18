@@ -469,7 +469,7 @@
     
     var isNonColorMessage = function(msg) {
         msg = removeColorCodes(msg);
-        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9 || msg[0] == ">");
+        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 0 || msg[0] == ">");
     };
     
     var importColors = function(line) {
