@@ -1,6 +1,6 @@
 /**
  * Script: Protection
- * Version: 1.8
+ * Version: 1.8.1
  *
  * Provides protection against trolls and other nasty users.
  * 
@@ -46,7 +46,7 @@
         var anchor = $('<a/>');
         anchor.attr("href", "#us-protection-pane");
         anchor.attr("data-toggle", "tab");
-        anchor.text("Protection");
+        anchor.html('<span class="glyphicon glyphicon-lock"></span> Protection');
         tab.append(anchor);
         
         var pane = $('<div/>');

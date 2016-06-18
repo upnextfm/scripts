@@ -38,7 +38,7 @@ the macro, type `"@which cake pie@"` into the chat box, and it will be replaced 
 
 ![Macro Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/macros_options.png)
 
-#### [Protection 1.8](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
+#### [Protection 1.8.1](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
 Provides protection against trolls and other nasty users.
 
 ![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/protection_options.png)
@@ -48,3 +48,9 @@ Creates a `/react` command, which displays a random image from [replygif.net](ht
 your search term. Now includes auto complete suggestions.
 
 ![React Autocomplete](https://raw.githubusercontent.com/upnextfm/scripts/master/images/react_autocomplete.png)
+
+#### [Scriptster 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/scriptster.js)
+Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a "Scripting" button
+to the site navigation bar.
+
+![Scriptster Screenshot](https://raw.githubusercontent.com/upnextfm/scripts/master/images/scriptster_options.png)
