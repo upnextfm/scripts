@@ -478,7 +478,7 @@ $api.on("send", function(e, data) {
     };
     
     var isNonColorMessage = function(msg) {
-        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9 || msg.indexOf("[#789922]>") == 0);
+        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9 || (msg.indexOf("[#789922]>") == 0 && msg.indexOf("[/#]") == msg.length-4));
     };
     
     var importColors = function(line) {
