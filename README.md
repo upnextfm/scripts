@@ -21,6 +21,12 @@ Applies a color gradient to the messages you send.
 
 ---------------------------------------
 
+#### [Greentext 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/greentext.js)
+lets you do greentext  
+>tfw no gf
+
+---------------------------------------
+
 #### [Hide Bots 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
 Hides channel bots from the users list.
 
