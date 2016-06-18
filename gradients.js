@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 2.2
+ * Version: 2.2.1
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -460,8 +460,16 @@
         $api.send("[#FFFFFF]" + MARK + " " + MARK_VERSION + ":[/#] " + my_colors.join(" "));
     };
     
+    var removeColorCodes = function(msg) {
+        msg = msg.replace(/\[color (#[a-f0-9]{3,6})\](.*?)\[\/color\]/gi, '$2');
+        msg = msg.replace(/\[(#[a-f0-9]{3,6})\](.*?)\[\/#\]/gi, '$2');
+        
+        return msg;
+    };
+    
     var isNonColorMessage = function(msg) {
-        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9);
+        msg = removeColorCodes(msg);
+        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 9 || msg[0] == ">");
     };
     
     var importColors = function(line) {

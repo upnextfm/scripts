@@ -10,7 +10,7 @@ button, which will create a new file where you paste the script.
 
 ---------------------------------------
 
-#### [Gradients 2.2](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
+#### [Gradients 2.2.1](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
 
 ![Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients.png)
