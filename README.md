@@ -10,11 +10,11 @@ Automatically queues one of the songs from your favorites every 30 minutes.
 #### [Gradients 2.2](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
 
-###### Previous Version
-* [1.5](https://raw.githubusercontent.com/upnextfm/scripts/2e391dbaeec06cf178409fc8c3c684671d8b5046/gradients.js)
-
 ![Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients.png)
 ![Gradients Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients_options.png)
+
+###### Previous Versions
+* [1.5](https://raw.githubusercontent.com/upnextfm/scripts/2e391dbaeec06cf178409fc8c3c684671d8b5046/gradients.js)
 
 
 #### [Hide Bots 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
