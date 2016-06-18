@@ -3,6 +3,9 @@ upnext.fm user scripts
 Click the name of the script to get the code. From upnext.fm, click on Options and then Scripting. Paste
 the code into your scripts box.
 
+![Scripting Box Screenshot](https://raw.githubusercontent.com/upnextfm/scripts/master/images/scripting_box.png)
+
+---------------------------------------
 
 #### [Gradients 2.2](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
