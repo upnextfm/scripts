@@ -24,7 +24,7 @@ containing your nickname or other words of interest.
 #### [Lucky 1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/lucky.js)
 Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.
 
-#### [Macros 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
+#### [Macros 1.1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
 Gives users the option to create macros, or "shortcuts" for long messages.
 
 Once the script is installed go to Options -> Macros to define and edit macros. Macros have two parts: a trigger
