@@ -6,6 +6,7 @@ the code into your scripts box.
 #### [Auto Queue Favorites 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/auto-queue-favorites.js)
 Automatically queues one of the songs from your favorites every 30 minutes.
 
+---------------------------------------
 
 #### [Gradients 2.2](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
@@ -16,10 +17,12 @@ Applies a color gradient to the messages you send.
 ###### Previous Versions
 * [1.5](https://raw.githubusercontent.com/upnextfm/scripts/2e391dbaeec06cf178409fc8c3c684671d8b5046/gradients.js)
 
+---------------------------------------
 
 #### [Hide Bots 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/hide-bots.js)
 Hides channel bots from the users list.
 
+---------------------------------------
 
 #### [Highlighter 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
 Highlights messages which contain any of the phrases you configure. Useful to highlight messages
@@ -27,10 +30,12 @@ containing your nickname or other words of interest.
 
 ![Highlighter Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/highlighter_options.png)
 
+---------------------------------------
 
 #### [Lucky 1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/lucky.js)
 Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.
 
+---------------------------------------
 
 #### [Macros 1.1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
 Gives users the option to create macros, or "shortcuts" for long messages.
@@ -46,12 +51,14 @@ the macro, type `"@which cake pie@"` into the chat box, and it will be replaced 
 
 ![Macro Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/macros_options.png)
 
+---------------------------------------
 
 #### [Protection 1.8.1](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
 Provides protection against trolls and other nasty users.
 
 ![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/protection_options.png)
 
+---------------------------------------
 
 #### [React 1.5](https://raw.githubusercontent.com/upnextfm/scripts/master/react.js)
 Creates a `/react` command, which displays a random image from [replygif.net](http://replygif.net) based on
@@ -59,6 +66,7 @@ your search term. Now includes auto complete suggestions.
 
 ![React Autocomplete](https://raw.githubusercontent.com/upnextfm/scripts/master/images/react_autocomplete.png)
 
+---------------------------------------
 
 #### [Scriptster 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/scriptster.js)
 Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a "Scripting" button
