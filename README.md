@@ -22,8 +22,7 @@ Applies a color gradient to the messages you send.
 ---------------------------------------
 
 #### [Greentext 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/greentext.js)
-lets you do greentext  
-\>tfw no gf
+Lets you do greentext by prefixing your message with the > character.
 
 ---------------------------------------
 
