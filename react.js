@@ -1,6 +1,6 @@
 /**
  * Script: Reaction GIFs
- * Version: 1.5
+ * Version: 1.5.1
  * Author: headzoo
  *
  * Displays a random image from replygif.net based on your search term
@@ -10,7 +10,7 @@
  * which will suggest possible search terms.
  */
 (function() {
-    $.getJSON("/proxy/image?u=" + encodeURIComponent("http://replygif.net/api/tags?reaction=1&api-key=39YAprx5Yi"), function(res) {
+    $proxy.getJSON("http://replygif.net/api/tags?reaction=1&api-key=39YAprx5Yi", function(res) {
         $('#chatline').textcomplete([
             {
                 id: 'react',
@@ -39,7 +39,7 @@
             var query = msg.replace("/react ", "");
             var url   = "http://replygif.net/api/gifs?api-key=39YAprx5Yi&tag=" + query;
             
-            $.getJSON("/proxy/image?u=" + encodeURIComponent(url), function(res) {
+            $proxy.getJSON(url, function(res) {
                 if (res.length == 0) {
                     $api.notice("No reaction found.", true);
                 } else {
