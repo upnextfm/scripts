@@ -2,6 +2,6 @@
   "gradients.js": {
     "name": "Gradients",
     "version": "2.2.2",
-    "description": ""
+    "description": "Applies a color gradient to the messages you send."
   }
 }
