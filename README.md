@@ -10,7 +10,7 @@ button, which will create a new file where you paste the script.
 
 ---------------------------------------
 
-#### [Gradients 2.2.1](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
+#### [Gradients 2.2.2](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
 Applies a color gradient to the messages you send.
 
 ![Gradients](https://raw.githubusercontent.com/upnextfm/scripts/master/images/gradients.png)
@@ -32,7 +32,7 @@ Hides channel bots from the users list.
 
 ---------------------------------------
 
-#### [Highlighter 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
+#### [Highlighter 1.3](https://raw.githubusercontent.com/upnextfm/scripts/master/highlighter.js)
 Highlights messages which contain any of the phrases you configure. Useful to highlight messages
 containing your nickname or other words of interest.
 
@@ -45,7 +45,7 @@ Creates a `/lucky` command, which searches YouTube using the query following the
 
 ---------------------------------------
 
-#### [Macros 1.1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
+#### [Macros 1.2](https://raw.githubusercontent.com/upnextfm/scripts/master/macros.js)
 Gives users the option to create macros, or "shortcuts" for long messages.
 
 Once the script is installed go to Options -> Macros to define and edit macros. Macros have two parts: a trigger
@@ -61,7 +61,7 @@ the macro, type `"@which cake pie@"` into the chat box, and it will be replaced 
 
 ---------------------------------------
 
-#### [Protection 1.8.1](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
+#### [Protection 1.8.2](https://raw.githubusercontent.com/upnextfm/scripts/master/protection.js)
 Provides protection against trolls and other nasty users.
 
 ![Protection Options](https://raw.githubusercontent.com/upnextfm/scripts/master/images/protection_options.png)
@@ -76,7 +76,7 @@ your search term. Now includes auto complete suggestions.
 
 ---------------------------------------
 
-#### [Scriptster 1.0](https://raw.githubusercontent.com/upnextfm/scripts/master/scriptster.js)
+#### [Scriptster 1.1](https://raw.githubusercontent.com/upnextfm/scripts/master/scriptster.js)
 Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a "Scripting" button
 to the site navigation bar.
 

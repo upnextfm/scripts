@@ -1,6 +1,6 @@
 /**
  * Script: Scriptster
- * Version: 1.0
+ * Version: 1.1
  * Import: https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js
  *
  * Turns the script editor into a full IDE and adds a "Scripting" button
@@ -21,7 +21,7 @@
     var options_box   = $("#useroptions");
     var scripting_box = $("#us-scripting");
     var scripting_tab = $("#us-scripting-tab").find("a");
-    var settings      = $api.getStorage("scriptster_settings", {});
+    var settings      = $store.local.get("scriptster_settings", {});
     $api.each(DEFAULT_SETTINGS, function(value, key) {
         if (settings[key] == undefined) {
             settings[key] = value;
@@ -255,7 +255,7 @@
      * Saves the current settings and updates the editors.
      */
     var saveSettings = function() {
-        $api.setStorage("scriptster_settings", settings);
+        $store.local.set("scriptster_settings", settings);
         $api.each(editors, function(editor) {
             editor.setTheme(settings.theme);
             editor.renderer.setShowGutter(settings.show_gutter == "1");

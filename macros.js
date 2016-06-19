@@ -1,6 +1,6 @@
 /**
  * Script: Macros
- * Version: 1.1.1
+ * Version: 1.2
  *
  * Gives users the option to create macros, or "shortcuts" for long messages.
  *
@@ -11,7 +11,7 @@
  * and it will be replaced by the replacement value.
  */
 (function() {
-    var macros = $api.getStorage("chat-macros", {
+    var macros = $store.local.get("chat-macros", {
         "@fire@"            : ":fire: :fire: :fire: :fire: :fire:",
         "@west@"            : "West coast is best coast.",
         "@bye@"             : "See ya! :taeyang:",
@@ -77,7 +77,7 @@
      */
     var deleteMacro = function(trigger) {
         delete macros[trigger];
-        $api.setStorage("chat-macros", macros);
+        $store.local.set("chat-macros", macros);
     };
     
     /**
@@ -185,7 +185,7 @@
         }
         
         macros[trigger_val] = replacement_val;
-        $api.setStorage("chat-macros", macros);
+        $store.local.set("chat-macros", macros);
         appendRow(replacement_val, trigger_val);
         trigger.val("");
         replacement.val("");
@@ -213,7 +213,7 @@
             return alert(e);
         }
         
-        $api.setStorage("chat-macros", imported);
+        $store.local.set("chat-macros", imported);
         macros = {};
         
         var tbody = $("#us-macros-tbody");

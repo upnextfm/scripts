@@ -1,6 +1,6 @@
 /**
  * Script: Protection
- * Version: 1.8.1
+ * Version: 1.8.2
  *
  * Provides protection against trolls and other nasty users.
  * 
@@ -19,15 +19,15 @@
         blocked_phrases: ""
     };
     
-    var settings = $api.getStorage("protection-settings");
+    var settings = $store.local.get("protection-settings");
     $api.each(DEFAULTS, function(val, key) {
         if (settings[key] == undefined) {
             settings[key] = val;
         }
     });
     
-    var trolls    = $api.getStorage("protection-trolls", []);
-    var no_queue  = $api.getStorage("protection-no-queue", []);
+    var trolls    = $store.local.get("protection-trolls", []);
+    var no_queue  = $store.local.get("protection-no-queue", []);
     var img_regex = /<img.+?src=[\"'](.+?)[\"'].*?>/g;
     var blocked_phrases_split = [];
     
@@ -233,7 +233,7 @@
     // Save our settings when the rest of the user options are saved.
     $api.on("user_options_save", function() {
         updateSettings();
-        $api.setStorage("protection-settings", settings);
+        $store.local.set("protection-settings", settings);
     });
     
     // Add buttons to each profile menu which turns protection on/off.
@@ -256,7 +256,7 @@
                     btn.text("Protection On");
                 }
                 
-                $api.setStorage("protection-trolls", trolls);
+                $store.local.set("protection-trolls", trolls);
             });
         
         // Gives mods a button to stop the user from adding to the queue.
@@ -275,7 +275,7 @@
                         btnq.text("No Queue On");
                     }
                     
-                    $api.setStorage("protection-no-queue", no_queue);
+                    $store.local.set("protection-no-queue", no_queue);
                 });
         }
     });

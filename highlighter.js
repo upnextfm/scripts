@@ -1,6 +1,6 @@
 /**
  * Script: Highlighter
- * Version: 1.2
+ * Version: 1.3
  * Author: headzoo
  *
  * Highlights messages which contain any of the phrases you configure. Useful to highlight messages
@@ -8,7 +8,7 @@
  */
 (function() {
     // Add our setting to the Options menu.
-    var words = localStorage.getItem("highlight-words");
+    var words = $store.local.get("highlight-words");
     if (!words) words = "";
     
     $("#us-highlight-words-group").remove();
@@ -38,7 +38,7 @@
     // Watch for the user saving the options, and save our words to local storage.
     $api.on("user_options_save", function() {
         words = input.val();
-        localStorage.setItem("highlight-words", words);
+        $store.local.set("highlight-words", words);
     });
     
     // Highlight the chat when the regex matches.

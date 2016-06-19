@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -40,7 +40,7 @@
     var state   = [];
     
     var Colorizer = {
-        is_on       : $api.getStorage("gradient-is-on", true),
+        is_on       : $store.local.get("gradient-is-on", true),
         colors      : DEFAULT_COLORS,
         color_count : DEFAULT_COLOR_COUNT,
         mode        : DEFAULT_MODE,
@@ -274,7 +274,7 @@
     
     var toggleColorizer = function() {
         Colorizer.is_on = !Colorizer.is_on;
-        $api.setStorage("gradient-is-on", Colorizer.is_on);
+        $store.local.set("gradient-is-on", Colorizer.is_on);
         updateIndicator();
     };
     
@@ -373,20 +373,24 @@
     };
     
     var saveSettings = function() {
-        $api.setStorage("gradient-colors",      Colorizer.colors);
-        $api.setStorage("gradient-mode",        Colorizer.mode);
-        $api.setStorage("gradient-color-count", Colorizer.color_count);
+        $store.local.set("gradient-colors",      Colorizer.colors);
+        $store.local.set("gradient-mode",        Colorizer.mode);
+        $store.local.set("gradient-color-count", Colorizer.color_count);
     };
     
     var restoreSettings = function() {
-        Colorizer.color_count = $api.getStorage("gradient-color-count", DEFAULT_COLOR_COUNT);
-        Colorizer.colors      = $api.getStorage("gradient-colors", DEFAULT_COLORS);
-        Colorizer.mode        = $api.getStorage("gradient-mode", DEFAULT_MODE);
+        Colorizer.color_count = $store.local.get("gradient-color-count", DEFAULT_COLOR_COUNT);
+        Colorizer.colors      = $store.local.get("gradient-colors", DEFAULT_COLORS);
+        Colorizer.mode        = $store.local.get("gradient-mode", DEFAULT_MODE);
     };
     
     var resetColors = function() {
         if (confirm("Are you sure you want to reset your colors?")) {
-            Colorizer.mode = DEFAULT_MODE;
+            $store.local.remove("gradient-colors");
+            $store.local.remove("gradient-mode");
+            $store.local.remove("gradient-color-count");
+            
+            Colorizer.mode        = DEFAULT_MODE;
             Colorizer.color_count = DEFAULT_COLOR_COUNT;
             for(var i = 0; i < Colorizer.color_count; i++) {
                 Colorizer.colors[i] = DEFAULT_COLORS[i];
