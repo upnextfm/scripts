@@ -22,7 +22,7 @@
     var scripting_box = $("#us-scripting");
     var scripting_tab = $("#us-scripting-tab").find("a");
     var settings      = $store.local.get("scriptster_settings", {});
-    $api.each(DEFAULT_SETTINGS, function(value, key) {
+    $each(DEFAULT_SETTINGS, function(value, key) {
         if (settings[key] == undefined) {
             settings[key] = value;
         }
@@ -165,12 +165,12 @@
         });
         
         scripting_box.on("expanded.scripting", function() {
-            $api.each(editors, function (editor) {
+            $each(editors, function (editor) {
                 editor.resize();
             });
         });
         scripting_box.on("shrunk.scripting", function() {
-            $api.each(editors, function(editor) {
+            $each(editors, function(editor) {
                 editor.resize();
             });
         });
@@ -256,7 +256,7 @@
      */
     var saveSettings = function() {
         $store.local.set("scriptster_settings", settings);
-        $api.each(editors, function(editor) {
+        $each(editors, function(editor) {
             editor.setTheme(settings.theme);
             editor.renderer.setShowGutter(settings.show_gutter == "1");
             editor.getSession().setUseSoftTabs(settings.soft_tabs == "1");
@@ -287,12 +287,12 @@
     // Use the reloading event to remove the elements and events
     // we added to the page.
     $api.on("reloading", function() {
-        $api.each(elements, function(element, name) {
+        $each(elements, function(element, name) {
             if (name != "settings") {
                 element.off();
             }
         });
-        $api.each(elements.settings, function(element) {
+        $each(elements.settings, function(element) {
             element.off();
         });
         elements.controls.remove();

@@ -38,7 +38,7 @@
     
     $api.on("loaded", function() {
         $(".userlist_item_is_bot").remove();
-        $api.each(bots, function(bot) {
+        $each(bots, function(bot) {
             $(".userlist_item_" + bot).remove();
         });
     });

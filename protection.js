@@ -20,7 +20,7 @@
     };
     
     var settings = $store.local.get("protection-settings");
-    $api.each(DEFAULTS, function(val, key) {
+    $each(DEFAULTS, function(val, key) {
         if (settings[key] == undefined) {
             settings[key] = val;
         }
@@ -191,7 +191,7 @@
     var hasBlockedPhrase = function(msg) {
         var found = false;
         msg = msg.toLowerCase();
-        $api.each(blocked_phrases_split, function(phrase) {
+        $each(blocked_phrases_split, function(phrase) {
             if (msg.indexOf(phrase) != -1) {
                 found = true;
                 return null;

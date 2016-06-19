@@ -39,7 +39,7 @@
         }
         
         var regex = trigger;
-        $api.each(groups, function(index, name) {
+        $each(groups, function(index, name) {
             regex = regex.replace("{" + name + "}", "([^\\s]+)");
         });
         
@@ -62,8 +62,8 @@
         if (matches === null) {
             return message;
         }
-        
-        $api.each(group.groups, function(index, name) {
+    
+        $each(group.groups, function(index, name) {
             replacement = replacement.replace("{" + name + "}", matches[index]);
         });
         
@@ -118,7 +118,7 @@
         
         var tbody = $('<tbody id="us-macros-tbody"/>');
         table.append(tbody);
-        $api.each(macros, function(replacement, trigger) {
+        $each(macros, function(replacement, trigger) {
             appendRow(replacement, trigger, tbody);
         });
         
@@ -218,14 +218,14 @@
         
         var tbody = $("#us-macros-tbody");
         tbody.empty();
-        $api.each(imported, function(replacement, trigger) {
+        $each(imported, function(replacement, trigger) {
             appendRow(replacement, trigger);
             macros[trigger] = replacement;
         });
     };
     
     // Converts each of the user's macros into regex groups.
-    $api.each(macros, function(replacement, trigger) {
+    $each(macros, function(replacement, trigger) {
         if (!trigger_regex.test(trigger)) {
             console.error('Trigger not delimited with @ character or using special characters. Got "' + trigger + '"');
             return;
@@ -247,7 +247,7 @@
     // Called when the user sends a message. Process any macros found in
     // the message.
     $api.on("send", function(e, data) {
-        $api.each(handlers, function(handler) {
+        $each(handlers, function(handler) {
             data.msg = parseMessage(handler.group, handler.value, data.msg);
         });
     });

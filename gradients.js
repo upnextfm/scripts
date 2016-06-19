@@ -346,7 +346,7 @@
     };
     
     var updatePickers = function() {
-        $api.each(pickers, function(picker) {
+        $each(pickers, function(picker) {
             picker.spectrum("destroy").remove();
         });
         pickers = [];
@@ -357,7 +357,7 @@
     
     var getPickerColors = function() {
         var colors = [];
-        $api.each(pickers, function(picker) {
+        $each(pickers, function(picker) {
             colors.push(picker.spectrum("get").toString());
         });
         
@@ -395,8 +395,8 @@
             for(var i = 0; i < Colorizer.color_count; i++) {
                 Colorizer.colors[i] = DEFAULT_COLORS[i];
             }
-            
-            $api.each(pickers, function(picker) {
+    
+            $each(pickers, function(picker) {
                 picker.spectrum("destroy").remove();
             });
             pickers = [];
@@ -417,8 +417,8 @@
             Colorizer.mode        = saved.mode;
             Colorizer.colors      = saved.colors;
             Colorizer.color_count = saved.color_count;
-            
-            $api.each(pickers, function(picker) {
+    
+            $each(pickers, function(picker) {
                 picker.spectrum("destroy").remove();
             });
             pickers = [];
@@ -441,8 +441,8 @@
         for(var i = 0; i < Colorizer.color_count; i++) {
             Colorizer.colors[i] = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
         }
-        
-        $api.each(pickers, function(picker) {
+    
+        $each(pickers, function(picker) {
             picker.spectrum("destroy").remove();
         });
         pickers = [];

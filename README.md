@@ -8,7 +8,6 @@ the code into your scripts box.
 When adding scripts to your user scripts, you should create a new tab for each script. Click the `Create Tab`
 button, which will create a new file where you paste the script.
 
-
 ---------------------------------------
 
 #### [Gradients 2.2.2](https://raw.githubusercontent.com/upnextfm/scripts/master/gradients.js)
