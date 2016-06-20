@@ -4,7 +4,7 @@
     <title>upnext.fm user scripts</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official user scripting repository and documentation for upnext.fm.">
+    <meta name="description" content="Official upnext.fm user scripting repository and documentation.">
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 <div id="main">
     <header>
         <img src="images/logo.png" />
-        <h1>Official user scripting repository and documentation for upnext.fm.</h1>
+        <h1>Official upnext.fm user scripting repository and documentation.</h1>
     </header>
     <p>
         Click the name of the script from the list below to get the code. From upnext.fm, click on
