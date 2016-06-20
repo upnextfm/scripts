@@ -1,6 +1,6 @@
 /**
  * Script: Magic 8 Ball
- * Version: 1.0
+ * Version: 1.1
  * Author: headzoo
  *
  * Creates a /8ball command which finds answers to your questions from beyond
@@ -49,7 +49,8 @@
                     var item = answers[Math.floor(Math.random() * answers.length)];
                     var color = color_map[item.color];
                     $api.send(sprintf(
-                        "[#FFFFFF]Magic 8 Ball «[/#] [%s]%s[/#] [#FFFFFF]»[/#]",
+                        "[#FFFFFF]Magic 8 Ball @%s «[/#] [%s]%s[/#] [#FFFFFF]»[/#]",
+                        data.username,
                         color,
                         item.text.toLowerCase()
                     ));
