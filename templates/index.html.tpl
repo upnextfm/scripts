@@ -9,6 +9,7 @@
         <link href="favicon.ico" rel="icon" type="image/x-icon">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/site.css" rel="stylesheet">
+        <link href="assets/prism.css" rel="stylesheet">
     </head>
     <body>
     <div id="main">
@@ -16,44 +17,27 @@
             <img src="images/logo.png" />
             <h1>Official upnext.fm user script repository and documentation.</h1>
         </header>
-        
-        <ul id="scripts-list">
-            {% for filename, script in meta %}
-                <li id="script-{{ filename|safeName }}" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="{{ filename }}">{{ script.name }}</a>
-                            <a href="#script-{{ filename|safeName }}" class="glyphicon glyphicon-link" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> {{ script.version }}</li>
-                            <li><strong>Author:</strong> {{ script.author }}</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="{{ script.source }}" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>{{ script.description }}</p>
-                    
-                    {% if script.screenshots|length > 0 %}
-                        {% for screenshot in script.screenshots %}
-                            <div class="screenshot">
-                                <img src="{{ screenshot.src }}" alt="Screenshot" />
-                                <small>{{ screenshot.description }}</small>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                    
-                    <a href="#main" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            {% endfor %}
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#scripts" aria-controls="home" role="tab" data-toggle="tab">Scripts</a>
+            </li>
+            <li role="presentation">
+                <a href="#docs" aria-controls="profile" role="tab" data-toggle="tab">Documentation</a>
+            </li>
         </ul>
+        
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="scripts">
+                {% include "scripts.html.tpl" %}
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="docs">
+                {% include "docs.html.tpl" %}
+            </div>
+            <div style="clear: left;"></div>
+        </div>
     </div>
     <footer>
         <p>Copyright © 2016 upnext.fm</p>
@@ -69,13 +53,31 @@
     </footer>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="assets/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
     <script>
+        var url = document.location.toString();
+        if (url.match('#')) {
+            var part = url.split('#')[1];
+            if (part.indexOf("topic-") !== -1 || part.indexOf("docs") !== -1) {
+                $('.nav-tabs a[href="#docs"]').tab('show');
+            } else {
+                $('.nav-tabs a[href="#scripts"]').tab('show');
+            }
+        }
+        $('.nav-tabs a').on('shown.bs.tab', function () {
+            window.location.hash = "";
+        });
+        
         new Clipboard('.btn', {
             target: function(trigger) {
                 return $(trigger).parents(".input-group").find("input")[0];
             }
         });
+        //$(function() {
+        //    $('.nav-tabs a[href="#docs"]').tab('show');
+        //});
     </script>
     </body>
 </html>

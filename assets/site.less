@@ -69,11 +69,11 @@ body {
 }
 
 #main {
-  width: 750px;
+  width: 950px;
   margin: 0 auto;
   
   img {
-    max-width: 750px;
+    max-width: 950px;
   }
 }
 
@@ -109,28 +109,30 @@ footer {
 }
 
 #scripts-list {
+  margin: 12px;
   
   .script-item {
     width: 100%;
     margin-bottom: 10px;
     
     h2 {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       
       .glyphicon {
         font-size: 14px;
-        opacity: 0;
       }
       
-      &:hover {
-        .glyphicon {
-          opacity: 1;
+      .glyphicon-link {
+        color: #A27427;
+      }
+      
+      a {
+        color: #DC9F39;
+
+        a:hover {
+          text-decoration: none;
+          color: lighten(#DC9F39, 10%);
         }
-      }
-      
-      a:hover {
-        text-decoration: none;
-        color: inherit;
       }
     }
     
@@ -196,3 +198,114 @@ code {
   }
 }
 
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #FFF;
+  background-color: #DC9F39;
+  border: none;
+}
+
+.nav-tabs>li>a {
+  background-color: #C39951;
+  border-radius: 0;
+  border: none;
+  
+  &:hover {
+    background-color: #FBC263;
+    border: none;
+  }
+}
+
+.nav-tabs {
+  border-bottom: none;
+  font-size: 14px;
+  padding: 0 14px;
+  
+  a {
+    color: #FFF;
+    text-transform: uppercase;
+  }
+}
+
+
+
+#docs-container {
+  margin-top: 22px;
+  font-family: Consolas, Monaco, monospace;
+  color: #FFF;
+
+  h1 {
+    color: #FFF;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &.top {
+      display: block;
+      text-decoration: none;
+      margin-top: 40px;
+
+      .glyphicon-chevron-up {
+        display: block;
+      }
+    }
+  }
+
+  section {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+    width: 100%;
+  }
+
+  ul > li > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 8px;
+  }
+
+  h3, h4, h5 {
+    color: #DC9F39;
+    margin: 0 0 12px 0;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 22px;
+    margin: 26px 0 12px 0;
+  }
+
+  code {
+    background-color: transparent;
+    color: #E0A32F;
+  }
+
+  .signature {
+    display: block;
+    font-size: 18px;
+    padding: 12px 0 0 0;
+  }
+}
+
+#docs-table-of-contents {
+  margin: 20px 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+.docs-tc-root {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.docs-toc-col {
+  margin-bottom: 20px;
+}
