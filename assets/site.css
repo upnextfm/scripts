@@ -144,6 +144,11 @@ h2 {
 header {
   padding-bottom: 18px;
 }
+footer {
+  height: 60px;
+  margin-top: 60px;
+  text-align: center;
+}
 #scripts-list {
   margin-top: 40px;
 }
