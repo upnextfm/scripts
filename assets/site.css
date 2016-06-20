@@ -142,7 +142,7 @@ h2 {
   font-weight: bold;
 }
 header {
-  padding-bottom: 18px;
+  padding: 0 12px 12px 12px;
 }
 header img {
   height: 60px;
@@ -157,9 +157,6 @@ footer img {
   height: 40px;
   width: 209px;
   margin: 8px 0;
-}
-#scripts-list {
-  margin-top: 40px;
 }
 #scripts-list .script-item {
   width: 100%;

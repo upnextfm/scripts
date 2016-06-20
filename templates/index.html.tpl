@@ -14,20 +14,8 @@
     <div id="main">
         <header>
             <img src="images/logo.png" />
-            <h1>Official upnext.fm user scripting repository and documentation.</h1>
+            <h1>Official upnext.fm user script repository and documentation.</h1>
         </header>
-        <p>
-            Click the name of the script from the list below to get the code. From upnext.fm, click on
-            <code>Options</code> and then <code>Scripting</code>. Paste
-            the code into your scripts box. When adding scripts to your user scripts, you should create a new file for each script.
-            Click the <code>New File</code> button, which will create a new file where you paste the script.
-        </p>
-        <div class="screenshot">
-            <img src="images/scripting_box.png" alt="Scripting box screenshot" />
-            <small>
-                Find the scripting box by clicking Options and then Scripting.
-            </small>
-        </div>
         
         <ul id="scripts-list">
             {% for filename, script in meta %}
@@ -79,6 +67,7 @@
             <img src="images/logo-footer.png" />
         </p>
     </footer>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
     <script>
