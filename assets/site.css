@@ -1,0 +1,217 @@
+html,
+body {
+  border: 0;
+  font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+ul,
+li {
+  list-style-type: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  color: #FFF;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  padding: 12px;
+}
+#main {
+  width: 750px;
+  margin: 0 auto;
+}
+#main img {
+  max-width: 750px;
+}
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+header {
+  padding-bottom: 18px;
+}
+#scripts-list {
+  margin-top: 40px;
+}
+#scripts-list .script-item {
+  width: 100%;
+}
+#scripts-list .script-item h2 {
+  margin-bottom: 8px;
+}
+#scripts-list .script-item h2 .glyphicon {
+  font-size: 14px;
+  opacity: 0;
+}
+#scripts-list .script-item h2:hover .glyphicon {
+  opacity: 1;
+}
+#scripts-list .script-item h2 a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+#scripts-list .script-item p {
+  margin-bottom: 8px;
+}
+.script-header {
+  margin-bottom: 22px;
+}
+.screenshot {
+  max-width: 750px;
+  margin: 18px 0;
+}
+.screenshot img {
+  margin-bottom: 4px;
+}
+.screenshot small {
+  display: block;
+  color: #999;
+  font-size: 12px;
+}
+.input-group {
+  margin-top: 6px;
+}
+.input-group .btn,
+.input-group input,
+.input-group input[readonly] {
+  border-radius: 0;
+  background-color: #000;
+  color: #FFF;
+  border-color: #335571;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+code {
+  background-color: transparent;
+  color: #E0A32F;
+}
+.top {
+  color: #A09F9F;
+  margin: 18px 0;
+  display: block;
+}
+.card {
+  background: #1D1D1D;
+  padding: 12px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card .screenshot img {
+  width: 100%;
+}
