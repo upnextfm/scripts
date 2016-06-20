@@ -47,7 +47,7 @@
     "name": "Last Seen",
     "version": "1.0",
     "author": "headzoo",
-    "description": "Creates a /seen command which displays the last time a user was seen as well as the channel they were seen in. For example '/seen headzoo'.",
+    "description": "Creates a /seen command which displays the last time a user was seen in the lobby. For example '/seen headzoo'.",
     "source": "https://scripts.upnext.fm/last_seen.js"
   },
   "lucky.js": {
