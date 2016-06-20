@@ -9,7 +9,7 @@
 (function() {
     var seen  = {};
     var regex = new RegExp('^/seen\\s+([^\\s]+)');
-    
+
     // Save the data to the database once a minute.
     setTimeout(function() {
         $store.database.set("last_seen", seen);
@@ -23,21 +23,17 @@
     });
     
     $api.on("receive", function(e, data) {
-        seen[data.username.toLowerCase()] = {
-            t: Date.now(),
-            c: $channel.name
-        };
+        seen[data.username.toLowerCase()] = Date.now();
         
         var matches = data.msg_clean.match(regex);
         if (matches !== null) {
             var username = matches[1].toLowerCase();
             if (seen[username] !== undefined) {
             
-                var date = new Date(seen[username].t);
+                var date = new Date(seen[username]);
                 $api.send(sprintf(
-                    "[#FFFFFF]%s was last seen in the %s channel on %s[/#]",
+                    "[#FFFFFF]%s was last seen on %s[/#]",
                     matches[1],
-                    seen[username].c,
                     date.toString()
                 ));
             } else {
