@@ -1,0 +1,14 @@
+{
+  "name": "pienudes-scripts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "headzoo",
+  "description": "upnext.fm user scripts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upnextfm/scripts.git"
+  },
+  "dependencies": {
+    "nunjucks": "^2.4.2"
+  }
+}

@@ -2,51 +2,105 @@
   "gradients.js": {
     "name": "Gradients",
     "version": "2.2.2",
-    "description": "Applies a color gradient to the messages you send."
+    "author": "headzoo",
+    "description": "Applies a color gradient to the messages you send.",
+    "source": "https://scripts.upnext.fm/gradients.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/gradients.png",
+        "description": "Example gradient messages."
+      },
+      {
+        "src": "https://scripts.upnext.fm/images/gradients_options.png",
+        "description": "The options menu."
+      }
+    ]
   },
   "greentext.js": {
     "name": "Greentext",
     "version": "1.0",
-    "description": "Lets you do greentext by prefixing your message with the > character."
+    "author": "az4521",
+    "description": "Lets you do greentext by prefixing your message with the > character.",
+    "source": "https://scripts.upnext.fm/greentext.js"
   },
   "hide-bots.js": {
     "name": "Hide Bots",
     "version": "1.2",
-    "description": "Hides channel bots from the users list."
+    "author": "headzoo",
+    "description": "Hides channel bots from the users list.",
+    "source": "https://scripts.upnext.fm/hide-bots.js"
   },
   "highlighter.js": {
     "name": "Highlighter",
     "version": "1.3",
-    "description": "Highlights messages which contain any of the phrases you configure. Useful to highlight messages containing your nickname or other words of interest."
+    "author": "headzoo",
+    "description": "Highlights messages which contain any of the phrases you configure. Useful to highlight messages containing your nickname or other words of interest.",
+    "source": "https://scripts.upnext.fm/highlighter.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/highlighter_options.png",
+        "description": "The options menu."
+      }
+    ]
   },
   "lucky.js": {
     "name": "Lucky",
     "version": "1.1",
-    "description": "Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found."
+    "author": "headzoo",
+    "description": "Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.",
+    "source": "https://scripts.upnext.fm/lucky.js"
   },
   "macros.js": {
     "name": "Macros",
     "version": "1.2",
-    "description": "Gives users the option to create macros, or 'shortcuts' for long messages."
+    "author": "headzoo",
+    "description": "Gives users the option to create macros, or 'shortcuts' for long messages.",
+    "source": "https://scripts.upnext.fm/macros.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/macros_options.png",
+        "description": "The options menu."
+      }
+    ]
   },
   "protection.js": {
     "name": "Protection",
     "version": "1.8.2",
-    "description": "Provides protection against trolls and other nasty users."
+    "author": "headzoo",
+    "description": "Provides protection against trolls and other nasty users.",
+    "source": "https://scripts.upnext.fm/protection.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/protection_options.png",
+        "description": "The options menu."
+      }
+    ]
   },
   "react.js": {
     "name": "React",
     "version": "1.5.1",
-    "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions."
+    "author": "headzoo",
+    "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
+    "source": "https://scripts.upnext.fm/react.js"
   },
   "scriptster.js": {
     "name": "Scriptster",
     "version": "1.1",
-    "description": "Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a 'Scripting' button to the site navigation bar."
+    "author": "headzoo",
+    "description": "Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a 'Scripting' button to the site navigation bar.",
+    "source": "https://scripts.upnext.fm/scriptster.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/scriptster_options.png",
+        "description": "The editor with options showing."
+      }
+    ]
   },
   "azannoybutton.js": {
     "name": "Az Irritation Button",
     "version": "1.0",
-    "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic."
+    "author": "az4521",
+    "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.",
+    "source": "https://scripts.upnext.fm/azannoybutton.js"
   }
 }
