@@ -1,7 +1,7 @@
 {
   "gradients.js": {
     "name": "Gradients",
-    "version": "2.2.2",
+    "version": "2.2.3",
     "author": "headzoo",
     "description": "Applies a color gradient to the messages you send.",
     "source": "https://scripts.upnext.fm/gradients.js",

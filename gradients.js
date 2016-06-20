@@ -1,6 +1,6 @@
 /**
  * Script: Gradients
- * Version: 2.2.2
+ * Version: 2.2.3
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -472,8 +472,9 @@
     };
     
     var isNonColorMessage = function(msg) {
+        var orig = msg;
         msg = removeColorCodes(msg);
-        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 0 || msg[0] == ">");
+        return (msg[0] == "/" || msg[0] == "$" || msg[0] == "@" || msg.indexOf(MARK) == 0 || msg[0] == ">" || msg != orig);
     };
     
     var importColors = function(line) {
