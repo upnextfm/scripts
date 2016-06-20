@@ -43,5 +43,10 @@
     "name": "Scriptster",
     "version": "1.1",
     "description": "Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a 'Scripting' button to the site navigation bar."
+  },
+  "azbutton.js": {
+    "name": "Az Irritation Button",
+    "version": "1.0",
+    "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic."
   }
 }
