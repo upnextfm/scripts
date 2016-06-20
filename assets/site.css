@@ -149,6 +149,7 @@ header {
 }
 #scripts-list .script-item {
   width: 100%;
+  margin-bottom: 10px;
 }
 #scripts-list .script-item h2 {
   margin-bottom: 8px;
@@ -201,7 +202,7 @@ code {
 }
 .top {
   color: #A09F9F;
-  margin: 18px 0;
+  margin: 28px 0 0 0;
   display: block;
 }
 .card {
