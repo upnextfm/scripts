@@ -105,7 +105,7 @@
   },
   "8ball.js": {
     "name": "Magic 8 Ball",
-    "version": "1.0",
+    "version": "1.1",
     "author": "headzoo",
     "description": "Creates a /8ball command which finds answers to your questions from beyond our realm. Is it really magic? No one knows for sure. Only one person in the room should run this script.",
     "source": "https://scripts.upnext.fm/8ball.js"
