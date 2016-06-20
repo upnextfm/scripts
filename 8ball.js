@@ -47,8 +47,6 @@
                 var color = color_map[item.color];
                 $api.send("Magic 8 ball says: [" + color + "]" + item.text.toLowerCase() + "[/#]");
             }, 4000);
-            
-            e.cancel();
         }
     });
 })();
