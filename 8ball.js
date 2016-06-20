@@ -43,12 +43,11 @@
     $api.on("receive", function(e, data) {
         var matches = data.msg_clean.match(regex);
         if (matches !== null) {
-            $api.send("Magic 8 ball is considering your question...");
             setTimeout(function() {
                 var item = answers[Math.floor(Math.random() * answers.length)];
                 var color = color_map[item.color];
-                $api.send("Magic 8 ball says: [" + color + "]" + item.text.toLowerCase() + "[/#]");
-            }, 4000);
+                $api.send("[#FFFFFF]Magic 8 Ball «[/#] [" + color + "]" + item.text.toLowerCase() + "[/#] [#FFFFFF]»[/#]");
+            }, 2000);
         }
     });
 })();
