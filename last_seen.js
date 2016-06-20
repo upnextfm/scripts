@@ -9,10 +9,20 @@
 (function() {
     var seen  = {};
     var regex = new RegExp('^/seen\\s+([^\\s]+)');
-
+    
     // Save the data to the database once a minute.
     setTimeout(function() {
         $store.database.set("last_seen", seen);
+    }, 60000);
+    
+    // Retrieve the data once a minute. Makes this work across channels.
+    setTimeout(function() {
+        $store.database.get("last_seen", {}, function(err, data) {
+            if (typeof data !== "object" || data == null) {
+                data = {};
+            }
+            seen = data;
+        });
     }, 60000);
     
     $store.database.get("last_seen", {}, function(err, data) {
