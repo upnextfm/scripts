@@ -75,6 +75,9 @@
             <a href="meta.json">meta.json</a> &middot;
             <a href="https://upnext.fm/contact">Contact</a>
         </p>
+        <p>
+            <img src="images/logo-footer.png" />
+        </p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>

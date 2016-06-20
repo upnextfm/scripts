@@ -144,10 +144,19 @@ h2 {
 header {
   padding-bottom: 18px;
 }
-footer {
+header img {
   height: 60px;
+  width: 314px;
+}
+footer {
+  height: 80px;
   margin-top: 60px;
   text-align: center;
+}
+footer img {
+  height: 40px;
+  width: 209px;
+  margin: 8px 0;
 }
 #scripts-list {
   margin-top: 40px;
