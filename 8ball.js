@@ -49,7 +49,7 @@
                     var item = answers[Math.floor(Math.random() * answers.length)];
                     var color = color_map[item.color];
                     $api.send(sprintf(
-                        "[#FFFFFF]Magic 8 Ball @%s «[/#] [%s]%s[/#] [#FFFFFF]»[/#]",
+                        "[#FFFFFF]@%s Magic 8 Ball «[/#] [%s]%s[/#] [#FFFFFF]»[/#]",
                         data.username,
                         color,
                         item.text.toLowerCase()
