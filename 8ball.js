@@ -40,14 +40,21 @@
     };
     var regex = new RegExp('^/8ball\\s+(.*)');
     
-    $api.on("receive", function(e, data) {
-        var matches = data.msg_clean.match(regex);
-        if (matches !== null) {
-            setTimeout(function() {
-                var item = answers[Math.floor(Math.random() * answers.length)];
-                var color = color_map[item.color];
-                $api.send("[#FFFFFF]Magic 8 Ball «[/#] [" + color + "]" + item.text.toLowerCase() + "[/#] [#FFFFFF]»[/#]");
-            }, 2000);
-        }
-    });
+    // Wait till the channel is loaded.
+    setTimeout(function() {
+        $api.on("receive", function(e, data) {
+            var matches = data.msg_clean.match(regex);
+            if (matches !== null) {
+                setTimeout(function() {
+                    var item = answers[Math.floor(Math.random() * answers.length)];
+                    var color = color_map[item.color];
+                    $api.send(sprintf(
+                        "[#FFFFFF]Magic 8 Ball «[/#] [%s]%s[/#] [#FFFFFF]»[/#]",
+                        color,
+                        item.text.toLowerCase()
+                    ));
+                }, 2000);
+            }
+        });
+    }, 5000);
 })();
