@@ -5,6 +5,8 @@
  *
  * Creates a /8ball command which finds answers to your questions from beyond
  * our realm. Is it really magic? No one knows for sure.
+ * 
+ * Only one person in the room should run this script.
  */
 (function() {
     var answers = [
