@@ -44,6 +44,7 @@
                 <li><a href="#topic-api-methods-send">$api.send()</a></li>
                 <li><a href="#topic-api-methods-notice">$api.notice()</a></li>
                 <li><a href="#topic-api-methods-command">$api.command()</a></li>
+                <li><a href="#topic-api-methods-toast">$api.toast()</a></li>
                 <li><a href="#topic-api-methods-queue">$api.queue()</a></li>
                 <li><a href="#topic-api-methods-dequeue-by-name">$api.dequeueByName()</a></li>
                 <li><a href="#topic-api-methods-skip">$api.skip()</a></li>
