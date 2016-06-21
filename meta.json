@@ -116,5 +116,12 @@
     "author": "headzoo",
     "description": "Creates a /8ball command which finds answers to your questions from beyond our realm. Is it really magic? No one knows for sure. Only one person in the room should run this script.",
     "source": "https://scripts.upnext.fm/8ball.js"
+  },
+  "ping.js": {
+    "name": "Ping",
+    "version": "1.0",
+    "author": "headzoo",
+    "description": "Displays your server ping time in the top right hand corner of the page.",
+    "source": "https://scripts.upnext.fm/ping.js"
   }
 }
