@@ -38,6 +38,7 @@
     
     // Returns whether the user is the troll list.
     var isTroll = function(name) {
+        name = name.replace("@", "");
         return trolls.indexOf(name) !== -1;
     };
     
