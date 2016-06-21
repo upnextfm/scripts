@@ -72,7 +72,7 @@
   },
   "protection.js": {
     "name": "Protection",
-    "version": "1.9",
+    "version": "1.9.1",
     "author": "headzoo",
     "description": "Provides protection against trolls and other nasty users.",
     "source": "https://scripts.upnext.fm/protection.js",

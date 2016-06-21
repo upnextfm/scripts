@@ -1,6 +1,6 @@
 /**
  * Script: Protection
- * Version: 1.9
+ * Version: 1.9.1
  *
  * Provides protection against trolls and other nasty users.
  * 
@@ -259,7 +259,7 @@
         msg = msg.replace(/\[color (#[a-f0-9]{3,6})\](.*?)\[\/color\]/gi, '$2');
         msg = msg.replace(/\[(#[a-f0-9]{3,6})\](.*?)\[\/#\]/gi, '$2');
     
-        return msg;
+        return "[#FFFFFF]" + msg + "[/#]";
     };
     
     // Trims long messages.
