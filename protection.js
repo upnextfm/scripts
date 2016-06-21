@@ -259,7 +259,7 @@
         msg = msg.replace(/\[color (#[a-f0-9]{3,6})\](.*?)\[\/color\]/gi, '$2');
         msg = msg.replace(/\[(#[a-f0-9]{3,6})\](.*?)\[\/#\]/gi, '$2');
     
-        return "[#FFFFFF]" + msg + "[/#]";
+        return msg;
     };
     
     // Trims long messages.
@@ -334,6 +334,8 @@
             if (settings.trim) {
                 data.msg = filterTrim(data.msg);
             }
+            
+            data.msg = "[#FFFFFF]" + data.msg + "[/#]";
         }
     });
     
