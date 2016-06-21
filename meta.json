@@ -30,19 +30,6 @@
     "description": "Hides channel bots from the users list.",
     "source": "https://scripts.upnext.fm/hide-bots.js"
   },
-  "highlighter.js": {
-    "name": "Highlighter",
-    "version": "1.3",
-    "author": "headzoo",
-    "description": "Highlights messages which contain any of the phrases you configure. Useful to highlight messages containing your nickname or other words of interest.",
-    "source": "https://scripts.upnext.fm/highlighter.js",
-    "screenshots": [
-      {
-        "src": "https://scripts.upnext.fm/images/highlighter_options.png",
-        "description": "The options menu."
-      }
-    ]
-  },
   "last_seen.js": {
     "name": "Last Seen",
     "version": "1.0",
