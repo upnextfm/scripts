@@ -94,6 +94,19 @@
             </code>
         </pre>
     </li>
+    <li id="topic-api-events-command">
+        <code class="signature">command</code>
+        Triggered when the script receives a command. The callback gets an object which contains the
+        command data.
+        <pre>
+            <code class="language-javascript">
+                {
+                    to: String,   // Name of the user receiving the command or "#" for the whole channel
+                    data: Object  // The command data
+                }
+            </code>
+        </pre>
+    </li>
     <li id="topic-api-events-user-join">
         <code class="signature">user_join</code>
         Triggered when a user joins the channel. The callback gets a data object with the user's details.

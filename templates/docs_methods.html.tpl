@@ -204,6 +204,29 @@
     </code>
 </pre>
 
+<!-- $api.command() -->
+<code id="topic-api-methods-command" class="signature">$api.command(to, data)</code>
+<p>
+    Sends a command to other bots. The <code>to</code> argument must be the name of a user
+    in the channel, or the pound sign "#" to broadcast the message to the whole room. The
+    <code>data</code> may contain any kind of data, including strings, numbers, objects and arrays.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Send command to single user (bot)
+        $api.command("headzoo", {
+            move: "up",
+            pos: 3
+        });
+
+        // Broadcast command to entire channel
+        $api.command("#", {
+            move: "up",
+            pos: 3
+        });
+    </code>
+</pre>
+
 <!-- $api.toast() -->
 <code id="topic-api-methods-toast" class="signature">$api.toast(msg, type, time_out)</code>
 <p>

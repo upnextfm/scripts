@@ -43,6 +43,7 @@
                 <li><a href="#topic-api-methods-keys-database">$store.database.keys()</a></li>
                 <li><a href="#topic-api-methods-send">$api.send()</a></li>
                 <li><a href="#topic-api-methods-notice">$api.notice()</a></li>
+                <li><a href="#topic-api-methods-command">$api.command()</a></li>
                 <li><a href="#topic-api-methods-queue">$api.queue()</a></li>
                 <li><a href="#topic-api-methods-dequeue-by-name">$api.dequeueByName()</a></li>
                 <li><a href="#topic-api-methods-skip">$api.skip()</a></li>
@@ -73,6 +74,7 @@
                 <li><a href="#topic-api-events-send">send</a></li>
                 <li><a href="#topic-api-events-notice">notice</a></li>
                 <li><a href="#topic-api-events-whisper">whisper</a></li>
+                <li><a href="#topic-api-events-command">command</a></li>
                 <li><a href="#topic-api-events-user-join">user_join</a></li>
                 <li><a href="#topic-api-events-user-leave">user_leave</a></li>
                 <li><a href="#topic-api-events-playlist">playlist</a></li>

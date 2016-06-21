@@ -423,6 +423,33 @@
             </a>
         </li>
     
+        <li id="script-test-css" class="script-item card">
+            <div class="script-header">
+                <h2>
+                    <a href="test.css">Testing CSS</a>
+                    <a href="#script-test-css" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                </h2>
+                <ul class="scripts-meta-list">
+                    <li><strong>Version:</strong> 1.0</li>
+                    <li><strong>Author:</strong> headzoo</li>
+                </ul>
+                <div class="input-group">
+                    <input value="https://scripts.upnext.fm/test.css" type="text" class="form-control" readonly />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-copy" type="button">Copy</button>
+                            </span>
+                </div>
+            </div>
+            <p>Does test stuff.</p>
+
+            
+
+            <a href="#main" class="top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                Back to Top
+            </a>
+        </li>
+    
 </ul>
             </div>
 
@@ -467,6 +494,7 @@
                 <li><a href="#topic-api-methods-keys-database">$store.database.keys()</a></li>
                 <li><a href="#topic-api-methods-send">$api.send()</a></li>
                 <li><a href="#topic-api-methods-notice">$api.notice()</a></li>
+                <li><a href="#topic-api-methods-command">$api.command()</a></li>
                 <li><a href="#topic-api-methods-queue">$api.queue()</a></li>
                 <li><a href="#topic-api-methods-dequeue-by-name">$api.dequeueByName()</a></li>
                 <li><a href="#topic-api-methods-skip">$api.skip()</a></li>
@@ -497,6 +525,7 @@
                 <li><a href="#topic-api-events-send">send</a></li>
                 <li><a href="#topic-api-events-notice">notice</a></li>
                 <li><a href="#topic-api-events-whisper">whisper</a></li>
+                <li><a href="#topic-api-events-command">command</a></li>
                 <li><a href="#topic-api-events-user-join">user_join</a></li>
                 <li><a href="#topic-api-events-user-leave">user_leave</a></li>
                 <li><a href="#topic-api-events-playlist">playlist</a></li>
@@ -766,6 +795,19 @@
                     meta: Object, // Meta information
                     time: Number, // Time the whisper was sent
                     name: String, // Name of the user who sent the whisper
+                }
+            </code>
+        </pre>
+    </li>
+    <li id="topic-api-events-command">
+        <code class="signature">command</code>
+        Triggered when the script receives a command. The callback gets an object which contains the
+        command data.
+        <pre>
+            <code class="language-javascript">
+                {
+                    to: String,   // Name of the user receiving the command or "#" for the whole channel
+                    data: Object  // The command data
                 }
             </code>
         </pre>
@@ -1326,6 +1368,29 @@
 
         // Shows an error notice.
         $api.notice("Could not find song.", true);
+    </code>
+</pre>
+
+<!-- $api.command() -->
+<code id="topic-api-methods-command" class="signature">$api.command(to, data)</code>
+<p>
+    Sends a command to other bots. The <code>to</code> argument must be the name of a user
+    in the channel, or the pound sign "#" to broadcast the message to the whole room. The
+    <code>data</code> may contain any kind of data, including strings, numbers, objects and arrays.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Send command to single user (bot)
+        $api.command("headzoo", {
+            move: "up",
+            pos: 3
+        });
+
+        // Broadcast command to entire channel
+        $api.command("#", {
+            move: "up",
+            pos: 3
+        });
     </code>
 </pre>
 
