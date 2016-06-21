@@ -1,6 +1,6 @@
 /**
  * Script: Protection
- * Version: 1.9.1
+ * Version: 1.9.2
  *
  * Provides protection against trolls and other nasty users.
  * 
@@ -23,7 +23,7 @@
         blocked_phrases : ""
     };
     
-    var settings = $store.local.get("protection-settings");
+    var settings = $store.local.get("protection-settings", {});
     $each(DEFAULTS, function(val, key) {
         if (settings[key] == undefined) {
             settings[key] = val;
