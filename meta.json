@@ -123,5 +123,12 @@
     "author": "headzoo",
     "description": "Displays your server ping time in the top right hand corner of the page.",
     "source": "https://scripts.upnext.fm/ping.js"
+  },
+  "test.css": {
+    "name": "Testing CSS",
+    "version": "1.0",
+    "author": "headzoo",
+    "description": "Does test stuff.",
+    "source": "https://scripts.upnext.fm/test.css"
   }
 }
