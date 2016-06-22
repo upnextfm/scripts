@@ -92,7 +92,7 @@
   },
   "azannoybutton.js": {
     "name": "Az Irritation Button",
-    "version": "1.B",
+    "version": "1.C",
     "author": "az4521",
     "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.",
     "source": "https://scripts.upnext.fm/azannoybutton.js"
