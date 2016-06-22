@@ -18,7 +18,7 @@
     };
     
     var handlePong = function() {
-        if (START_TIME !== null) {
+        if (start_time !== null) {
             var elapsed = (Date.now()) - start_time;
             start_time  = null;
             ping_time.text(elapsed + "ms");
