@@ -1,5 +1,5 @@
 /**
- * Script: Last Seen
+ * Name: Last Seen
  * Version: 1.0
  * Author: headzoo
  * 

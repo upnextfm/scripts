@@ -1,5 +1,5 @@
 /**
- * Script: Hide Bots
+ * Name: Hide Bots
  * Version: 1.2
  * Author: headzoo
  * 

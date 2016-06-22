@@ -1,5 +1,5 @@
 /**
- * Script: Lucky
+ * Name: Lucky
  * Version: 1.1
  * Author: headzoo
  *

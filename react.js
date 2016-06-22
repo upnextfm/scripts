@@ -1,5 +1,5 @@
 /**
- * Script: Reaction GIFs
+ * Name: Reaction GIFs
  * Version: 1.5.1
  * Author: headzoo
  *

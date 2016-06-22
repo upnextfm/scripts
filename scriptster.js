@@ -1,5 +1,5 @@
 /**
- * Script: Scriptster
+ * Name: Scriptster
  * Version: 1.1
  * Import: https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js
  *

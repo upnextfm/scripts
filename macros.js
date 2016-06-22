@@ -1,5 +1,5 @@
 /**
- * Script: Macros
+ * Name: Macros
  * Version: 1.2
  *
  * Gives users the option to create macros, or "shortcuts" for long messages.

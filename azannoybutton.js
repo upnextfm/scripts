@@ -1,5 +1,5 @@
 /**
- * Script: Az Irritation Button
+ * Name: Az Irritation Button
  * Version: 1.C
  * Adds a button that sends a message to a bot
  * bot then adds to a count of irritations per username

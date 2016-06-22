@@ -1,5 +1,5 @@
 /**
- * Script: Magic 8 Ball
+ * Name: Magic 8 Ball
  * Version: 1.1
  * Author: headzoo
  *

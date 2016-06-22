@@ -1,6 +1,7 @@
 /**
- * Script: Protection
+ * Name: Protection
  * Version: 1.9.2
+ * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
  * 

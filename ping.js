@@ -1,5 +1,5 @@
 /**
- * Script: Ping
+ * Name: Ping
  * Version: 1.0
  * Author: headzoo
  * 

@@ -1,5 +1,5 @@
 /**
- * Script: Gradients
+ * Name: Gradients
  * Version: 2.2.3
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js

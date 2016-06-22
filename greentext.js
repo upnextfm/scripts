@@ -1,5 +1,5 @@
 /**
- * Script: Greentext
+ * Name: Greentext
  * Version: 1.A
  * Author: az4521
  * 
