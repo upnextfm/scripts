@@ -1,6 +1,6 @@
 /**
  * Name: Protection
- * Version: 1.9.4
+ * Version: 1.9.5
  * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
@@ -166,6 +166,7 @@
         $store.local.set("protection-settings", settings);
     };
     
+    // Adds the protection button to the given profile menu.
     var setupProfileMenu = function(menu) {
         if (menu.data("protected")) {
             return;
@@ -300,12 +301,13 @@
         return found;
     };
     
-    // Add indicator to users that join after script init.
-    $api.on("user_join", function(e, data) {
-        if (isTroll(data.name)) {
+    // Add profile menu options for each user.
+    $api.on("profile_menu", function(e, menu) {
+        setupProfileMenu(menu);
+        if (isTroll(menu.data("name"))) {
             setTimeout(function() {
-                $(".userlist_item_" + data.name + ":first")
-                    .addClass("protection-indicator-active");
+                var item = $(".userlist_item_" + menu.data("name") + ":first");
+                item.addClass("protection-indicator-active");
             }, 2000);
         }
     });
@@ -363,11 +365,6 @@
     // Save our settings when the rest of the user options are saved.
     $api.on("user_options_save", updateSettings);
     
-    // Add buttons to each profile menu which turns protection on/off.
-    $api.on("profile_menu", function(e, menu) {
-        setupProfileMenu(menu);
-    });
-    
     // Might be deleting the script. Clean up after ourselves.
     $api.on("delete_script", function(e, filename) {
         if ($script.filename == filename) {
@@ -392,15 +389,13 @@
         removeOptions();
         addOptions();
         splitBlockedPhrases();
-        
-        setTimeout(function() {
-            $("#userlist").find(".user-dropdown").each(function(i, menu) {
-                setupProfileMenu($(menu));
-            });
-            $each(trolls, function(name) {
-                $(".userlist_item_" + name + ":first")
-                    .addClass("protection-indicator-active");
-            });
-        }, 2000);
+    
+        $("#userlist").find(".user-dropdown").each(function(i, menu) {
+            setupProfileMenu($(menu));
+        });
+        $each(trolls, function(name) {
+            $(".userlist_item_" + name + ":first")
+                .addClass("protection-indicator-active");
+        });
     });
 })();

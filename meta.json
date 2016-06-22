@@ -16,6 +16,19 @@
       }
     ]
   },
+  "protection.js": {
+    "name": "Protection",
+    "version": "1.9.5",
+    "author": "headzoo",
+    "description": "Provides protection against trolls and other nasty users.",
+    "source": "https://scripts.upnext.fm/protection.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/protection_options.png",
+        "description": "The options menu."
+      }
+    ]
+  },
   "greentext.js": {
     "name": "Greentext",
     "version": "1.0",
@@ -53,19 +66,6 @@
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/macros_options.png",
-        "description": "The options menu."
-      }
-    ]
-  },
-  "protection.js": {
-    "name": "Protection",
-    "version": "1.9.4",
-    "author": "headzoo",
-    "description": "Provides protection against trolls and other nasty users.",
-    "source": "https://scripts.upnext.fm/protection.js",
-    "screenshots": [
-      {
-        "src": "https://scripts.upnext.fm/images/protection_options.png",
         "description": "The options menu."
       }
     ]
