@@ -28,7 +28,7 @@
                 <li><a href="#topic-api-options">$options</a></li>
                 <li><a href="#topic-api-proxy">$proxy</a></li>
                 <li><a href="#topic-api-store">$store</a></li>
-                <li><a href="#topic-api-annotations">$annotations</a></li>
+                <li><a href="#topic-api-script">$script</a></li>
                 <li><a href="#topic-api-first-script">First Script</a></li>
             </ul>
 
@@ -71,6 +71,7 @@
             <ul>
                 <li><a href="#topic-api-events-loaded">loaded</a></li>
                 <li><a href="#topic-api-events-reloaded">reloaded</a></li>
+                <li><a href="#topic-api-events-delete-script">delete_script</a></li>
                 <li><a href="#topic-api-events-receive">receive</a></li>
                 <li><a href="#topic-api-events-send">send</a></li>
                 <li><a href="#topic-api-events-notice">notice</a></li>

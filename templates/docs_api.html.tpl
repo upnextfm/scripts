@@ -73,15 +73,15 @@
         </p>
     </li>
     <li>
-        <code id="topic-api-annotations" class="signature">$annotations</code>
+        <code id="topic-api-script" class="signature">$script</code>
         <p>
-            Object of key/value pairs found in the head of the user script. For instance when
-            the user script contains the following doc block:
+            Provides information about the script itself, as well as annotations found in the
+            script doc block header.For instance when the user script contains the following doc block:
         </p>
         <pre style="margin-top: 12px;">
             <code class="language-javascript">
                 /**
-                * Script: Reaction GIFs
+                * Name: Reaction GIFs
                 * Version: 1.5
                 * Author: headzoo
                 *
@@ -90,17 +90,23 @@
             </code>
         </pre>
         <p>
-            The <code>$annotations</code> object will contain the following values:
+            The <code>$script</code> object will contain the following values:
         </p>
         <pre style="margin-top: 12px;">
             <code class="language-javascript">
                 {
-                    "Script": "Reaction GIFs",
+                    "filename": "react.js",
+                    "is_first_run": false,
+                    "Name": "Reaction GIFs",
                     "Version": "1.5",
                     "Author": "headzoo"
                 }
             </code>
         </pre>
+        <p>
+            Note that <code>$script</code> also contains the script filename, and whether it's being run for
+            the the first.
+        </p>
     </li>
 </ul>
 

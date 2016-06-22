@@ -38,6 +38,21 @@
         Triggered after the user scripts have been updated, and are about to be torn down and
         reinserted into the page. No data is passed to the callback.
     </li>
+    <li id="topic-api-events-delete-script">
+        <code class="signature">delete_script</code>
+        Triggered before a script is deleted. The filename of the script being deleted is passed to the callback.
+        This is triggered when any script is deleted, not just the script watching the event. Scripts should
+        use <code>$script.filename</code> to check if its being deleted.
+        <pre>
+            <code class="language-javascript">
+                $api.on("delete_script", function(e, filename) {
+                    if ($script.filename == filename) {
+                        console.log("Help! I'm being deleted!");
+                    }
+                });
+            </code>
+        </pre>
+    </li>
     <li id="topic-api-events-receive">
         <code class="signature">receive</code>
         Triggered when a message is received from another user in the room. The callback gets a

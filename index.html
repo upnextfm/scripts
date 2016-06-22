@@ -418,7 +418,7 @@
                 <li><a href="#topic-api-options">$options</a></li>
                 <li><a href="#topic-api-proxy">$proxy</a></li>
                 <li><a href="#topic-api-store">$store</a></li>
-                <li><a href="#topic-api-annotations">$annotations</a></li>
+                <li><a href="#topic-api-script">$script</a></li>
                 <li><a href="#topic-api-first-script">First Script</a></li>
             </ul>
 
@@ -461,6 +461,7 @@
             <ul>
                 <li><a href="#topic-api-events-loaded">loaded</a></li>
                 <li><a href="#topic-api-events-reloaded">reloaded</a></li>
+                <li><a href="#topic-api-events-delete-script">delete_script</a></li>
                 <li><a href="#topic-api-events-receive">receive</a></li>
                 <li><a href="#topic-api-events-send">send</a></li>
                 <li><a href="#topic-api-events-notice">notice</a></li>
@@ -581,15 +582,15 @@
         </p>
     </li>
     <li>
-        <code id="topic-api-annotations" class="signature">$annotations</code>
+        <code id="topic-api-script" class="signature">$script</code>
         <p>
-            Object of key/value pairs found in the head of the user script. For instance when
-            the user script contains the following doc block:
+            Provides information about the script itself, as well as annotations found in the
+            script doc block header.For instance when the user script contains the following doc block:
         </p>
         <pre style="margin-top: 12px;">
             <code class="language-javascript">
                 /**
-                * Script: Reaction GIFs
+                * Name: Reaction GIFs
                 * Version: 1.5
                 * Author: headzoo
                 *
@@ -598,17 +599,23 @@
             </code>
         </pre>
         <p>
-            The <code>$annotations</code> object will contain the following values:
+            The <code>$script</code> object will contain the following values:
         </p>
         <pre style="margin-top: 12px;">
             <code class="language-javascript">
                 {
-                    "Script": "Reaction GIFs",
+                    "filename": "react.js",
+                    "is_first_run": false,
+                    "Name": "Reaction GIFs",
                     "Version": "1.5",
                     "Author": "headzoo"
                 }
             </code>
         </pre>
+        <p>
+            Note that <code>$script</code> also contains the script filename, and whether it's being run for
+            the the first.
+        </p>
     </li>
 </ul>
 
@@ -682,6 +689,21 @@
         <code class="signature">reloading</code>
         Triggered after the user scripts have been updated, and are about to be torn down and
         reinserted into the page. No data is passed to the callback.
+    </li>
+    <li id="topic-api-events-delete-script">
+        <code class="signature">delete_script</code>
+        Triggered before a script is deleted. The filename of the script being deleted is passed to the callback.
+        This is triggered when any script is deleted, not just the script watching the event. Scripts should
+        use <code>$script.filename</code> to check if its being deleted.
+        <pre>
+            <code class="language-javascript">
+                $api.on("delete_script", function(e, filename) {
+                    if ($script.filename == filename) {
+                        console.log("Help! I'm being deleted!");
+                    }
+                });
+            </code>
+        </pre>
     </li>
     <li id="topic-api-events-receive">
         <code class="signature">receive</code>
