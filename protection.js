@@ -1,6 +1,6 @@
 /**
  * Name: Protection
- * Version: 1.9.2
+ * Version: 1.9.3
  * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
@@ -308,6 +308,16 @@
         });
     }, 2000);
     
+    // Add indicator to users that join after script init.
+    $api.on("user_join", function(e, data) {
+        if (isTroll(data.name)) {
+            setTimeout(function() {
+                $(".userlist_item_" + data.name + ":first")
+                    .addClass("protection-indicator-active");
+            }, 2000);
+        }
+    });
+    
     // Filter messages from users that have been put in troll prison.
     $api.on("receive", function(e, data) {
         buffer.push(data);
@@ -319,7 +329,6 @@
         }
         if (isTroll(data.username)) {
             if (shouldThrottle(data)) {
-                console.log("user throttled");
                 return e.cancel();
             }
             
