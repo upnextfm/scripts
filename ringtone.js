@@ -227,12 +227,14 @@
     });
     
     // Clean up.
-    $api.on("delete_script", function() {
-        $store.local.remove("ringtone-url");
-        $store.local.remove("ringtone-include");
-        $store.local.remove("ringtone-volume");
-        $("#ringtone-audio-player").remove();
-        $("#us-ringtone-tab").remove();
-        $("#us-ringtone-pane").remove();
+    $api.on("delete_script", function(filename) {
+        if ($script.filename == filename) {
+            $store.local.remove("ringtone-url");
+            $store.local.remove("ringtone-include");
+            $store.local.remove("ringtone-volume");
+            $("#ringtone-audio-player").remove();
+            $("#us-ringtone-tab").remove();
+            $("#us-ringtone-pane").remove();
+        }
     });
 })();
