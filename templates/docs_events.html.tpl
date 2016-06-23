@@ -445,6 +445,10 @@
         <code class="signature">blink</code>
         Triggered when the browser title bar is to blink because the user's name was said in chat.
     </li>
+    <li id="topic-api-events-unblink">
+        <code class="signature">unblink</code>
+        Triggered when the receives focus and blinking is being turned off.
+    </li>
 </ul>
 
 <h5>Event Object</h5>

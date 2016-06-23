@@ -98,6 +98,7 @@
                 <li><a href="#topic-api-events-search-results">search_results</a></li>
                 <li><a href="#topic-api-events-color-change">color_change</a></li>
                 <li><a href="#topic-api-events-blink">blink</a></li>
+                <li><a href="#topic-api-events-unblink">unblink</a></li>
             </ul>
         </div>
 
