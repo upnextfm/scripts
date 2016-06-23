@@ -99,7 +99,7 @@
         // Test button...
         form.append($options.makeButtonGroup([{
             id: "us-ringtone-test-btn",
-            label: "Test&nbsp;&nbsp;<span class='glyphicon glyphicon-volume-up'></span>"
+            label: "Test"
         }]));
         $("#us-ringtone-test-btn").on("click", function() {
             if (testing) {
