@@ -3,6 +3,7 @@
     "name": "Gradients",
     "version": "2.2.3",
     "author": "headzoo",
+    "checksum": "6413014f7513f113a374ae31eba1efc7",
     "description": "Applies a color gradient to the messages you send.",
     "source": "https://scripts.upnext.fm/script/gradients.js",
     "screenshots": [
@@ -20,6 +21,7 @@
     "name": "Protection",
     "version": "1.9.5",
     "author": "headzoo",
+    "checksum": "0f1ba3166e0131635f960116604a7e2b",
     "description": "Provides protection against trolls and other nasty users.",
     "source": "https://scripts.upnext.fm/script/protection.js",
     "screenshots": [
@@ -33,6 +35,7 @@
     "name": "Greentext",
     "version": "1.0",
     "author": "az4521",
+    "checksum": "fba91942b1f69dd26f39bfd5fc58c3e2",
     "description": "Lets you do greentext by prefixing your message with the > character.",
     "source": "https://scripts.upnext.fm/script/greentext.js"
   },
@@ -40,6 +43,7 @@
     "name": "Hide Bots",
     "version": "1.2",
     "author": "headzoo",
+    "checksum": "2a8898e6d2c11faa49a092637a1e6b0b",
     "description": "Hides channel bots from the users list.",
     "source": "https://scripts.upnext.fm/script/hide-bots.js"
   },
@@ -47,6 +51,7 @@
     "name": "Last Seen",
     "version": "1.0",
     "author": "headzoo",
+    "checksum": "5fa493733e9a5fb417e82055b03b3760",
     "description": "Creates a /seen command which displays the last time a user was seen in the lobby. For example '/seen headzoo'.",
     "source": "https://scripts.upnext.fm/script/last_seen.js"
   },
@@ -54,6 +59,7 @@
     "name": "Lucky",
     "version": "1.1",
     "author": "headzoo",
+    "checksum": "1aac6b3a84b541acb846244f58b5160c",
     "description": "Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.",
     "source": "https://scripts.upnext.fm/script/lucky.js"
   },
@@ -61,6 +67,7 @@
     "name": "Macros",
     "version": "1.2",
     "author": "headzoo",
+    "checksum": "57fc5acd679891f4522db66d0b157a87",
     "description": "Gives users the option to create macros, or 'shortcuts' for long messages.",
     "source": "https://scripts.upnext.fm/script/macros.js",
     "screenshots": [
@@ -74,6 +81,7 @@
     "name": "React",
     "version": "1.5.1",
     "author": "headzoo",
+    "checksum": "53ea5155fa1af54f4c4639a14819052a",
     "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
     "source": "https://scripts.upnext.fm/script/react.js"
   },
@@ -81,6 +89,7 @@
     "name": "Scriptster",
     "version": "1.1",
     "author": "headzoo",
+    "checksum": "c5d599ce43c08cbc1dd5cfda7b87acda",
     "description": "Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a 'Scripting' button to the site navigation bar.",
     "source": "https://scripts.upnext.fm/script/scriptster.js",
     "screenshots": [
@@ -94,6 +103,7 @@
     "name": "Az Irritation Button",
     "version": "1.C",
     "author": "az4521",
+    "checksum": "4fc25c2a28ea8c9459a87e790c06fd9c",
     "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.",
     "source": "https://scripts.upnext.fm/script/azannoybutton.js"
   },
@@ -101,6 +111,7 @@
     "name": "Magic 8 Ball",
     "version": "1.1",
     "author": "headzoo",
+    "checksum": "770916b5d244e72bd069e99806b79b35",
     "description": "Creates a /8ball command which finds answers to your questions from beyond our realm. Is it really magic? No one knows for sure. Only one person in the room should run this script.",
     "source": "https://scripts.upnext.fm/script/8ball.js"
   },
@@ -108,6 +119,7 @@
     "name": "Ping",
     "version": "1.1",
     "author": "headzoo",
+    "checksum": "32b0412a5db410b8a67a049003f64622",
     "description": "Displays your server ping time in the top right hand corner of the page.",
     "source": "https://scripts.upnext.fm/script/ping.js"
   },
@@ -115,6 +127,7 @@
     "name": "Ringtone",
     "version": "1.1",
     "author": "headzoo",
+    "checksum": "fc7b96e67f78a2d30e0d7a0f0b704bbc",
     "description": "Plays an MP3 when your name is mentioned in chat and you're not watching the chat window. Choose from the built in ringtones or use your own.",
     "source": "https://scripts.upnext.fm/script/ringtone.js",
     "screenshots": [
@@ -128,6 +141,7 @@
     "name": "Aww",
     "version": "1.0",
     "author": "headzoo",
+    "checksum": "e50e691eb8faab58c4b34da92b79c59c",
     "description": "Creates an /aww command which sends a random cute pictures to the chat room.",
     "source": "https://scripts.upnext.fm/script/aww.js"
   }
