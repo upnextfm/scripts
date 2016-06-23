@@ -16,10 +16,15 @@ env.addFilter('safeName', function(str) {
 var html = env.render("index.html.tpl", {
     meta: meta
 });
-
 fs.writeFile("./index.html", html, function(err) {
     if(err) {
         return console.log(err);
     }
-    console.log("Finished.");
+    
+    var html = env.render("docs.html.tpl", {
+        meta: meta
+    });
+    fs.writeFile("./docs.html", html, function(err) {
+        console.log("Finished.");
+    });
 });

@@ -126,11 +126,13 @@ body {
   line-height: 1.42857143;
   padding: 12px;
 }
-#main {
+#head,
+#content {
   width: 950px;
   margin: 0 auto;
 }
-#main img {
+#head img,
+#content img {
   max-width: 950px;
 }
 h1 {
@@ -258,7 +260,7 @@ code {
   text-transform: uppercase;
 }
 #docs-container {
-  margin-top: 22px;
+  margin: 22px 15px;
   font-family: Consolas, Monaco, monospace;
   color: #FFF;
 }
