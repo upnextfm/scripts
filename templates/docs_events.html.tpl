@@ -449,6 +449,7 @@
             <code class="language-javascript">
                 {
                     title_text: String,    // Text that will appear in the title bar, e.g. "*Chat*"
+                    boop_setting: String,  // Play sound setting, either "never", "onlyping", or "always"
                     blink_setting: String, // Blink setting, either "never", "onlyping", or "always"
                     blink_interval: Number // Speed of flashing title text. Lower equals faster, default is 1000.
                 }
