@@ -5,7 +5,7 @@
                 <li id="script-{{ filename|safeName }}" class="script-item card">
                     <div class="script-header">
                         <h2>
-                            <a href="{{ filename }}">{{ script.name }}</a>
+                            <a href="{{ script.source }}">{{ script.name }}</a>
                             <a href="#script-{{ filename|safeName }}" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
                         </h2>
                         <ul class="scripts-meta-list">
