@@ -4,7 +4,7 @@
     "version": "2.2.3",
     "author": "headzoo",
     "description": "Applies a color gradient to the messages you send.",
-    "source": "https://scripts.upnext.fm/gradients.js",
+    "source": "https://scripts.upnext.fm/script/gradients.js",
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/gradients.png",
@@ -21,7 +21,7 @@
     "version": "1.9.5",
     "author": "headzoo",
     "description": "Provides protection against trolls and other nasty users.",
-    "source": "https://scripts.upnext.fm/protection.js",
+    "source": "https://scripts.upnext.fm/script/protection.js",
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/protection_options.png",
@@ -34,35 +34,35 @@
     "version": "1.0",
     "author": "az4521",
     "description": "Lets you do greentext by prefixing your message with the > character.",
-    "source": "https://scripts.upnext.fm/greentext.js"
+    "source": "https://scripts.upnext.fm/script/greentext.js"
   },
   "hide-bots.js": {
     "name": "Hide Bots",
     "version": "1.2",
     "author": "headzoo",
     "description": "Hides channel bots from the users list.",
-    "source": "https://scripts.upnext.fm/hide-bots.js"
+    "source": "https://scripts.upnext.fm/script/hide-bots.js"
   },
   "last_seen.js": {
     "name": "Last Seen",
     "version": "1.0",
     "author": "headzoo",
     "description": "Creates a /seen command which displays the last time a user was seen in the lobby. For example '/seen headzoo'.",
-    "source": "https://scripts.upnext.fm/last_seen.js"
+    "source": "https://scripts.upnext.fm/script/last_seen.js"
   },
   "lucky.js": {
     "name": "Lucky",
     "version": "1.1",
     "author": "headzoo",
     "description": "Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.",
-    "source": "https://scripts.upnext.fm/lucky.js"
+    "source": "https://scripts.upnext.fm/script/lucky.js"
   },
   "macros.js": {
     "name": "Macros",
     "version": "1.2",
     "author": "headzoo",
     "description": "Gives users the option to create macros, or 'shortcuts' for long messages.",
-    "source": "https://scripts.upnext.fm/macros.js",
+    "source": "https://scripts.upnext.fm/script/macros.js",
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/macros_options.png",
@@ -75,14 +75,14 @@
     "version": "1.5.1",
     "author": "headzoo",
     "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
-    "source": "https://scripts.upnext.fm/react.js"
+    "source": "https://scripts.upnext.fm/script/react.js"
   },
   "scriptster.js": {
     "name": "Scriptster",
     "version": "1.1",
     "author": "headzoo",
     "description": "Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a 'Scripting' button to the site navigation bar.",
-    "source": "https://scripts.upnext.fm/scriptster.js",
+    "source": "https://scripts.upnext.fm/script/scriptster.js",
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/scriptster_options.png",
@@ -95,28 +95,28 @@
     "version": "1.C",
     "author": "az4521",
     "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.",
-    "source": "https://scripts.upnext.fm/azannoybutton.js"
+    "source": "https://scripts.upnext.fm/script/azannoybutton.js"
   },
   "8ball.js": {
     "name": "Magic 8 Ball",
     "version": "1.1",
     "author": "headzoo",
     "description": "Creates a /8ball command which finds answers to your questions from beyond our realm. Is it really magic? No one knows for sure. Only one person in the room should run this script.",
-    "source": "https://scripts.upnext.fm/8ball.js"
+    "source": "https://scripts.upnext.fm/script/8ball.js"
   },
   "ping.js": {
     "name": "Ping",
     "version": "1.1",
     "author": "headzoo",
     "description": "Displays your server ping time in the top right hand corner of the page.",
-    "source": "https://scripts.upnext.fm/ping.js"
+    "source": "https://scripts.upnext.fm/script/ping.js"
   },
   "ringtone.js": {
     "name": "Ringtone",
     "version": "1.1",
     "author": "headzoo",
     "description": "Plays an MP3 when your name is mentioned in chat and you're not watching the chat window. Choose from the built in ringtones or use your own.",
-    "source": "https://scripts.upnext.fm/ringtone.js",
+    "source": "https://scripts.upnext.fm/script/ringtone.js",
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/ringtone_options.png",
@@ -129,6 +129,6 @@
     "version": "1.0",
     "author": "headzoo",
     "description": "Creates an /aww command which sends a random cute pictures to the chat room.",
-    "source": "https://scripts.upnext.fm/aww.js"
+    "source": "https://scripts.upnext.fm/script/aww.js"
   }
 }
