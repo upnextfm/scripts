@@ -28,7 +28,7 @@
         // Build in...
         $options.makeSelect(
             "us-chat-ringtone-select-input",
-            "Build In Ringtone",
+            "Built In Ringtone",
             {
                 "0": "Choose...",
                 "https://s3.amazonaws.com/assets.upnext.fm/ringtones/Bleepies.mp3": "Bleepies",
