@@ -110,5 +110,12 @@
     "author": "headzoo",
     "description": "Displays your server ping time in the top right hand corner of the page.",
     "source": "https://scripts.upnext.fm/ping.js"
+  },
+  "aww.js": {
+    "name": "Aww",
+    "version": "1.0",
+    "author": "headzoo",
+    "description": "Creates an /aww command which sends a random cute pictures to the chat room.",
+    "source": "https://scripts.upnext.fm/aww.js"
   }
 }
