@@ -59,7 +59,7 @@
     // Save the mp3 url to local storage.
     $api.on("user_options_save", function() {
         mp3_url = $("#us-chat-ringtone-file-input").val();
-        if (mp3_url.indexOf("https://") !== 0) {
+        if (mp3_url.length > 0 && mp3_url.indexOf("https://") !== 0) {
             return alert("Invalid MP3 URL. Must start with 'https://'.");
         }
         
