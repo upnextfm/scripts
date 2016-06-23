@@ -441,6 +441,10 @@
         Triggered when the text color is changed. Fires when the page initially loads as well. The
         callback gets a string with the html color code.
     </li>
+    <li id="topic-api-events-blink">
+        <code class="signature">blink</code>
+        Triggered when the browser title bar is to blink because the user's name was said in chat.
+    </li>
 </ul>
 
 <h5>Event Object</h5>

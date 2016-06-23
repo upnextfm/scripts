@@ -97,6 +97,7 @@
                 <li><a href="#topic-api-events-save-scripts">save_scripts</a></li>
                 <li><a href="#topic-api-events-search-results">search_results</a></li>
                 <li><a href="#topic-api-events-color-change">color_change</a></li>
+                <li><a href="#topic-api-events-blink">blink</a></li>
             </ul>
         </div>
 
