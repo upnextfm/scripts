@@ -443,7 +443,17 @@
     </li>
     <li id="topic-api-events-blink">
         <code class="signature">blink</code>
-        Triggered when the browser title bar is to blink because the user's name was said in chat.
+        Triggered when the browser title bar is to blink because the user's name was said in chat. The callback
+        receives the following object.
+        <pre>
+            <code class="language-javascript">
+                {
+                    title_text: String,    // Text that will appear in the title bar, e.g. "*Chat*"
+                    blink_setting: String, // Blink setting, either "never", "onlyping", or "always"
+                    blink_interval: Number // Speed of flashing title text. Lower equals faster, default is 1000.
+                }
+            </code>
+        </pre>
     </li>
     <li id="topic-api-events-unblink">
         <code class="signature">unblink</code>
