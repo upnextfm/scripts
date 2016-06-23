@@ -113,10 +113,16 @@
   },
   "ringtone.js": {
     "name": "Ringtone",
-    "version": "1.0",
+    "version": "1.1",
     "author": "headzoo",
-    "description": "Plays an MP3 when your name is said in chat and you're not watching the chat window.",
-    "source": "https://scripts.upnext.fm/ringtone.js"
+    "description": "Plays an MP3 when your name is mentioned in chat and you're not watching the chat window. Choose from the built in ringtones or use your own.",
+    "source": "https://scripts.upnext.fm/ringtone.js",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/ringtone_options.png",
+        "description": "The ringtone options menu."
+      }
+    ]
   },
   "aww.js": {
     "name": "Aww",
