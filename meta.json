@@ -111,6 +111,13 @@
     "description": "Displays your server ping time in the top right hand corner of the page.",
     "source": "https://scripts.upnext.fm/ping.js"
   },
+  "ringtone.js": {
+    "name": "Ringtone",
+    "version": "1.0",
+    "author": "headzoo",
+    "description": "Plays an MP3 when your name is said in chat and you're not watching the chat window.",
+    "source": "https://scripts.upnext.fm/ringtone.js"
+  },
   "aww.js": {
     "name": "Aww",
     "version": "1.0",
