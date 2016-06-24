@@ -100,6 +100,7 @@
     "site": "https://github.com/upnextfm/scripts",
     "checksum": "0514f71c0d3f169a2985cc5c68e2ae46",
     "description": "Displays your notices and whispers in a separate chat window.",
+    "source": "https://scripts.upnext.fm/script/notice-buddy.js",
     "screenshots": [
       {
         "src": "https://scripts.upnext.fm/images/notice-buddy.png",
