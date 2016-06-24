@@ -24,7 +24,7 @@
             <a href="index.html">Scripts</a>
         </li>
         <li role="presentation">
-            <a href="docs.html">Documentation</a>
+            <a href="docs.html">API Documentation</a>
         </li>
     </ul>
 </div>

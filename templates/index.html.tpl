@@ -18,6 +18,10 @@
                 </li>
             </ol>
         </div>
+
+        <div class="content-box" style="margin-top: 20px;">
+            <h2>Scripts</h2>
+        </div>
         <ul id="scripts-list">
             {% for filename, script in meta %}
                 <li id="script-{{ filename|safeName }}" class="script-item card">
