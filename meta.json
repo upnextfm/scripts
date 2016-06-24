@@ -93,6 +93,20 @@
     "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
     "source": "https://scripts.upnext.fm/script/react.js"
   },
+  "notice-buddy.js": {
+    "name": "Notice Buddy",
+    "version": "1.0",
+    "author": "headzoo",
+    "site": "https://github.com/upnextfm/scripts",
+    "checksum": "0514f71c0d3f169a2985cc5c68e2ae46",
+    "description": "Displays your notices and whispers in a separate chat window.",
+    "screenshots": [
+      {
+        "src": "https://scripts.upnext.fm/images/notice-buddy.png",
+        "description": "Notices and whispers are shown in their own window below chat."
+      }
+    ]
+  },
   "scriptster.js": {
     "name": "Scriptster",
     "version": "1.1",
