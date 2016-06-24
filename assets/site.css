@@ -127,13 +127,18 @@ body {
   padding: 12px;
 }
 #head,
-#content {
+#content,
+.content-box {
   width: 950px;
   margin: 0 auto;
 }
 #head img,
-#content img {
+#content img,
+.content-box img {
   max-width: 950px;
+}
+.content-box {
+  padding: 0 15px;
 }
 h1 {
   font-size: 22px;
@@ -185,6 +190,9 @@ footer img {
 }
 #scripts-list .script-item p {
   margin-bottom: 8px;
+}
+#how-to-install li {
+  margin-bottom: 18px;
 }
 .script-header {
   margin-bottom: 22px;
