@@ -170,6 +170,109 @@
     </code>
 </pre>
 
+<!-- $timer.interval() -->
+<code id="topic-api-methods-timer-interval" class="signature">$timer.interval(name, time, callback)</code>
+<p>
+    A wrapper around the <code>setInterval()</code> function which sets a callback function to be executed
+    at a regular interval. Automatically clears a previously set timer with the same name.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Sets a time to be called once every second.
+        $timer.interval("my-timer", 1000, function() {
+            console.log("tick");
+        });
+
+        // Sets the interval again. This will clear the first timer and
+        // create a new one.
+        $timer.interval("my-timer", 1000, function() {
+            console.log("tock");
+        });
+    </code>
+</pre>
+
+<!-- $timer.once() -->
+<code id="topic-api-methods-timer-once" class="signature">$timer.once(name, timeout, callback)</code>
+<p>
+    A wrapper around the <code>setTimeout()</code> function which sets a callback function to be executed
+    once after the given <code>timeout</code>. Automatically clears a previously set timer with the same name.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Sets a timer to be called after 1 second has elapsed.
+        $timer.once("my-timer", 1000, function() {
+            console.log("tick");
+        });
+
+        // Sets the timer again. This will clear the first timer and
+        // create a new one.
+        $timer.once("my-timer", 1000, function() {
+            console.log("tock");
+        });
+    </code>
+</pre>
+
+<!-- $timer.clear() -->
+<code id="topic-api-methods-timer-clear" class="signature">$timer.clear(name)</code>
+<p>
+    A wrapper around the <code>clearTimeout()</code> and <code>clearInterval()</code> functions, which clears
+    any timers that were set with the given name.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Sets a time to be called once every second.
+        $timer.interval("my-timer", 1000, function() {
+            console.log("tick");
+        });
+
+        // Now clear the interval.
+        $timer.clear("my-timer");
+    </code>
+</pre>
+
+<!-- $timer.clearAll() -->
+<code id="topic-api-methods-timer-clear-all" class="signature">$timer.clearAll()</code>
+<p>
+    A wrapper around the <code>clearTimeout()</code> and <code>clearInterval()</code> functions, which clears
+    <i>all</i> timers that have been set.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Sets a time to be called once every second.
+        $timer.interval("my-timer", 1000, function() {
+            console.log("tick");
+        });
+
+        // Sets a time to be called once every second.
+        $timer.interval("my-timer-2", 1000, function() {
+            console.log("tock");
+        });
+
+        // Now clear all the timers.
+        $timer.clearAll();
+    </code>
+</pre>
+
+<!-- $timer.has() -->
+<code id="topic-api-methods-timer-has" class="signature">$timer.has(name)</code>
+<p>
+    Returns whether a timer has been set with the given name.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        // Sets a time to be called once every second.
+        $timer.interval("my-timer", 1000, function() {
+            console.log("tick");
+        });
+
+        // Displays "true".
+        console.log($timer.has("my-timer"));
+        
+        // Displays "false".
+        console.log($timer.has("another-timer"));
+    </code>
+</pre>
+
 <!-- $api.send() -->
 <code id="topic-api-methods-send" class="signature">$api.send(msg, meta)</code>
 <p>

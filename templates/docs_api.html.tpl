@@ -73,6 +73,14 @@
         </p>
     </li>
     <li>
+        <code id="topic-api-timer" class="signature">$timer</code>
+        <p>
+            A convenience wrapper around the setInterval() and setTimeout() functions. Information about the
+            methods is available in the <a href="#topic-api-methods-timer-interval" class="help-tc-root">methods section</a> of
+            this documentation.
+        </p>
+    </li>
+    <li>
         <code id="topic-api-script" class="signature">$script</code>
         <p>
             Provides information about the script itself, as well as annotations found in the

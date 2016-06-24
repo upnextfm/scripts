@@ -29,6 +29,7 @@
                     <li><a href="#topic-api-options">$options</a></li>
                     <li><a href="#topic-api-proxy">$proxy</a></li>
                     <li><a href="#topic-api-store">$store</a></li>
+                    <li><a href="#topic-api-timer">$timer</a></li>
                     <li><a href="#topic-api-script">$script</a></li>
                     <li><a href="#topic-api-first-script">First Script</a></li>
                 </ul>
@@ -42,6 +43,13 @@
                     <li><a href="#topic-api-methods-get-database">$store.database.get()</a></li>
                     <li><a href="#topic-api-methods-remove-database">$store.database.remove()</a></li>
                     <li><a href="#topic-api-methods-keys-database">$store.database.keys()</a></li>
+
+                    <li><a href="#topic-api-methods-timer-interval">$timer.interval()</a></li>
+                    <li><a href="#topic-api-methods-timer-once">$timer.once()</a></li>
+                    <li><a href="#topic-api-methods-timer-clear">$timer.clear()</a></li>
+                    <li><a href="#topic-api-methods-timer-clear-all">$timer.clearAll()</a></li>
+                    <li><a href="#topic-api-methods-timer-has">$timer.has()</a></li>
+                    
                     <li><a href="#topic-api-methods-send">$api.send()</a></li>
                     <li><a href="#topic-api-methods-notice">$api.notice()</a></li>
                     <li><a href="#topic-api-methods-command">$api.command()</a></li>
