@@ -72,6 +72,7 @@
                     <li><a href="#topic-api-methods-unmute">$api.unmute()</a></li>
                     <li><a href="#topic-api-methods-ban-by-name">$api.banByName()</a></li>
                     <li><a href="#topic-api-methods-ban-by-ip">$api.banByIP()</a></li>
+                    <li><a href="#topic-api-methods-users">$api.users()</a></li>
                 </ul>
             </div>
             

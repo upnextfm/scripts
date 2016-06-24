@@ -586,3 +586,15 @@
         $api.banByIP("az4521", "Being a troll.");
     </code>
 </pre>
+
+<!-- $api.users() -->
+<code id="topic-api-methods-users" class="signature">$api.users()</code>
+<p>
+    Returns an array of names for each user in the channel.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        var names = $api.users();
+        console.log(names);
+    </code>
+</pre>
