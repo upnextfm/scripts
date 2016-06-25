@@ -1,6 +1,6 @@
 /**
  * Name: Buddy
- * Version: 1.0
+ * Version: 1.1
  * Author: headzoo
  * 
  * Displays your notices and whispers in a separate chat window.
@@ -76,11 +76,11 @@
                     'animation-timing-function: ease-in-out;'  +
                 '}' +
                 '@-webkit-keyframes flash-animation {  '  +
-                    'from { background: #A26F03; }'  +
+                    'from { background: #333; }'  +
                     'to   { background: #000; }'  +
                 '}'  +
                 '@keyframes flash-animation {'  +
-                    'from { background: #A26F03; }'  +
+                    'from { background: #333; }'  +
                     'to   { background: #000; }'  +
                 '}' +
                 '#buddy-whisper-line {' +
@@ -151,7 +151,7 @@
         
         buffer.appendMessage = function(data) {
             var parts = stripHTML(data.msg).split(" ");
-            if (parts.length > 0 && parts[0] != "You") {
+            if (parts.length > 0 && parts[0] != "You" && parts[0] != "You've") {
                 last_whisper_from = parts[0];
             }
             Messages.format(data);
@@ -195,6 +195,26 @@
         }
     };
     
+    var onMediaChange = function(e, data) {
+        $.ajax({
+            url: "/tracks/who/" + data.type + "/" + data.uid
+        }).done(function(res) {
+            if (res.length > 1) {
+                var index = res.indexOf($user.name);
+                if (index !== -1) {
+                    res.splice(index, 1);
+                    var joined = [res.slice(0, -1).join(', '), res.slice(-1)[0]].join(res.length < 2 ? '' : ' and ');
+        
+                    buffer.appendMessage({
+                        msg: "You've played [i]" + data.title + "[/i] and so did " + joined + ".",
+                        meta: {},
+                        time: Date.now()
+                    });
+                }
+            }
+        });
+    };
+    
     $api.on("loaded", function() {
         appendStylesheet();
         appendContainer();
@@ -211,6 +231,7 @@
             
             $api.on("notice whisper", onNotice);
             $api.on("receive", onReceive);
+            $api.on("media_change", onMediaChange);
             loaded = true;
         });
     });
