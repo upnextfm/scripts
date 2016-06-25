@@ -185,6 +185,16 @@
         }
     };
     
+    var onReceive = function(e, data) {
+        if (data.is_mentioned) {
+            buffer.appendMessage({
+                msg: "[#FFFFFF]" + data.username + " mentioned you:[/#] " + data.msg,
+                meta: data.meta,
+                time: data.time
+            });
+        }
+    };
+    
     $api.on("loaded", function() {
         appendStylesheet();
         appendContainer();
@@ -200,6 +210,7 @@
             });
             
             $api.on("notice whisper", onNotice);
+            $api.on("receive", onReceive);
             loaded = true;
         });
     });
