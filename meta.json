@@ -103,7 +103,7 @@
     "source": "https://scripts.upnext.fm/script/buddy.js",
     "screenshots": [
       {
-        "src": "https://scripts.upnext.fm/images/notice-buddy.png",
+        "src": "https://scripts.upnext.fm/images/buddy.png",
         "description": "Notices and whispers are shown in their own window below chat."
       }
     ]
