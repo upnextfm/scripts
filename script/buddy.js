@@ -1,5 +1,5 @@
 /**
- * Name: Notice Buddy
+ * Name: Buddy
  * Version: 1.0
  * Author: headzoo
  * 
@@ -176,6 +176,15 @@
         };
     };
     
+    var onNotice = function(e, data) {
+        e.cancel();
+        buffer.appendMessage(data);
+        messages.push(data);
+        if (messages.length > BUFFER_SAVE_SIZE) {
+            messages.shift();
+        }
+    };
+    
     $api.on("loaded", function() {
         appendStylesheet();
         appendContainer();
@@ -190,15 +199,7 @@
                 $store.database.set("buddy-messages", messages);
             });
             
-            $api.on("notice whisper", function(e, data) {
-                e.cancel();
-                buffer.appendMessage(data);
-                messages.push(data);
-                if (messages.length > BUFFER_SAVE_SIZE) {
-                    messages.shift();
-                }
-            });
-            
+            $api.on("notice whisper", onNotice);
             loaded = true;
         });
     });

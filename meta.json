@@ -93,8 +93,8 @@
     "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
     "source": "https://scripts.upnext.fm/script/react.js"
   },
-  "notice-buddy.js": {
-    "name": "Notice Buddy",
+  "buddy.js": {
+    "name": "Buddy",
     "version": "1.0",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
