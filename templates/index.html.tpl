@@ -18,7 +18,6 @@
                 </li>
             </ol>
         </div>
-
         <div class="content-box" style="margin-top: 20px;">
             <h2>Scripts</h2>
         </div>
