@@ -32,7 +32,7 @@
                         <ul class="scripts-meta-list">
                             <li><strong>Version:</strong> {{ script.version }}</li>
                             <li><strong>Author:</strong> {{ script.author }}</li>
-
+                            <li><strong>Checksum:</strong> {{ script.checksum }}</li>
                         </ul>
                         <div class="input-group">
                             <input value="{{ script.source }}" type="text" class="form-control" readonly />
