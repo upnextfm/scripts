@@ -116,6 +116,40 @@
             the the first.
         </p>
     </li>
+    <li>
+        <code id="topic-api-stylesheet" class="signature">$stylesheet</code>
+        <p>
+            Used to create and add stylesheets to the document.
+        </p>
+        <pre style="margin-top: 12px;">
+            <code class="language-javascript">
+                // Create a new stylesheet using a unique identifier.
+                var my_stylesheet = new $stylesheet("my_stylesheet");
+                
+                // Add styles by providing the selector followed by one or more
+                // properties.
+                my_stylesheet.add("#wrap", {
+                    "color": "#FFF",
+                    "font-family": "arial"
+                });
+                
+                // Append the stylesheet to the document head. Automatically removes
+                // previously appended stylesheets with the same identifier.
+                my_stylesheet.append();
+                
+                // Removes the stylesheet from the document.
+                my_stylesheet.remove();
+            </code>
+        </pre>
+    </li>
+    <li>
+        <code id="topic-api-store" class="signature">$store</code>
+        <p>
+            Provides access to cookies, localStorage, and the site database key/value store.
+            More information about the <code>$store</code> methods are covered in the
+            <a href="#topic-api-methods" class="help-tc-root">methods</a> of this documentation.
+        </p>
+    </li>
 </ul>
 
 <h5 id="topic-api-first-script">First Script</h5>

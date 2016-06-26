@@ -31,6 +31,7 @@
                     <li><a href="#topic-api-store">$store</a></li>
                     <li><a href="#topic-api-timer">$timer</a></li>
                     <li><a href="#topic-api-script">$script</a></li>
+                    <li><a href="#topic-api-stylesheet">$stylesheet</a></li>
                     <li><a href="#topic-api-first-script">First Script</a></li>
                 </ul>
     
