@@ -1,6 +1,6 @@
 /**
  * Name: Protection
- * Version: 1.9.5
+ * Version: 1.9.6
  * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
@@ -48,6 +48,7 @@
     var trolls        = $store.local.get("protection-trolls", []);
     var no_queue      = $store.local.get("protection-no-queue", []);
     var img_regex     = /<img.+?src=[\"'](.+?)[\"'].*?>/g;
+    var stylesheet    = new $stylesheet("us-chat-protection-styles");
     var phrases_split = [];
     var buffer        = [];
     
@@ -59,21 +60,24 @@
     
     // Adds our custom css to the page.
     var addStylesheet = function() {
-        $(
-            '<style id="us-chat-protection-styles" type="text/css">' +
-            '#us-protection-pane .checkbox { padding-top: 0; } ' +
-            '#us-protection-pane .checkbox .text-muted { margin: 0 0 0 0; } ' +
-            '#us-protection-pane .form-group { margin-bottom: 8px; } ' +
-            '.protection-indicator-active::after { content: "\\2022"; margin-left: 8px; color: #00FF00; } ' +
-            '.protection-indicator-inactive::after { content: "\\2022"; margin-left: 8px; color: #aaa; } ' +
-            '.userlist_item .glyphicon-ban-circle { color: #cc4b4b; padding-right: 2px; } ' +
-            '</style>'
-        ).appendTo($("head"));
-    };
-    
-    // Removes the protection stylesheet from the page.
-    var removeStylesheet = function() {
-        $("#us-chat-protection-styles").remove();
+        stylesheet.add("#us-protection-pane .checkbox", {
+            "padding-top": "0"
+        }).add("#us-protection-pane .checkbox .text-muted", {
+            "margin": "0 0 0 0"
+        }).add("#us-protection-pane .form-group", {
+            "margin-bottom": "8px"
+        }).add(".protection-indicator-active::after", {
+            "content": '"\\2022"',
+            "margin-left": "8px",
+            "color": "#00FF00"
+        }).add(".protection-indicator-inactive::after", {
+            "content": '"\\2022"',
+            "margin-left": "8px",
+            "color": "#aaa"
+        }).add(".userlist_item .glyphicon-ban-circle", {
+            "color": "#cc4b4b",
+            "padding-right": "2px"
+        }).append();
     };
     
     // Adds a "Protection" tab to the user options where the protection
@@ -377,14 +381,13 @@
                 $(".userlist_item_" + troll + ":first")
                     .removeClass("protection-indicator-active");
             });
-            removeStylesheet();
+            stylesheet.remove();
             removeOptions();
         }
     });
     
     // Set everything up.
     $api.on("loaded", function() {
-        removeStylesheet();
         addStylesheet();
         removeOptions();
         addOptions();

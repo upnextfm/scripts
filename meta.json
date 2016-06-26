@@ -20,10 +20,10 @@
   },
   "protection.js": {
     "name": "Protection",
-    "version": "1.9.5",
+    "version": "1.9.6",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "0f1ba3166e0131635f960116604a7e2b",
+    "checksum": "cfcc5587defc3718b0a2cfd9cff8b61f",
     "description": "Provides protection against trolls and other nasty users.",
     "source": "https://scripts.upnext.fm/script/protection.js",
     "screenshots": [
