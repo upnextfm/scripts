@@ -1,6 +1,6 @@
 /**
  * Name: Gradients
- * Version: 2.2.3
+ * Version: 2.2.4
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -36,8 +36,9 @@
     var REGEX_MACRO         = new RegExp('@([^@]+)@', "g");
     var REGEX_HEX_COLOR     = new RegExp('#[a-f0-9]{6}', "gi");
     
-    var pickers = [];
-    var state   = [];
+    var pickers     = [];
+    var state       = [];
+    var stylesheet  = new $stylesheet("us-chat-gradient-styles");
     
     var Colorizer = {
         is_on       : $store.local.get("gradient-is-on", true),
@@ -164,24 +165,65 @@
     };
     
     var addStylesheet = function() {
-        $("#us-chat-gradient-styles").remove();
-        $(
-            '<style id="us-chat-gradient-styles" type="text/css">' +
-                '#us-chat-gradient-preview { background-color: #000; padding: 8px 12px; border: 1px solid #444; } ' +
-                '#us-chat-gradient-preview .timestamp { color: #c8c8c8; margin-right: 4px; } ' +
-                '#us-chat-gradient-preview .username { color: #c8c8c8; margin-right: 4px; font-weight: 700; } ' +
-                '#gradients-credits { font-size: 12px; text-align: right;-webkit-transition-property:color;-webkit-transition-duration: 1s, 1s;-webkit-transition-timing-function: linear, ease-in; } ' +
-                '#gradients-indicator { display: inline-block; cursor: pointer; } ' +
-                '.gradients-reset-undo { -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;text-transform:uppercase;font-size:12px; margin-top: -5px;margin-left:4px;color: #5bc0de; text-decoration: underline; cursor: pointer; } ' +
-                '.gradients-reset-undo.disabled { color: #5C7C86; } ' +
-                '.gradient-color-picker { float: left; } ' +
-                '.gradient-indicator-active::after { content: "\\2022"; margin-left: 8px; color: #00FF00; } ' +
-                '.gradient-indicator-inactive::after { content: "\\2022"; margin-left: 8px; color: #aaa; } ' +
-                '.gradient-picker-add { margin-left: 10px; width: 20px; height: 30px; display: inline-block; text-align: center; } ' +
-                '.gradient-picker-add .glyphicon { vertical-align: text-bottom;font-size: 20px;line-height: 8px;cursor:pointer; text-shadow: 1px 1px rgba(0, 0, 0, 0.7); } ' +
-                '.gradient-picker-add:hover .glyphicon { color: #FFF; text-shadow: 2px 2px rgba(0, 0, 0, 0.9);  } ' +
-            '</style>'
-        ).appendTo($("head"));
+        stylesheet.add("#us-chat-gradient-preview", {
+            "background-color": "#000",
+            "padding": "8px 12px",
+            "border": "1px solid #444"
+        }).add("#us-chat-gradient-preview .timestamp", {
+            "color": "c8c8c8",
+            "margin-right": "4px"
+        }).add("#us-chat-gradient-preview .username", {
+            "color": "#c8c8c8",
+            "margin-right": "4px",
+            "font-weight": "700"
+        }).add("#gradients-credits", {
+            "font-size": "12px",
+            "text-align": "right",
+            "-webkit-transition-property": "color",
+            "-webkit-transition-duration": "1s 1s",
+            "-webkit-transition-timing-function": "linear, ease-in"
+        }).add("#gradients-indicator", {
+            "display": "inline-block",
+            "cursor": "pointer"
+        }).add(".gradients-reset-undo", {
+            "-webkit-user-select": "none",
+            "-moz-user-select": "none",
+            "-ms-user-select": "none",
+            "text-transform": "uppercase",
+            "font-size": "12px",
+            "margin-top": "-5px",
+            "margin-left": "4px",
+            "color": "#5bc0de",
+            "text-decoration": "underline",
+            "cursor": "pointer"
+        }).add(".gradients-reset-undo.disabled", {
+            "color": "#5C7C86"
+        }).add(".gradient-color-picker", {
+            "float": "left"
+        }).add(".gradient-indicator-active::after", {
+            "content": '"\\2022"',
+            "margin-left": "8px",
+            "color": "#00FF00"
+        }).add(".gradient-indicator-inactive::after", {
+            "content": '"\\2022"',
+            "margin-left": "8px",
+            "color": "#aaa"
+        }).add(".gradient-picker-add", {
+            "margin-left": "10px",
+            "width": "20px",
+            "height": "30px",
+            "display": "inline-block",
+            "text-align": "center"
+        }).add(".gradient-picker-add .glyphicon", {
+            "vertical-align": "text-bottom",
+            "font-size": "20px",
+            "line-height": "8px",
+            "cursor": "pointer",
+            "text-shadow": "1px 1px rgba(0, 0, 0, 0.7)"
+        }).add(".gradient-picker-add:hover .glyphicon", {
+            "color": "#FFF",
+            "text-shadow": "2px 2px rgba(0, 0, 0, 0.9)"
+        }).append();
     };
     
     var addOptions = function() {
