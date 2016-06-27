@@ -113,7 +113,7 @@
     "version": "1.0",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "8cc6aedc3e33187e53ae3b8c26de981c",
+    "checksum": "f43766d4ec6d19c7b931a56bf584b195",
     "description": "Play rock, paper, scissors against other users. Start a game by typing '/rps <player1> <player2>' or use only one player to play against the computer.",
     "source": "https://scripts.upnext.fm/script/rock-paper-scissors.js"
   },

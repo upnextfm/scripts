@@ -139,11 +139,11 @@
                                 game = null;
                                 $api.send("[#FFFFFF]Rock-Paper-Scissors: " + winner + "[/#]");
                             }
-                        }, 15000);
+                        }, 30000);
                         $api.send(
                             "[#FFFFFF]Rock-Paper-Scissors: " + game.player1_name +
                             " vs. " + game.player2_name + ". Each player whisper your answer using `/w " +
-                            $user.name + " <answer>`. You have 15 seconds.[/#]"
+                            $user.name + " <answer>`. You have 30 seconds.[/#]"
                         );
                     })();
                 }
@@ -152,6 +152,8 @@
     
         $api.on("whisper", function(e, data) {
             if (game !== null && game.isPlaying(data.name)) {
+                e.cancel();
+                
                 try {
                     var answer = removeBBCodes(data.msg.trim());
                     answer     = answer.split(": ");
