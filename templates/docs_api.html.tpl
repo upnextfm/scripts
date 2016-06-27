@@ -48,9 +48,32 @@
     <li>
         <code id="topic-api-options" class="signature">$options</code>
         <p>
-            Reference to an object which represents the channel Options menu. It can be used
-            to add additional options to the menu.
+            Reference to an object which represents the channel Options menu. Used to create options
+            menus for scripts.
         </p>
+        <pre style="margin-top: 12px;">
+            <code class="language-javascript">
+                // Creates a new menu where the tab has the label "Twitter Feed", and
+                // sub element IDs are prefixed with "twitter".
+                var options = $options.create("Twitter Feed", "twitter");
+                
+                // Set the menu title.
+                options.title("Twitter Feed");
+                
+                // Add a text input to the form.
+                options.add("text", "twitter-username", {
+                    label: "Username",
+                    help: "Your Twitter username"
+                });
+                
+                // Get the value of the input.
+                var value = options.val("twitter-username");
+                console.log(value);
+                
+                // Clear the input.
+                options.clear("twitter-username");
+            </code>
+        </pre>
     </li>
     <li>
         <code id="topic-api-proxy" class="signature">$proxy</code>
