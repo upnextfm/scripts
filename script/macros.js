@@ -1,6 +1,6 @@
 /**
  * Name: Macros
- * Version: 1.2
+ * Version: 1.3
  *
  * Gives users the option to create macros, or "shortcuts" for long messages.
  *
