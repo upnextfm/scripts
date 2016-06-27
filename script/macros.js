@@ -19,6 +19,7 @@
     });
     
     var handlers       = [];
+    var options        = null;
     var trigger_regex  = new RegExp("^@[a-z0-9\\s{}]+@$", "i");
     var variable_regex = new RegExp("{([^\\s]+)}", "g");
     
@@ -84,51 +85,51 @@
      * Adds the "Macros" tab/pane to the Options dialog
      */
     var addOptions = function() {
-        var tab  = $options.makeTab("Macros", "us-macros-tab", "book");
-        var pane = $options.makePane("us-macros-pane", tab);
-        $options.tabs().append(tab);
-        $options.panes().append(pane);
-        
-        var title = $('<h4>Macros</h4>');
-        pane.form.append(title);
-        
-        // Form
-        pane.form.on("submit", function(e) {
-            e.preventDefault();
+        options = $options.create("Macros", "macros", "book");
+        options.title("Macros").on("submit", function() {
+            return false;
         });
-        pane.form.append(
-            $options.makeInput("us-macros-input-trigger", "Trigger")
-        );
-        pane.form.append(
-            $options.makeInput("us-macros-input-replacement", "Replacement")
-        );
-        pane.form.append($options.makeButtonGroup([
-            {
-                id: "us-macros-button-add",
-                label: "Add"
-            }
-        ]));
         
-        // Table
+        options.add("text", "macros-input-trigger", {
+            label: "Trigger",
+            help: "The string that triggers the macro, e.g. @sometext@."
+        });
+        
+        options.add("text", "macros-input-replacement", {
+            label: "Replacement",
+            help: "The string that replaces the trigger."
+        });
+        
+        options.add("button", "macros-button-add", {
+            label: "Add",
+            icon: "plus"
+        }).on("click", addMacro);
+        
         var table = $('<table class="table table-striped table-condensed"/>');
-        pane.form.append(table);
+        options.append(table);
         
         var thead = $('<thead><tr><th>Delete</th><th>Trigger</th><th>Replacement</th></tr></thead>');
         table.append(thead);
         
-        var tbody = $('<tbody id="us-macros-tbody"/>');
+        var tbody = $('<tbody id="macros-tbody"/>');
         table.append(tbody);
         $each(macros, function(replacement, trigger) {
             appendRow(replacement, trigger, tbody);
         });
+    
+        options.add("button", "macros-export-btn", {
+            label: "Export Macros"
+        }).on("click", exportMacros);
         
-        // Export & Import
-        var export_button = $('<button id="us-macros-export-btn" class="btn btn-default">Export Macros</button>');
-        var import_button = $('<button id="us-macros-import-btn" class="btn btn-default">Import Macros</button>');
-        var textarea      = $('<textarea id="us-macros-export-textarea" class="form-control" rows="5"></textarea>');
-        pane.form.append(export_button);
-        pane.form.append(import_button);
-        pane.form.append(textarea);
+        options.add("button", "macros-import-btn", {
+            label: "Import Macros"
+        }).on("click", importMacros);
+        
+        options.add("textarea", "macros-export-textarea", {
+            attr: {
+                rows: 5
+            }
+        });
     };
     
     /**
@@ -143,7 +144,7 @@
         if (tbody) {
             tbody.append(row);
         } else {
-            $("#us-macros-tbody").append(row);
+            $("#macros-tbody").append(row);
         }
         
         var delete_button = $('<button class="btn btn-xs btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>');
@@ -169,40 +170,37 @@
      * Called when the "Add" button is clicked in the macros dialog
      */
     var addMacro = function() {
-        var trigger         = $("#us-macros-input-trigger");
-        var trigger_val     = trigger.val().trim();
-        var replacement     = $("#us-macros-input-replacement");
-        var replacement_val = replacement.val().trim();
-        
-        if (!trigger_val || !replacement_val) {
+        var trigger     = options.val("macros-input-trigger").trim();
+        var replacement = options.val("macros-input-replacement").trim();
+        if (!trigger || !replacement) {
             return alert("Both values are required.");
         }
-        if (!trigger_regex.test(trigger_val)) {
+        if (!trigger_regex.test(trigger)) {
             return alert('Invalid trigger. Must start and end with @ and may not contain special characters.');
         }
-        if (typeof macros[trigger_val] !== "undefined") {
+        if (typeof macros[trigger] !== "undefined") {
             return alert("Trigger is already being used.");
         }
         
-        macros[trigger_val] = replacement_val;
+        macros[trigger] = replacement;
         $store.local.set("chat-macros", macros);
-        appendRow(replacement_val, trigger_val);
-        trigger.val("");
-        replacement.val("");
+        appendRow(replacement, trigger);
+        options.clear("macros-input-trigger");
+        options.clear("macros-input-replacement");
     };
     
     /**
      * Exports the macros as a JSON string
      */
     var exportMacros = function() {
-        $("#us-macros-export-textarea").text(JSON.stringify(macros, null, 2));
+        $("#macros-export-textarea").text(JSON.stringify(macros, null, 2));
     };
     
     /**
      * Imports a JSON string as macros
      */
     var importMacros = function() {
-        var text = $("#us-macros-export-textarea").val().trim();
+        var text = $("#macros-export-textarea").val().trim();
         if (!text) {
             return;
         }
@@ -216,7 +214,7 @@
         $store.local.set("chat-macros", imported);
         macros = {};
         
-        var tbody = $("#us-macros-tbody");
+        var tbody = $("#macros-tbody");
         tbody.empty();
         $each(imported, function(replacement, trigger) {
             appendRow(replacement, trigger);
@@ -239,9 +237,6 @@
     // Called when the chat api is loaded.
     $api.on("loaded", function() {
         addOptions();
-        $("#us-macros-button-add").on("click", addMacro);
-        $("#us-macros-export-btn").on("click", exportMacros);
-        $("#us-macros-import-btn").on("click", importMacros);
     });
     
     // Called when the user sends a message. Process any macros found in
