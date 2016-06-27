@@ -116,14 +116,23 @@
         $each(macros, function(replacement, trigger) {
             appendRow(replacement, trigger, tbody);
         });
-    
-        options.add("button", "macros-export-btn", {
-            label: "Export Macros"
-        }).on("click", exportMacros);
         
-        options.add("button", "macros-import-btn", {
-            label: "Import Macros"
-        }).on("click", importMacros);
+        options.add("button-group", [
+            {
+                id: "macros-export-btn",
+                label: "Export Macros",
+                on: {
+                    click: exportMacros
+                }
+            },
+            {
+                id: "macros-import-btn",
+                label: "Import Macros",
+                on: {
+                    click: importMacros
+                }
+            }
+        ], {full_width: true});
         
         options.add("textarea", "macros-export-textarea", {
             attr: {
@@ -193,14 +202,14 @@
      * Exports the macros as a JSON string
      */
     var exportMacros = function() {
-        $("#macros-export-textarea").text(JSON.stringify(macros, null, 2));
+        options.val("macros-export-textarea", JSON.stringify(macros, null, 2));
     };
     
     /**
      * Imports a JSON string as macros
      */
     var importMacros = function() {
-        var text = $("#macros-export-textarea").val().trim();
+        var text = options.val("macros-export-textarea").trim();
         if (!text) {
             return;
         }
@@ -220,6 +229,7 @@
             appendRow(replacement, trigger);
             macros[trigger] = replacement;
         });
+        options.clear("macros-export-textarea");
     };
     
     // Converts each of the user's macros into regex groups.

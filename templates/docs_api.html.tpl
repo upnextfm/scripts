@@ -63,15 +63,16 @@
                 // Add a text input to the form.
                 options.add("text", "twitter-username", {
                     label: "Username",
+                    val: settings.username,
                     help: "Your Twitter username"
+                }).on("change", function() {
+                    // Get the value of the input.
+                    settings.username = options.val("twitter-username");
+                    console.log(settings.username);
+                    
+                    // Clear the input.
+                    options.clear("twitter-username");
                 });
-                
-                // Get the value of the input.
-                var value = options.val("twitter-username");
-                console.log(value);
-                
-                // Clear the input.
-                options.clear("twitter-username");
             </code>
         </pre>
     </li>
