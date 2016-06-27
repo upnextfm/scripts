@@ -102,7 +102,7 @@
                         answer = "Rock breaks scissors.";
                         break;
                     case "paper":
-                        name = this.player1_name;
+                        name   = this.player1_name;
                         answer = "Scissors cut paper.";
                         break;
                     case "scissors":
