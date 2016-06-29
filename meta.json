@@ -62,10 +62,10 @@
   },
   "lucky.js": {
     "name": "Lucky",
-    "version": "1.1",
+    "version": "1.2",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "1aac6b3a84b541acb846244f58b5160c",
+    "checksum": "94d17769b49b9949a3dc1ca526b7f300",
     "description": "Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.",
     "source": "https://scripts.upnext.fm/script/lucky.js"
   },
