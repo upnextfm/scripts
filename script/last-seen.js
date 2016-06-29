@@ -1,6 +1,6 @@
 /**
  * Name: Last Seen
- * Version: 1.0
+ * Version: 1.1
  * Author: headzoo
  * 
  * Creates a /seen command which displays the last time a user was seen in
@@ -26,7 +26,7 @@
         seen = data;
     });
     
-    $api.on("receive", function(e, data) {
+    $chat.on("receive", function(e, data) {
         seen[data.username.toLowerCase()] = Date.now();
         
         var matches = data.msg_clean.match(regex);
@@ -35,13 +35,13 @@
             if (seen[username] !== undefined) {
             
                 var date = new Date(seen[username]);
-                $api.send(sprintf(
+                $chat.send(sprintf(
                     "[#FFFFFF]%s was last seen on %s[/#]",
                     matches[1],
                     date.toString()
                 ));
             } else {
-                $api.send("[#FFFFFF]" + matches[1] + " has not been seen in a while.[/#]");
+                $chat.send("[#FFFFFF]" + matches[1] + " has not been seen in a while.[/#]");
             }
         }
     });

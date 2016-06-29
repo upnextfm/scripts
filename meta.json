@@ -51,14 +51,14 @@
     "description": "Hides channel bots from the users list.",
     "source": "https://scripts.upnext.fm/script/hide-bots.js"
   },
-  "last_seen.js": {
+  "last-seen.js": {
     "name": "Last Seen",
-    "version": "1.0",
+    "version": "1.1",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "5fa493733e9a5fb417e82055b03b3760",
+    "checksum": "f6f0f66d03c60b9a72d87c3b7e9ecac9",
     "description": "Creates a /seen command which displays the last time a user was seen in the lobby. For example '/seen headzoo'.",
-    "source": "https://scripts.upnext.fm/script/last_seen.js"
+    "source": "https://scripts.upnext.fm/script/last-seen.js"
   },
   "lucky.js": {
     "name": "Lucky",
