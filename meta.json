@@ -176,10 +176,10 @@
   },
   "aww.js": {
     "name": "Aww",
-    "version": "1.0",
+    "version": "1.1",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "e50e691eb8faab58c4b34da92b79c59c",
+    "checksum": "6539cba2d2533500c8a2d79147c7a40a",
     "description": "Creates an /aww command which sends a random cute pictures to the chat room.",
     "source": "https://scripts.upnext.fm/script/aww.js"
   }

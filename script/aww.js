@@ -1,6 +1,6 @@
 /**
  * Name: Aww
- * Version: 1.0
+ * Version: 1.1
  * Author: headzoo
  * 
  * Creates an /aww command which sends a random cute pictures to the chat room.
@@ -17,14 +17,14 @@
         });
     });
 
-    $api.on("send", function(e, data) {
+    $chat.on("send", function(e, data) {
         if (data.msg.indexOf("/aww") === 0) {
             e.cancel();
             if (pics.length == 0) {
-                return $api.notice("No aww pictures found");
+                return $chat.notice("No aww pictures found");
             }
             var pic = pics[Math.floor(Math.random() * pics.length)];
-            $api.send(pic);
+            $chat.send(pic);
         }
     });
 })();
