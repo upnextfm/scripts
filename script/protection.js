@@ -1,6 +1,6 @@
 /**
  * Name: Protection
- * Version: 1.9.7
+ * Version: 1.9.8
  * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
@@ -18,6 +18,7 @@
         no_emotes       : true,
         no_colors       : true,
         no_upper_case   : true,
+        no_attachments  : true,
         throttle        : true,
         trim            : true,
         vote_skip       : false,
@@ -28,6 +29,7 @@
         no_emotes       : null,
         no_colors       : null,
         no_upper_case   : null,
+        no_attachments  : null,
         throttle        : null,
         trim            : null,
         vote_skip       : null,
@@ -113,6 +115,11 @@
             "Do not show UPPER CASE text.",
             "Convert all messages to lower case."
         ));
+        form_elements.no_attachments = appendForm($options.makeCheckbox(
+            "us-protection-settings-no-attachments",
+            "Do not show attached files.",
+            "Files sent to chat will be ignored and not displayed."
+        ));
         form_elements.throttle = appendForm($options.makeCheckbox(
             "us-protection-settings-throttle",
             "Throttle messages.",
@@ -137,14 +144,15 @@
             "Comma separated list of phrases, e.g. \"hamburgers, taco bell, hate\"."
         ));
     
-        form_elements.no_images.prop("checked",     settings.no_images);
-        form_elements.no_emotes.prop("checked",     settings.no_emotes);
-        form_elements.no_colors.prop("checked",     settings.no_colors);
-        form_elements.no_upper_case.prop("checked", settings.no_upper_case);
-        form_elements.throttle.prop("checked",      settings.throttle);
-        form_elements.vote_skip.prop("checked",     settings.vote_skip);
-        form_elements.trim.prop("checked",          settings.trim);
-        form_elements.blocked_phrases.val(          settings.blocked_phrases);
+        form_elements.no_images.prop("checked",      settings.no_images);
+        form_elements.no_emotes.prop("checked",      settings.no_emotes);
+        form_elements.no_colors.prop("checked",      settings.no_colors);
+        form_elements.no_upper_case.prop("checked",  settings.no_upper_case);
+        form_elements.no_attachments.prop("checked", settings.no_attachments);
+        form_elements.throttle.prop("checked",       settings.throttle);
+        form_elements.vote_skip.prop("checked",      settings.vote_skip);
+        form_elements.trim.prop("checked",           settings.trim);
+        form_elements.blocked_phrases.val(           settings.blocked_phrases);
         
         $options.tabs().append(tab);
         $options.panes().append(pane);
@@ -162,6 +170,7 @@
         settings.no_emotes       = form_elements.no_emotes.is(":checked");
         settings.no_colors       = form_elements.no_colors.is(":checked");
         settings.no_upper_case   = form_elements.no_upper_case.is(":checked");
+        settings.no_attachments  = form_elements.no_attachments.is(":checked");
         settings.throttle        = form_elements.throttle.is(":checked");
         settings.vote_skip       = form_elements.vote_skip.is(":checked");
         settings.trim            = form_elements.trim.is(":checked");
@@ -363,6 +372,13 @@
             }
             
             data.msg = "[#FFFFFF]" + data.msg + "[/#]";
+        }
+    });
+    
+    // Filter attachments.
+    $chat.on("attachment", function(e, data) {
+        if (isTroll(data.username) && settings.no_attachments) {
+            e.cancel();
         }
     });
     
