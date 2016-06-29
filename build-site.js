@@ -25,6 +25,13 @@ fs.writeFile("./index.html", html, function(err) {
         meta: meta
     });
     fs.writeFile("./docs.html", html, function(err) {
-        console.log("Finished.");
+    
+        var html = env.render("installing.html.tpl", {
+            meta: meta
+        });
+        
+        fs.writeFile("./installing.html", html, function(err) {
+            console.log("Finished.");
+        });
     });
 });

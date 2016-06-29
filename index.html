@@ -1,545 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>upnext.fm user scripts</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official upnext.fm user scripting repository and documentation.">
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="favicon.ico" rel="icon" type="image/x-icon">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/site.css" rel="stylesheet">
-    <link href="assets/prism.css" rel="stylesheet">
-</head>
-<body>
-<a href="https://github.com/upnextfm/scripts/fork">
-    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-</a>
-<div id="head">
-    <header>
-        <img src="images/logo.png" />
-        <h1>Official upnext.fm user script repository and documentation.</h1>
-    </header>
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
-        <li role="presentation">
+    <head>
+        <title>upnext.fm user scripts</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Official upnext.fm user scripting repository and documentation.">
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="favicon.ico" rel="icon" type="image/x-icon">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/site.css" rel="stylesheet">
+        <link href="assets/prism.css" rel="stylesheet">
+    </head>
+    <body id="top">
+        <a href="https://github.com/upnextfm/scripts/fork">
+            <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+        </a>
+        <div class="row">
+            <div id="sidebar" class="col-sm-2 col-sm-offset-1">
+    <img src="images/logo.png" style="width: 100%;" />
+    <h1>Official upnext.fm script repository and API documentation.</h1>
+    <ul>
+        <li class="active">
             <a href="index.html">Scripts</a>
         </li>
-        <li role="presentation">
+        <li>
+            <a href="installing.html">How To Install Scripts</a>
+        </li>
+        <li>
             <a href="docs.html">API Documentation</a>
+            <ul>
+                <li><a href="docs.html#topic-api-api">$api</a></li>
+                <li><a href="docs.html#topic-api-chat">$chat</a></li>
+                <li><a href="docs.html#topic-api-playlist">$playlist</a></li>
+                <li><a href="docs.html#topic-api-channel">$channel</a></li>
+                <li><a href="docs.html#topic-api-user">$user</a></li>
+                <li><a href="docs.html#topic-api-options">$options</a></li>
+                <li><a href="docs.html#topic-api-proxy">$proxy</a></li>
+                <li><a href="docs.html#topic-api-store">$store</a></li>
+                <li><a href="docs.html#topic-api-timer">$timer</a></li>
+                <li><a href="docs.html#topic-api-script">$script</a></li>
+                <li><a href="docs.html#topic-api-stylesheet">$stylesheet</a></li>
+                <li><a href="docs.html#topic-api-first-script">First Script</a></li>
+            </ul>
+
+            <a href="docs.html#topic-properties" class="docs-tc-root">Properties</a>
+            <ul>
+                <li><a href="docs.html#topic-properties-version">$api.version</a></li>
+            </ul>
+
+            <a href="docs.html#topic-api-methods" class="docs-tc-root">Methods</a>
+            <ul>
+                <li><a href="docs.html#topic-api-methods-send">$chat.send()</a></li>
+                <li><a href="docs.html#topic-api-methods-notice">$chat.notice()</a></li>
+                <li><a href="docs.html#topic-api-methods-command">$chat.command()</a></li>
+                <li><a href="docs.html#topic-api-methods-toast">$chat.toast()</a></li>
+                <li><a href="docs.html#topic-api-methods-clear">$chat.clear()</a></li>
+                <li><a href="docs.html#topic-api-methods-color">$chat.color()</a></li>
+                <li><a href="docs.html#topic-api-methods-ignore">$chat.ignore()</a></li>
+                <li><a href="docs.html#topic-api-methods-unignore">$chat.unignore()</a></li>
+                <li><a href="docs.html#topic-api-methods-kick">$chat.kick()</a></li>
+                <li><a href="docs.html#topic-api-methods-mute">$chat.mute()</a></li>
+                <li><a href="docs.html#topic-api-methods-smute">$chat.smute()</a></li>
+                <li><a href="docs.html#topic-api-methods-unmute">$chat.unmute()</a></li>
+                <li><a href="docs.html#topic-api-methods-ban-by-name">$chat.banByName()</a></li>
+                <li><a href="docs.html#topic-api-methods-ban-by-ip">$chat.banByIP()</a></li>
+                <li><a href="docs.html#topic-api-methods-users">$chat.users()</a></li>
+
+                <li><a href="docs.html#topic-api-methods-playlist-queue">$playlist.queue()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-dequeue-by-name">$playlist.dequeueByName()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-skip">$playlist.skip()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-vote">$playlist.vote()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-clear">$playlist.clear()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-shuffle">$playlist.shuffle()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-lock">$playlist.lock()</a></li>
+                <li><a href="docs.html#topic-api-methods-playlist-search">$playlist.search()</a></li>
+
+                <li><a href="docs.html#topic-api-methods-set-storage">$store.local.set()</a></li>
+                <li><a href="docs.html#topic-api-methods-get-storage">$store.local.get()</a></li>
+                <li><a href="docs.html#topic-api-methods-remove-storage">$store.local.remove()</a></li>
+                <li><a href="docs.html#topic-api-methods-set-database">$store.database.set()</a></li>
+                <li><a href="docs.html#topic-api-methods-get-database">$store.database.get()</a></li>
+                <li><a href="docs.html#topic-api-methods-remove-database">$store.database.remove()</a></li>
+                <li><a href="docs.html#topic-api-methods-keys-database">$store.database.keys()</a></li>
+
+                <li><a href="docs.html#topic-api-methods-timer-interval">$timer.interval()</a></li>
+                <li><a href="docs.html#topic-api-methods-timer-once">$timer.once()</a></li>
+                <li><a href="docs.html#topic-api-methods-timer-clear">$timer.clear()</a></li>
+                <li><a href="docs.html#topic-api-methods-timer-clear-all">$timer.clearAll()</a></li>
+                <li><a href="docs.html#topic-api-methods-timer-has">$timer.has()</a></li>
+            </ul>
+
+            <a href="docs.html#topic-api-events" class="docs-tc-root">Events</a>
+            <ul>
+                <li><a href="docs.html#topic-api-events-delete-script">$api.delete_script</a></li>
+                <li><a href="docs.html#topic-api-events-save-scripts">$api.save_scripts</a></li>
+
+                <li><a href="docs.html#topic-api-events-loaded">$chat.loaded</a></li>
+                <li><a href="docs.html#topic-api-events-reloaded">$chat.reloaded</a></li>
+                <li><a href="docs.html#topic-api-events-receive">$chat.receive</a></li>
+                <li><a href="docs.html#topic-api-events-send">$chat.send</a></li>
+                <li><a href="docs.html#topic-api-events-notice">$chat.notice</a></li>
+                <li><a href="docs.html#topic-api-events-whisper">$chat.whisper</a></li>
+                <li><a href="docs.html#topic-api-events-command">$chat.command</a></li>
+                <li><a href="docs.html#topic-api-events-user-join">$chat.user_join</a></li>
+                <li><a href="docs.html#topic-api-events-user-leave">$chat.user_leave</a></li>
+                <li><a href="docs.html#topic-api-events-emotes-personal">$chat.emotes_personal</a></li>
+                <li><a href="docs.html#topic-api-events-emotes-channel">$chat.emotes_channel</a></li>
+                <li><a href="docs.html#topic-api-events-afk">$chat.afk</a></li>
+                <li><a href="docs.html#topic-api-events-profile-menu">$chat.profile_menu</a></li>
+                <li><a href="docs.html#topic-api-events-user-options-save">$chat.user_options_save</a></li>
+                <li><a href="docs.html#topic-api-events-channel-option-save">$chat.channel_option_save</a></li>
+                <li><a href="docs.html#topic-api-events-color-change">$chat.color_change</a></li>
+                <li><a href="docs.html#topic-api-events-blink">$chat.blink</a></li>
+                <li><a href="docs.html#topic-api-events-unblink">$chat.unblink</a></li>
+
+                <li><a href="docs.html#topic-api-events-playlist-loaded">$playlist.loaded</a></li>
+                <li><a href="docs.html#topic-api-events-queue">$playlist.queue</a></li>
+                <li><a href="docs.html#topic-api-events-media-change">$playlist.media_change</a></li>
+                <li><a href="docs.html#topic-api-events-media-update">$playlist.media_update</a></li>
+                <li><a href="docs.html#topic-api-events-favorites">$playlist.favorites</a></li>
+                <li><a href="docs.html#topic-api-events-favorite-add">$playlist.favorite_add</a></li>
+                <li><a href="docs.html#topic-api-events-tags">$playlist.tags</a></li>
+                <li><a href="docs.html#topic-api-events-votes">$playlist.votes</a></li>
+                <li><a href="docs.html#topic-api-events-vote-value">$playlist.vote_value</a></li>
+                <li><a href="docs.html#topic-api-events-search-results">$playlist.search_results</a></li>
+            </ul>
+
+            <a href="docs.html#topic-examples" class="docs-tc-root">Examples</a>
+            <ul>
+                <li><a href="docs.html#topic-api-examples-favorites">Queuing Favorites</a></li>
+                <li><a href="docs.html#topic-api-examples-lucky">I'm Feeling Lucky</a></li>
+            </ul>
         </li>
     </ul>
 </div>
-    <div id="content">
-        <div class="content-box" style="margin-top: 20px; margin-bottom: 40px;">
-            <h2>How to Install</h2>
-            <ol id="how-to-install">
-                <li>
-                    1. Find the script you want to install and click
-                    <img src="images/copy_button.png" style="vertical-align: middle;margin: 0 6px;" />
-                </li>
-                <li>
-                    2. From <a href="https://upnext.fm">upnext.fm</a> click on
-                    <img src="images/site_options.png" style="vertical-align: middle;margin: 0 6px;" />
-                    and then click <img src="images/site_scripting.png" style="vertical-align: middle;margin: 0 6px;" />.
-                </li>
-                <li>
-                    3. Finally click <img src="images/site_install_script.png" style="vertical-align: middle;margin: 0 6px;" />
-                    and paste in the script URL that you copied in step 1, and press ENTER.
-                </li>
-            </ol>
+            <div class="col-sm-6">
+                
+    <ul id="scripts-list">
+        
+            <li id="script-gradients-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/gradients.js">Gradients</a>
+                        <a href="#script-gradients-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 2.2.5</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 5f6bf2e32f5e48c1d739668268d3cd8c</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/gradients.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Applies a color gradient to the messages you send.</p>
+                
+                
+                    
+                        <div class="screenshot">
+                            <img src="https://scripts.upnext.fm/images/gradients.png" alt="Screenshot" />
+                            <small>Example gradient messages.</small>
+                        </div>
+                    
+                        <div class="screenshot">
+                            <img src="https://scripts.upnext.fm/images/gradients_options.png" alt="Screenshot" />
+                            <small>The options menu.</small>
+                        </div>
+                    
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-protection-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/protection.js">Protection</a>
+                        <a href="#script-protection-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.9.8</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 3bb9f4a541731fa7fe7482f7277fb3ee</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/protection.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Provides protection against trolls and other nasty users.</p>
+                
+                
+                    
+                        <div class="screenshot">
+                            <img src="https://scripts.upnext.fm/images/protection_options.png" alt="Screenshot" />
+                            <small>The options menu.</small>
+                        </div>
+                    
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-greentext-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/greentext.js">Greentext</a>
+                        <a href="#script-greentext-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.0</li>
+                        <li><strong>Author:</strong> az4521</li>
+                        <li><strong>Checksum:</strong> fba91942b1f69dd26f39bfd5fc58c3e2</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/greentext.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Lets you do greentext by prefixing your message with the &gt; character.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-hide-bots-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/hide-bots.js">Hide Bots</a>
+                        <a href="#script-hide-bots-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.3</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 46598ba65d5a8a027a8d8b4329745a24</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/hide-bots.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Hides channel bots from the users list.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-last-seen-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/last-seen.js">Last Seen</a>
+                        <a href="#script-last-seen-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.1</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> f6f0f66d03c60b9a72d87c3b7e9ecac9</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/last-seen.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Creates a /seen command which displays the last time a user was seen in the lobby. For example &#39;/seen headzoo&#39;.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-lucky-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/lucky.js">Lucky</a>
+                        <a href="#script-lucky-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.2</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 94d17769b49b9949a3dc1ca526b7f300</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/lucky.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-macros-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/macros.js">Macros</a>
+                        <a href="#script-macros-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.4</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> b89bb4ac0d6daca0dc43d66606eea61a</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/macros.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Gives users the option to create macros, or &#39;shortcuts&#39; for long messages.</p>
+                
+                
+                    
+                        <div class="screenshot">
+                            <img src="https://scripts.upnext.fm/images/macros_options.png" alt="Screenshot" />
+                            <small>The options menu.</small>
+                        </div>
+                    
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-react-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/react.js">React</a>
+                        <a href="#script-react-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.5.2</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 1d434d0d09ac6ca2616b39e6f804713d</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/react.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-rock-paper-scissors-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/rock-paper-scissors.js">Rock, Paper, Scissors</a>
+                        <a href="#script-rock-paper-scissors-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.1</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 218ed9fb5c2bf671744a262d041b386e</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/rock-paper-scissors.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Play rock, paper, scissors against other users. Start a game by typing &#39;/rps &lt;player1&gt; &lt;player2&gt;&#39; or use only one player to play against the computer.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-scriptster-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/scriptster.js">Scriptster</a>
+                        <a href="#script-scriptster-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.2</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> f78530f526a8ccce194d5afb357b7d43</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/scriptster.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a &#39;Scripting&#39; button to the site navigation bar.</p>
+                
+                
+                    
+                        <div class="screenshot">
+                            <img src="https://scripts.upnext.fm/images/scriptster_options.png" alt="Screenshot" />
+                            <small>The editor with options showing.</small>
+                        </div>
+                    
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-azannoybutton-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/azannoybutton.js">Az Irritation Button</a>
+                        <a href="#script-azannoybutton-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.C</li>
+                        <li><strong>Author:</strong> az4521</li>
+                        <li><strong>Checksum:</strong> 4fc25c2a28ea8c9459a87e790c06fd9c</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/azannoybutton.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-8ball-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/8ball.js">Magic 8 Ball</a>
+                        <a href="#script-8ball-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.2</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> bf8e004dc5cb067281b18d54617a71a0</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/8ball.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Creates a /8ball command which finds answers to your questions from beyond our realm. Is it really magic? No one knows for sure. Only one person in the room should run this script.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-ping-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/ping.js">Ping</a>
+                        <a href="#script-ping-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.2</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 333730081ac48dfca5935a36d960bdab</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/ping.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Displays your server ping time in the top right hand corner of the page.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-ringtone-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/ringtone.js">Ringtone</a>
+                        <a href="#script-ringtone-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.2</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> cc508ffe008dda61d8272040f5b15649</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/ringtone.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Plays an MP3 when your name is mentioned in chat and you&#39;re not watching the chat window. Choose from the built in ringtones or use your own.</p>
+                
+                
+                    
+                        <div class="screenshot">
+                            <img src="https://scripts.upnext.fm/images/ringtone_options.png" alt="Screenshot" />
+                            <small>The ringtone options menu.</small>
+                        </div>
+                    
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+            <li id="script-aww-js" class="script-item card">
+                <div class="script-header">
+                    <h2>
+                        <a href="https://scripts.upnext.fm/script/aww.js">Aww</a>
+                        <a href="#script-aww-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
+                    </h2>
+                    <ul class="scripts-meta-list">
+                        <li><strong>Version:</strong> 1.1</li>
+                        <li><strong>Author:</strong> headzoo</li>
+                        <li><strong>Checksum:</strong> 6539cba2d2533500c8a2d79147c7a40a</li>
+                    </ul>
+                    <div class="input-group">
+                        <input value="https://scripts.upnext.fm/script/aww.js" type="text" class="form-control" readonly />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-copy" type="button">Copy</button>
+                        </span>
+                    </div>
+                </div>
+                <p>Creates an /aww command which sends a random cute pictures to the chat room.</p>
+                
+                
+    
+                <a href="#top" class="top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    Back to Top
+                </a>
+            </li>
+        
+    </ul>
+
+            </div>
         </div>
-        <div class="content-box" style="margin-top: 20px;">
-            <h2>Scripts</h2>
-        </div>
-        <ul id="scripts-list">
-            
-                <li id="script-gradients-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/gradients.js">Gradients</a>
-                            <a href="#script-gradients-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 2.2.5</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 5f6bf2e32f5e48c1d739668268d3cd8c</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/gradients.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Applies a color gradient to the messages you send.</p>
-
-                    
-                        
-                            <div class="screenshot">
-                                <img src="https://scripts.upnext.fm/images/gradients.png" alt="Screenshot" />
-                                <small>Example gradient messages.</small>
-                            </div>
-                        
-                            <div class="screenshot">
-                                <img src="https://scripts.upnext.fm/images/gradients_options.png" alt="Screenshot" />
-                                <small>The options menu.</small>
-                            </div>
-                        
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-protection-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/protection.js">Protection</a>
-                            <a href="#script-protection-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.9.8</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 3bb9f4a541731fa7fe7482f7277fb3ee</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/protection.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Provides protection against trolls and other nasty users.</p>
-
-                    
-                        
-                            <div class="screenshot">
-                                <img src="https://scripts.upnext.fm/images/protection_options.png" alt="Screenshot" />
-                                <small>The options menu.</small>
-                            </div>
-                        
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-greentext-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/greentext.js">Greentext</a>
-                            <a href="#script-greentext-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.0</li>
-                            <li><strong>Author:</strong> az4521</li>
-                            <li><strong>Checksum:</strong> fba91942b1f69dd26f39bfd5fc58c3e2</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/greentext.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Lets you do greentext by prefixing your message with the &gt; character.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-hide-bots-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/hide-bots.js">Hide Bots</a>
-                            <a href="#script-hide-bots-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.3</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 46598ba65d5a8a027a8d8b4329745a24</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/hide-bots.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Hides channel bots from the users list.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-last-seen-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/last-seen.js">Last Seen</a>
-                            <a href="#script-last-seen-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.1</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> f6f0f66d03c60b9a72d87c3b7e9ecac9</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/last-seen.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Creates a /seen command which displays the last time a user was seen in the lobby. For example &#39;/seen headzoo&#39;.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-lucky-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/lucky.js">Lucky</a>
-                            <a href="#script-lucky-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.2</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 94d17769b49b9949a3dc1ca526b7f300</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/lucky.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Creates a `/lucky` command, which searches YouTube using the query following the command, and queues the first video found.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-macros-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/macros.js">Macros</a>
-                            <a href="#script-macros-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.4</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> b89bb4ac0d6daca0dc43d66606eea61a</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/macros.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Gives users the option to create macros, or &#39;shortcuts&#39; for long messages.</p>
-
-                    
-                        
-                            <div class="screenshot">
-                                <img src="https://scripts.upnext.fm/images/macros_options.png" alt="Screenshot" />
-                                <small>The options menu.</small>
-                            </div>
-                        
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-react-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/react.js">React</a>
-                            <a href="#script-react-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.5.2</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 1d434d0d09ac6ca2616b39e6f804713d</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/react.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-rock-paper-scissors-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/rock-paper-scissors.js">Rock, Paper, Scissors</a>
-                            <a href="#script-rock-paper-scissors-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.1</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 218ed9fb5c2bf671744a262d041b386e</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/rock-paper-scissors.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Play rock, paper, scissors against other users. Start a game by typing &#39;/rps &lt;player1&gt; &lt;player2&gt;&#39; or use only one player to play against the computer.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-scriptster-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/scriptster.js">Scriptster</a>
-                            <a href="#script-scriptster-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.2</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> f78530f526a8ccce194d5afb357b7d43</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/scriptster.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a &#39;Scripting&#39; button to the site navigation bar.</p>
-
-                    
-                        
-                            <div class="screenshot">
-                                <img src="https://scripts.upnext.fm/images/scriptster_options.png" alt="Screenshot" />
-                                <small>The editor with options showing.</small>
-                            </div>
-                        
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-azannoybutton-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/azannoybutton.js">Az Irritation Button</a>
-                            <a href="#script-azannoybutton-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.C</li>
-                            <li><strong>Author:</strong> az4521</li>
-                            <li><strong>Checksum:</strong> 4fc25c2a28ea8c9459a87e790c06fd9c</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/azannoybutton.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-8ball-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/8ball.js">Magic 8 Ball</a>
-                            <a href="#script-8ball-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.2</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> bf8e004dc5cb067281b18d54617a71a0</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/8ball.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Creates a /8ball command which finds answers to your questions from beyond our realm. Is it really magic? No one knows for sure. Only one person in the room should run this script.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-ping-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/ping.js">Ping</a>
-                            <a href="#script-ping-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.2</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 333730081ac48dfca5935a36d960bdab</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/ping.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Displays your server ping time in the top right hand corner of the page.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-ringtone-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/ringtone.js">Ringtone</a>
-                            <a href="#script-ringtone-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.2</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> cc508ffe008dda61d8272040f5b15649</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/ringtone.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Plays an MP3 when your name is mentioned in chat and you&#39;re not watching the chat window. Choose from the built in ringtones or use your own.</p>
-
-                    
-                        
-                            <div class="screenshot">
-                                <img src="https://scripts.upnext.fm/images/ringtone_options.png" alt="Screenshot" />
-                                <small>The ringtone options menu.</small>
-                            </div>
-                        
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-                <li id="script-aww-js" class="script-item card">
-                    <div class="script-header">
-                        <h2>
-                            <a href="https://scripts.upnext.fm/script/aww.js">Aww</a>
-                            <a href="#script-aww-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                        </h2>
-                        <ul class="scripts-meta-list">
-                            <li><strong>Version:</strong> 1.1</li>
-                            <li><strong>Author:</strong> headzoo</li>
-                            <li><strong>Checksum:</strong> 6539cba2d2533500c8a2d79147c7a40a</li>
-                        </ul>
-                        <div class="input-group">
-                            <input value="https://scripts.upnext.fm/script/aww.js" type="text" class="form-control" readonly />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-copy" type="button">Copy</button>
-                            </span>
-                        </div>
-                    </div>
-                    <p>Creates an /aww command which sends a random cute pictures to the chat room.</p>
-
-                    
-
-                    <a href="#head" class="top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        Back to Top
-                    </a>
-                </li>
-            
-        </ul>
-    </div>
-<footer>
-    <p>Copyright © 2016 upnext.fm</p>
-    <p>
-        <a href="https://upnext.fm">upnext.fm</a> &middot;
-        <a href="https://github.com/upnextfm/scripts">GitHub</a> &middot;
-        <a href="meta.json">meta.json</a> &middot;
-        <a href="https://upnext.fm/contact">Contact</a>
-    </p>
-    <p>
-        <img src="images/logo-footer.png" />
-    </p>
-</footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="assets/prism.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
-<script>
-    new Clipboard('.btn', {
-        target: function(trigger) {
-            return $(trigger).parents(".input-group").find("input")[0];
-        }
-    });
-</script>
-</body>
+        <footer>
+            <p>Copyright &copy; 2016 upnext.fm</p>
+            <p>
+                <a href="https://upnext.fm">upnext.fm</a> &middot;
+                <a href="https://github.com/upnextfm/scripts">GitHub</a> &middot;
+                <a href="meta.json">meta.json</a> &middot;
+                <a href="https://upnext.fm/contact">Contact</a>
+            </p>
+            <p><img src="images/logo-footer.png" /></p>
+        </footer>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="assets/prism.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+        <script>
+            new Clipboard('.btn', {
+                target: function(trigger) {
+                    return $(trigger).parents(".input-group").find("input")[0];
+                }
+            });
+        </script>
+    </body>
 </html>

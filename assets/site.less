@@ -68,21 +68,8 @@ body {
   padding: 12px;
 }
 
-#head, #content, .content-box {
-  width: 950px;
-  margin: 0 auto;
-  
-  img {
-    max-width: 950px;
-  }
-}
-
-.content-box {
-  padding: 0 15px;
-}
-
 h1 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -91,12 +78,42 @@ h2 {
   font-weight: bold;
 }
 
-header {
-  padding: 0 12px 12px 12px;
+#sidebar {
+  h1 {
+    margin-bottom: 12px;
+  }
   
-  img {
-    height: 60px;
-    width: 314px;
+  li {
+    border-bottom: 1px solid #333;
+    
+    &:first-child {
+      border-top: 1px solid #333;
+    }
+    
+    a {
+      display: block;
+      color: #FFF;
+      text-decoration: none;
+      padding: 12px;
+      
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    &.active {
+      a {
+        background-color: #333;
+        
+        &:hover {
+          background-color: #444;
+        }
+      }
+    }
+    
+    & > ul li a {
+      padding-left: 22px;
+    }
   }
 }
 
@@ -113,7 +130,6 @@ footer {
 }
 
 #scripts-list {
-  margin: 12px;
   
   .script-item {
     width: 100%;
@@ -306,24 +322,4 @@ code {
     font-size: 18px;
     padding: 12px 0 0 0;
   }
-}
-
-#docs-table-of-contents {
-  margin: 20px 0;
-  a {
-    text-decoration: none;
-  }
-}
-
-.docs-tc-root {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.docs-toc-col {
-  margin-bottom: 20px;
-}
-
-.docs-toc-separator {
-  margin-bottom: 16px;
 }
