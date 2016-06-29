@@ -1,6 +1,6 @@
 /**
  * Name: Reaction GIFs
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: headzoo
  *
  * Displays a random image from replygif.net based on your search term
@@ -33,7 +33,7 @@
         });
     });
     
-    $api.on("send", function(e, data) {
+    $chat.on("send", function(e, data) {
         var msg = data.msg.toLowerCase();
         if (msg.indexOf("/react ") === 0) {
             var query = msg.replace("/react ", "");
@@ -41,10 +41,10 @@
             
             $proxy.getJSON(url, function(res) {
                 if (res.length == 0) {
-                    $api.notice("No reaction found.", true);
+                    $chat.notice("No reaction found.", true);
                 } else {
                     var item = res[Math.floor(Math.random()*res.length)];
-                    $api.send(item.file);
+                    $chat.send(item.file);
                 }
             });
             

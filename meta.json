@@ -86,10 +86,10 @@
   },
   "react.js": {
     "name": "React",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "53ea5155fa1af54f4c4639a14819052a",
+    "checksum": "1d434d0d09ac6ca2616b39e6f804713d",
     "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
     "source": "https://scripts.upnext.fm/script/react.js"
   },
