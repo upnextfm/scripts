@@ -44,10 +44,10 @@
   },
   "hide-bots.js": {
     "name": "Hide Bots",
-    "version": "1.2",
+    "version": "1.3",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "2a8898e6d2c11faa49a092637a1e6b0b",
+    "checksum": "46598ba65d5a8a027a8d8b4329745a24",
     "description": "Hides channel bots from the users list.",
     "source": "https://scripts.upnext.fm/script/hide-bots.js"
   },
