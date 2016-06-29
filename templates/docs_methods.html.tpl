@@ -1,4 +1,4 @@
-<h3 id="topic-api-methods">Methods</h3>
+<h1 id="topic-api-methods">Methods</h1>
 <p>
     The API contains a few methods for interacting with the channel. For instance to send messages,
     queue songs, and vote skip videos.

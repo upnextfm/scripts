@@ -1,4 +1,4 @@
-<h3 id="topic-api-events">Events</h3>
+<h1 id="topic-api-events">Events</h1>
 <p>
     Interacting with the channel is mostly done through the use of event callbacks. The following code
     demonstrates the use of callbacks to CAPITALIZE every message you send. Callbacks are registered

@@ -7,6 +7,7 @@
         <meta name="description" content="Official upnext.fm user scripting repository and documentation.">
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="favicon.ico" rel="icon" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/site.css" rel="stylesheet">
         <link href="assets/prism.css" rel="stylesheet">
@@ -32,7 +33,6 @@
             <p><img src="images/logo-footer.png" /></p>
         </footer>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="assets/prism.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>

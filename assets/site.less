@@ -60,27 +60,32 @@ ul, li {
 
 
 body {
-  background-color: #000;
+  background: #000000 url(../images/background.jpg) top center no-repeat;
   color: #FFF;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Consolas, Monaco, monospace;
   font-size: 14px;
   line-height: 1.42857143;
   padding: 12px;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
+  color: #DC9F39;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 #sidebar {
   h1 {
     margin-bottom: 12px;
+  }
+  
+  .sidebar-items {
+    margin-top: 20px;
   }
   
   li {
@@ -95,14 +100,24 @@ h2 {
       color: #FFF;
       text-decoration: none;
       padding: 12px;
+      font-size: 12px;
       
       &:hover {
         background-color: #444;
       }
+      
+      &.docs-tc-root {
+        font-weight: bold;
+        font-size: 14px;
+        
+        &.sub {
+          padding-left: 22px;
+        }
+      }
     }
 
     &.active {
-      a {
+      & > a {
         background-color: #333;
         
         &:hover {
@@ -111,8 +126,8 @@ h2 {
       }
     }
     
-    & > ul li a {
-      padding-left: 22px;
+    ul li a {
+      padding-left: 32px;
     }
   }
 }
@@ -135,7 +150,7 @@ footer {
     width: 100%;
     margin-bottom: 10px;
     
-    h2 {
+    h1 {
       margin-bottom: 12px;
       
       .glyphicon {
@@ -259,8 +274,7 @@ code {
 
 
 #docs-container {
-  margin: 22px 15px;
-  font-family: Consolas, Monaco, monospace;
+  
   color: #FFF;
 
   h1 {

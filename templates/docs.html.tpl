@@ -4,6 +4,7 @@
         Back to Top
     </a>
 {% endmacro %}
+{% set active_sidebar_item = "docs" %}
 {% extends "layout.html.tpl" %}
 {% block content %}
     <div id="docs-container">

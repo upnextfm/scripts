@@ -1,4 +1,4 @@
-<h3 id="topic-examples">Examples</h3>
+<h1 id="topic-examples">Examples</h1>
 <h5 id="topic-api-examples-favorites">Queuing Favorites</h5>
 <p>
     A user script that automatically queues one of your favorite videos every

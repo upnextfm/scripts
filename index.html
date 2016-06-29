@@ -7,6 +7,7 @@
         <meta name="description" content="Official upnext.fm user scripting repository and documentation.">
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="favicon.ico" rel="icon" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/site.css" rel="stylesheet">
         <link href="assets/prism.css" rel="stylesheet">
@@ -16,134 +17,138 @@
             <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
         </a>
         <div class="row">
-            <div id="sidebar" class="col-sm-2 col-sm-offset-1">
+            <div id="sidebar" class="col-sm-2 col-sm-offset-1 card">
     <img src="images/logo.png" style="width: 100%;" />
-    <h1>Official upnext.fm script repository and API documentation.</h1>
-    <ul>
+    <h2>Official upnext.fm script repository and API documentation.</h2>
+    <ul class="sidebar-items">
         <li class="active">
-            <a href="index.html">Scripts</a>
+            <a href="index.html" class="docs-tc-root">Scripts</a>
         </li>
         <li>
-            <a href="installing.html">How To Install Scripts</a>
+            <a href="installing.html" class="docs-tc-root">How To Install Scripts</a>
         </li>
         <li>
-            <a href="docs.html">API Documentation</a>
-            <ul>
-                <li><a href="docs.html#topic-api-api">$api</a></li>
-                <li><a href="docs.html#topic-api-chat">$chat</a></li>
-                <li><a href="docs.html#topic-api-playlist">$playlist</a></li>
-                <li><a href="docs.html#topic-api-channel">$channel</a></li>
-                <li><a href="docs.html#topic-api-user">$user</a></li>
-                <li><a href="docs.html#topic-api-options">$options</a></li>
-                <li><a href="docs.html#topic-api-proxy">$proxy</a></li>
-                <li><a href="docs.html#topic-api-store">$store</a></li>
-                <li><a href="docs.html#topic-api-timer">$timer</a></li>
-                <li><a href="docs.html#topic-api-script">$script</a></li>
-                <li><a href="docs.html#topic-api-stylesheet">$stylesheet</a></li>
-                <li><a href="docs.html#topic-api-first-script">First Script</a></li>
-            </ul>
-
-            <a href="docs.html#topic-properties" class="docs-tc-root">Properties</a>
-            <ul>
-                <li><a href="docs.html#topic-properties-version">$api.version</a></li>
-            </ul>
-
-            <a href="docs.html#topic-api-methods" class="docs-tc-root">Methods</a>
-            <ul>
-                <li><a href="docs.html#topic-api-methods-send">$chat.send()</a></li>
-                <li><a href="docs.html#topic-api-methods-notice">$chat.notice()</a></li>
-                <li><a href="docs.html#topic-api-methods-command">$chat.command()</a></li>
-                <li><a href="docs.html#topic-api-methods-toast">$chat.toast()</a></li>
-                <li><a href="docs.html#topic-api-methods-clear">$chat.clear()</a></li>
-                <li><a href="docs.html#topic-api-methods-color">$chat.color()</a></li>
-                <li><a href="docs.html#topic-api-methods-ignore">$chat.ignore()</a></li>
-                <li><a href="docs.html#topic-api-methods-unignore">$chat.unignore()</a></li>
-                <li><a href="docs.html#topic-api-methods-kick">$chat.kick()</a></li>
-                <li><a href="docs.html#topic-api-methods-mute">$chat.mute()</a></li>
-                <li><a href="docs.html#topic-api-methods-smute">$chat.smute()</a></li>
-                <li><a href="docs.html#topic-api-methods-unmute">$chat.unmute()</a></li>
-                <li><a href="docs.html#topic-api-methods-ban-by-name">$chat.banByName()</a></li>
-                <li><a href="docs.html#topic-api-methods-ban-by-ip">$chat.banByIP()</a></li>
-                <li><a href="docs.html#topic-api-methods-users">$chat.users()</a></li>
-
-                <li><a href="docs.html#topic-api-methods-playlist-queue">$playlist.queue()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-dequeue-by-name">$playlist.dequeueByName()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-skip">$playlist.skip()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-vote">$playlist.vote()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-clear">$playlist.clear()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-shuffle">$playlist.shuffle()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-lock">$playlist.lock()</a></li>
-                <li><a href="docs.html#topic-api-methods-playlist-search">$playlist.search()</a></li>
-
-                <li><a href="docs.html#topic-api-methods-set-storage">$store.local.set()</a></li>
-                <li><a href="docs.html#topic-api-methods-get-storage">$store.local.get()</a></li>
-                <li><a href="docs.html#topic-api-methods-remove-storage">$store.local.remove()</a></li>
-                <li><a href="docs.html#topic-api-methods-set-database">$store.database.set()</a></li>
-                <li><a href="docs.html#topic-api-methods-get-database">$store.database.get()</a></li>
-                <li><a href="docs.html#topic-api-methods-remove-database">$store.database.remove()</a></li>
-                <li><a href="docs.html#topic-api-methods-keys-database">$store.database.keys()</a></li>
-
-                <li><a href="docs.html#topic-api-methods-timer-interval">$timer.interval()</a></li>
-                <li><a href="docs.html#topic-api-methods-timer-once">$timer.once()</a></li>
-                <li><a href="docs.html#topic-api-methods-timer-clear">$timer.clear()</a></li>
-                <li><a href="docs.html#topic-api-methods-timer-clear-all">$timer.clearAll()</a></li>
-                <li><a href="docs.html#topic-api-methods-timer-has">$timer.has()</a></li>
-            </ul>
-
-            <a href="docs.html#topic-api-events" class="docs-tc-root">Events</a>
-            <ul>
-                <li><a href="docs.html#topic-api-events-delete-script">$api.delete_script</a></li>
-                <li><a href="docs.html#topic-api-events-save-scripts">$api.save_scripts</a></li>
-
-                <li><a href="docs.html#topic-api-events-loaded">$chat.loaded</a></li>
-                <li><a href="docs.html#topic-api-events-reloaded">$chat.reloaded</a></li>
-                <li><a href="docs.html#topic-api-events-receive">$chat.receive</a></li>
-                <li><a href="docs.html#topic-api-events-send">$chat.send</a></li>
-                <li><a href="docs.html#topic-api-events-notice">$chat.notice</a></li>
-                <li><a href="docs.html#topic-api-events-whisper">$chat.whisper</a></li>
-                <li><a href="docs.html#topic-api-events-command">$chat.command</a></li>
-                <li><a href="docs.html#topic-api-events-user-join">$chat.user_join</a></li>
-                <li><a href="docs.html#topic-api-events-user-leave">$chat.user_leave</a></li>
-                <li><a href="docs.html#topic-api-events-emotes-personal">$chat.emotes_personal</a></li>
-                <li><a href="docs.html#topic-api-events-emotes-channel">$chat.emotes_channel</a></li>
-                <li><a href="docs.html#topic-api-events-afk">$chat.afk</a></li>
-                <li><a href="docs.html#topic-api-events-profile-menu">$chat.profile_menu</a></li>
-                <li><a href="docs.html#topic-api-events-user-options-save">$chat.user_options_save</a></li>
-                <li><a href="docs.html#topic-api-events-channel-option-save">$chat.channel_option_save</a></li>
-                <li><a href="docs.html#topic-api-events-color-change">$chat.color_change</a></li>
-                <li><a href="docs.html#topic-api-events-blink">$chat.blink</a></li>
-                <li><a href="docs.html#topic-api-events-unblink">$chat.unblink</a></li>
-
-                <li><a href="docs.html#topic-api-events-playlist-loaded">$playlist.loaded</a></li>
-                <li><a href="docs.html#topic-api-events-queue">$playlist.queue</a></li>
-                <li><a href="docs.html#topic-api-events-media-change">$playlist.media_change</a></li>
-                <li><a href="docs.html#topic-api-events-media-update">$playlist.media_update</a></li>
-                <li><a href="docs.html#topic-api-events-favorites">$playlist.favorites</a></li>
-                <li><a href="docs.html#topic-api-events-favorite-add">$playlist.favorite_add</a></li>
-                <li><a href="docs.html#topic-api-events-tags">$playlist.tags</a></li>
-                <li><a href="docs.html#topic-api-events-votes">$playlist.votes</a></li>
-                <li><a href="docs.html#topic-api-events-vote-value">$playlist.vote_value</a></li>
-                <li><a href="docs.html#topic-api-events-search-results">$playlist.search_results</a></li>
-            </ul>
-
-            <a href="docs.html#topic-examples" class="docs-tc-root">Examples</a>
-            <ul>
-                <li><a href="docs.html#topic-api-examples-favorites">Queuing Favorites</a></li>
-                <li><a href="docs.html#topic-api-examples-lucky">I'm Feeling Lucky</a></li>
-            </ul>
+            <a href="docs.html" class="docs-tc-root">API Documentation</a>
+            <div class="hidden">
+                <a href="docs.html#topic-api-api" class="docs-tc-root sub">Overview</a>
+                <ul id="sidebar-item-api">
+                    <li><a href="docs.html#topic-api-api">$api</a></li>
+                    <li><a href="docs.html#topic-api-chat">$chat</a></li>
+                    <li><a href="docs.html#topic-api-playlist">$playlist</a></li>
+                    <li><a href="docs.html#topic-api-channel">$channel</a></li>
+                    <li><a href="docs.html#topic-api-user">$user</a></li>
+                    <li><a href="docs.html#topic-api-options">$options</a></li>
+                    <li><a href="docs.html#topic-api-proxy">$proxy</a></li>
+                    <li><a href="docs.html#topic-api-store">$store</a></li>
+                    <li><a href="docs.html#topic-api-timer">$timer</a></li>
+                    <li><a href="docs.html#topic-api-script">$script</a></li>
+                    <li><a href="docs.html#topic-api-stylesheet">$stylesheet</a></li>
+                    <li><a href="docs.html#topic-api-first-script">First Script</a></li>
+                </ul>
+                
+                <a href="docs.html#topic-properties" class="docs-tc-root sub">Properties</a>
+                <ul id="sidebar-item-properties">
+                    <li><a href="docs.html#topic-properties-version">$api.version</a></li>
+                </ul>
+    
+                <a href="docs.html#topic-api-methods" class="docs-tc-root sub">Methods</a>
+                <ul id="sidebar-item-methods">
+                    <li><a href="docs.html#topic-api-methods-send">$chat.send()</a></li>
+                    <li><a href="docs.html#topic-api-methods-notice">$chat.notice()</a></li>
+                    <li><a href="docs.html#topic-api-methods-command">$chat.command()</a></li>
+                    <li><a href="docs.html#topic-api-methods-toast">$chat.toast()</a></li>
+                    <li><a href="docs.html#topic-api-methods-clear">$chat.clear()</a></li>
+                    <li><a href="docs.html#topic-api-methods-color">$chat.color()</a></li>
+                    <li><a href="docs.html#topic-api-methods-ignore">$chat.ignore()</a></li>
+                    <li><a href="docs.html#topic-api-methods-unignore">$chat.unignore()</a></li>
+                    <li><a href="docs.html#topic-api-methods-kick">$chat.kick()</a></li>
+                    <li><a href="docs.html#topic-api-methods-mute">$chat.mute()</a></li>
+                    <li><a href="docs.html#topic-api-methods-smute">$chat.smute()</a></li>
+                    <li><a href="docs.html#topic-api-methods-unmute">$chat.unmute()</a></li>
+                    <li><a href="docs.html#topic-api-methods-ban-by-name">$chat.banByName()</a></li>
+                    <li><a href="docs.html#topic-api-methods-ban-by-ip">$chat.banByIP()</a></li>
+                    <li><a href="docs.html#topic-api-methods-users">$chat.users()</a></li>
+    
+                    <li><a href="docs.html#topic-api-methods-playlist-queue">$playlist.queue()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-dequeue-by-name">$playlist.dequeueByName()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-skip">$playlist.skip()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-vote">$playlist.vote()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-clear">$playlist.clear()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-shuffle">$playlist.shuffle()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-lock">$playlist.lock()</a></li>
+                    <li><a href="docs.html#topic-api-methods-playlist-search">$playlist.search()</a></li>
+    
+                    <li><a href="docs.html#topic-api-methods-set-storage">$store.local.set()</a></li>
+                    <li><a href="docs.html#topic-api-methods-get-storage">$store.local.get()</a></li>
+                    <li><a href="docs.html#topic-api-methods-remove-storage">$store.local.remove()</a></li>
+                    <li><a href="docs.html#topic-api-methods-set-database">$store.database.set()</a></li>
+                    <li><a href="docs.html#topic-api-methods-get-database">$store.database.get()</a></li>
+                    <li><a href="docs.html#topic-api-methods-remove-database">$store.database.remove()</a></li>
+                    <li><a href="docs.html#topic-api-methods-keys-database">$store.database.keys()</a></li>
+    
+                    <li><a href="docs.html#topic-api-methods-timer-interval">$timer.interval()</a></li>
+                    <li><a href="docs.html#topic-api-methods-timer-once">$timer.once()</a></li>
+                    <li><a href="docs.html#topic-api-methods-timer-clear">$timer.clear()</a></li>
+                    <li><a href="docs.html#topic-api-methods-timer-clear-all">$timer.clearAll()</a></li>
+                    <li><a href="docs.html#topic-api-methods-timer-has">$timer.has()</a></li>
+                </ul>
+    
+                <a href="docs.html#topic-api-events" class="docs-tc-root sub">Events</a>
+                <ul id="sidebar-item-events">
+                    <li><a href="docs.html#topic-api-events-delete-script">$api.delete_script</a></li>
+                    <li><a href="docs.html#topic-api-events-save-scripts">$api.save_scripts</a></li>
+    
+                    <li><a href="docs.html#topic-api-events-loaded">$chat.loaded</a></li>
+                    <li><a href="docs.html#topic-api-events-reloaded">$chat.reloaded</a></li>
+                    <li><a href="docs.html#topic-api-events-receive">$chat.receive</a></li>
+                    <li><a href="docs.html#topic-api-events-send">$chat.send</a></li>
+                    <li><a href="docs.html#topic-api-events-notice">$chat.notice</a></li>
+                    <li><a href="docs.html#topic-api-events-whisper">$chat.whisper</a></li>
+                    <li><a href="docs.html#topic-api-events-command">$chat.command</a></li>
+                    <li><a href="docs.html#topic-api-events-user-join">$chat.user_join</a></li>
+                    <li><a href="docs.html#topic-api-events-user-leave">$chat.user_leave</a></li>
+                    <li><a href="docs.html#topic-api-events-emotes-personal">$chat.emotes_personal</a></li>
+                    <li><a href="docs.html#topic-api-events-emotes-channel">$chat.emotes_channel</a></li>
+                    <li><a href="docs.html#topic-api-events-afk">$chat.afk</a></li>
+                    <li><a href="docs.html#topic-api-events-profile-menu">$chat.profile_menu</a></li>
+                    <li><a href="docs.html#topic-api-events-user-options-save">$chat.user_options_save</a></li>
+                    <li><a href="docs.html#topic-api-events-channel-option-save">$chat.channel_option_save</a></li>
+                    <li><a href="docs.html#topic-api-events-color-change">$chat.color_change</a></li>
+                    <li><a href="docs.html#topic-api-events-blink">$chat.blink</a></li>
+                    <li><a href="docs.html#topic-api-events-unblink">$chat.unblink</a></li>
+    
+                    <li><a href="docs.html#topic-api-events-playlist-loaded">$playlist.loaded</a></li>
+                    <li><a href="docs.html#topic-api-events-queue">$playlist.queue</a></li>
+                    <li><a href="docs.html#topic-api-events-media-change">$playlist.media_change</a></li>
+                    <li><a href="docs.html#topic-api-events-media-update">$playlist.media_update</a></li>
+                    <li><a href="docs.html#topic-api-events-favorites">$playlist.favorites</a></li>
+                    <li><a href="docs.html#topic-api-events-favorite-add">$playlist.favorite_add</a></li>
+                    <li><a href="docs.html#topic-api-events-tags">$playlist.tags</a></li>
+                    <li><a href="docs.html#topic-api-events-votes">$playlist.votes</a></li>
+                    <li><a href="docs.html#topic-api-events-vote-value">$playlist.vote_value</a></li>
+                    <li><a href="docs.html#topic-api-events-search-results">$playlist.search_results</a></li>
+                </ul>
+    
+                <a href="docs.html#topic-examples" class="docs-tc-root sub">Examples</a>
+                <ul id="sidebar-item-examples">
+                    <li><a href="docs.html#topic-api-examples-favorites">Queuing Favorites</a></li>
+                    <li><a href="docs.html#topic-api-examples-lucky">I'm Feeling Lucky</a></li>
+                </ul>
+            </div>
         </li>
     </ul>
 </div>
+
             <div class="col-sm-6">
                 
     <ul id="scripts-list">
         
             <li id="script-gradients-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/gradients.js">Gradients</a>
                         <a href="#script-gradients-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 2.2.5</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -180,10 +185,10 @@
         
             <li id="script-protection-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/protection.js">Protection</a>
                         <a href="#script-protection-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.9.8</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -215,10 +220,10 @@
         
             <li id="script-greentext-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/greentext.js">Greentext</a>
                         <a href="#script-greentext-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.0</li>
                         <li><strong>Author:</strong> az4521</li>
@@ -243,10 +248,10 @@
         
             <li id="script-hide-bots-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/hide-bots.js">Hide Bots</a>
                         <a href="#script-hide-bots-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.3</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -271,10 +276,10 @@
         
             <li id="script-last-seen-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/last-seen.js">Last Seen</a>
                         <a href="#script-last-seen-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.1</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -299,10 +304,10 @@
         
             <li id="script-lucky-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/lucky.js">Lucky</a>
                         <a href="#script-lucky-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.2</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -327,10 +332,10 @@
         
             <li id="script-macros-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/macros.js">Macros</a>
                         <a href="#script-macros-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.4</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -362,10 +367,10 @@
         
             <li id="script-react-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/react.js">React</a>
                         <a href="#script-react-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.5.2</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -390,10 +395,10 @@
         
             <li id="script-rock-paper-scissors-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/rock-paper-scissors.js">Rock, Paper, Scissors</a>
                         <a href="#script-rock-paper-scissors-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.1</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -418,10 +423,10 @@
         
             <li id="script-scriptster-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/scriptster.js">Scriptster</a>
                         <a href="#script-scriptster-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.2</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -453,10 +458,10 @@
         
             <li id="script-azannoybutton-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/azannoybutton.js">Az Irritation Button</a>
                         <a href="#script-azannoybutton-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.C</li>
                         <li><strong>Author:</strong> az4521</li>
@@ -481,10 +486,10 @@
         
             <li id="script-8ball-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/8ball.js">Magic 8 Ball</a>
                         <a href="#script-8ball-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.2</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -509,10 +514,10 @@
         
             <li id="script-ping-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/ping.js">Ping</a>
                         <a href="#script-ping-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.2</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -537,10 +542,10 @@
         
             <li id="script-ringtone-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/ringtone.js">Ringtone</a>
                         <a href="#script-ringtone-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.2</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -572,10 +577,10 @@
         
             <li id="script-aww-js" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="https://scripts.upnext.fm/script/aww.js">Aww</a>
                         <a href="#script-aww-js" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> 1.1</li>
                         <li><strong>Author:</strong> headzoo</li>
@@ -613,7 +618,6 @@
             <p><img src="images/logo-footer.png" /></p>
         </footer>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="assets/prism.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>

@@ -1,4 +1,4 @@
-<h3 id="topic-overview-api">API</h3>
+<h1 id="topic-overview-api">API</h1>
 <p>
     Several objects are available to user scripts.
 </p>

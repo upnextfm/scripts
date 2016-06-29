@@ -5,10 +5,10 @@
         {% for filename, script in meta %}
             <li id="script-{{ filename|safeName }}" class="script-item card">
                 <div class="script-header">
-                    <h2>
+                    <h1>
                         <a href="{{ script.source }}">{{ script.name }}</a>
                         <a href="#script-{{ filename|safeName }}" class="glyphicon glyphicon-link pull-right" title="Permalink"></a>
-                    </h2>
+                    </h1>
                     <ul class="scripts-meta-list">
                         <li><strong>Version:</strong> {{ script.version }}</li>
                         <li><strong>Author:</strong> {{ script.author }}</li>

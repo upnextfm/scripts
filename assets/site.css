@@ -119,23 +119,27 @@ li {
   box-sizing: border-box;
 }
 body {
-  background-color: #000;
+  background: #000000 url(../images/background.jpg) top center no-repeat;
   color: #FFF;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Consolas, Monaco, monospace;
   font-size: 14px;
   line-height: 1.42857143;
   padding: 12px;
 }
 h1 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
+  color: #DC9F39;
 }
 h2 {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
 }
 #sidebar h1 {
   margin-bottom: 12px;
+}
+#sidebar .sidebar-items {
+  margin-top: 20px;
 }
 #sidebar li {
   border-bottom: 1px solid #333;
@@ -148,18 +152,26 @@ h2 {
   color: #FFF;
   text-decoration: none;
   padding: 12px;
+  font-size: 12px;
 }
 #sidebar li a:hover {
   background-color: #444;
 }
-#sidebar li.active a {
+#sidebar li a.docs-tc-root {
+  font-weight: bold;
+  font-size: 14px;
+}
+#sidebar li a.docs-tc-root.sub {
+  padding-left: 22px;
+}
+#sidebar li.active > a {
   background-color: #333;
 }
-#sidebar li.active a:hover {
+#sidebar li.active > a:hover {
   background-color: #444;
 }
-#sidebar li > ul li a {
-  padding-left: 22px;
+#sidebar li ul li a {
+  padding-left: 32px;
 }
 footer {
   height: 80px;
@@ -175,19 +187,19 @@ footer img {
   width: 100%;
   margin-bottom: 10px;
 }
-#scripts-list .script-item h2 {
+#scripts-list .script-item h1 {
   margin-bottom: 12px;
 }
-#scripts-list .script-item h2 .glyphicon {
+#scripts-list .script-item h1 .glyphicon {
   font-size: 14px;
 }
-#scripts-list .script-item h2 .glyphicon-link {
+#scripts-list .script-item h1 .glyphicon-link {
   color: #A27427;
 }
-#scripts-list .script-item h2 a {
+#scripts-list .script-item h1 a {
   color: #DC9F39;
 }
-#scripts-list .script-item h2 a a:hover {
+#scripts-list .script-item h1 a a:hover {
   text-decoration: none;
   color: #e4b464;
 }
@@ -276,8 +288,6 @@ code {
   text-transform: uppercase;
 }
 #docs-container {
-  margin: 22px 15px;
-  font-family: Consolas, Monaco, monospace;
   color: #FFF;
 }
 #docs-container h1 {
