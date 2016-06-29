@@ -71,10 +71,10 @@
   },
   "macros.js": {
     "name": "Macros",
-    "version": "1.3",
+    "version": "1.4",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "7f69052baff2c7a31701589a4f934ded",
+    "checksum": "b89bb4ac0d6daca0dc43d66606eea61a",
     "description": "Gives users the option to create macros, or 'shortcuts' for long messages.",
     "source": "https://scripts.upnext.fm/script/macros.js",
     "screenshots": [

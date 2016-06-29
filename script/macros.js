@@ -1,6 +1,6 @@
 /**
  * Name: Macros
- * Version: 1.3
+ * Version: 1.4
  *
  * Gives users the option to create macros, or "shortcuts" for long messages.
  *
@@ -245,13 +245,13 @@
     });
     
     // Called when the chat api is loaded.
-    $api.on("loaded", function() {
+    $chat.on("loaded", function() {
         addOptions();
     });
     
     // Called when the user sends a message. Process any macros found in
     // the message.
-    $api.on("send", function(e, data) {
+    $chat.on("send", function(e, data) {
         $each(handlers, function(handler) {
             data.msg = parseMessage(handler.group, handler.value, data.msg);
         });
