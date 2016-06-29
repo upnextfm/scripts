@@ -146,10 +146,10 @@
   },
   "ringtone.js": {
     "name": "Ringtone",
-    "version": "1.1",
+    "version": "1.2",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "fc7b96e67f78a2d30e0d7a0f0b704bbc",
+    "checksum": "cc508ffe008dda61d8272040f5b15649",
     "description": "Plays an MP3 when your name is mentioned in chat and you're not watching the chat window. Choose from the built in ringtones or use your own.",
     "source": "https://scripts.upnext.fm/script/ringtone.js",
     "screenshots": [

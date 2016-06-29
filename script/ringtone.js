@@ -1,6 +1,6 @@
 /**
  * Name: Ringtone
- * Version: 1.1
+ * Version: 1.2
  * Author: headzoo
  * 
  * Plays an MP3 when your name is mentioned in chat and you're not watching the
@@ -179,7 +179,7 @@
     };
     
     // Save the mp3 url to local storage.
-    $api.on("user_options_save", function() {
+    $chat.on("user_options_save", function() {
         stopTest();
         
         $store.local.set("ringtone-volume", volume);
@@ -202,7 +202,7 @@
     });
     
     // Play the audio when the page blinks.
-    $api.on("blink", function() {
+    $chat.on("blink", function() {
         if (mp3_url) {
             audio[0].volume = volume;
             audio[0].play();
@@ -210,7 +210,7 @@
     });
     
     // Stop the audio when the page stops blinking.
-    $api.on("unblink", function() {
+    $chat.on("unblink", function() {
         if (mp3_url) {
             audio[0].pause();
             audio[0].currentTime = 0;
@@ -218,7 +218,7 @@
     });
     
     // Setup.
-    $api.on("loaded", function() {
+    $chat.on("loaded", function() {
         mp3_url     = $store.local.get("ringtone-url", "");
         mp3_include = $store.local.get("ringtone-include", "0");
         volume      = $store.local.get("ringtone-volume", 1);
