@@ -1,6 +1,6 @@
 /**
  * Name: Gradients
- * Version: 2.2.4
+ * Version: 2.2.5
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -30,7 +30,7 @@
     var DEFAULT_COLOR_COUNT = 5;
     var DEFAULT_MODE        = "stretch";
     var MARK                = "Gradients Script";
-    var MARK_VERSION        = "v2.2";
+    var MARK_VERSION        = "v2.2.5";
     var REGEX_EMOTE         = new RegExp(':([^:]+):', "g");
     var REGEX_URL           = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:/~+#-]*[\\w@?^=%&amp;/~+#-])?', "gi");
     var REGEX_MACRO         = new RegExp('@([^@]+)@', "g");
@@ -503,7 +503,7 @@
                 "[" + Colorizer.colors[i] + "]" + Colorizer.colors[i].toUpperCase() + "[/#] "
             )
         }
-        $api.send("[#FFFFFF]" + MARK + " " + MARK_VERSION + ":[/#] " + my_colors.join(" "));
+        $chat.send("[#FFFFFF]" + MARK + " " + MARK_VERSION + ":[/#] " + my_colors.join(" "));
     };
     
     var removeColorCodes = function(msg) {
@@ -540,7 +540,7 @@
             saveSettings();
             updatePickers();
             updatePreview();
-            $api.toast("The colors have been imported.");
+            $chat.toast("The colors have been imported.");
         }
     };
     
@@ -566,7 +566,7 @@
         });
     };
     
-    $api.on("loaded", function() {
+    $chat.on("loaded", function() {
         restoreSettings();
         addStylesheet();
         addOptions();
@@ -615,11 +615,11 @@
         });
     });
     
-    $api.on("user_options_save", function() {
+    $chat.on("user_options_save", function() {
         saveSettings();
     });
     
-    $api.on("send", function(e, data) {
+    $chat.on("send", function(e, data) {
         if (data.msg.match(/^\/colou?rs/i)) {
             var args = data.msg.replace(/^\/colou?rs\s+/i, '');
             if (args.toLowerCase() == "share") {

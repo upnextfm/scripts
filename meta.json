@@ -1,10 +1,10 @@
 {
   "gradients.js": {
     "name": "Gradients",
-    "version": "2.2.4",
+    "version": "2.2.5",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "faf002803d2571b09d628097bbee3f01",
+    "checksum": "5f6bf2e32f5e48c1d739668268d3cd8c",
     "description": "Applies a color gradient to the messages you send.",
     "source": "https://scripts.upnext.fm/script/gradients.js",
     "screenshots": [
@@ -92,21 +92,6 @@
     "checksum": "53ea5155fa1af54f4c4639a14819052a",
     "description": "Creates a `/react` command, which displays a random image from http://replygif.net based on your search term. Now includes auto complete suggestions.",
     "source": "https://scripts.upnext.fm/script/react.js"
-  },
-  "buddy.js": {
-    "name": "Buddy",
-    "version": "1.1",
-    "author": "headzoo",
-    "site": "https://github.com/upnextfm/scripts",
-    "checksum": "c6dfb6e3547b474b926ed7028de26f1d",
-    "description": "Displays your notices and whispers in a separate chat window.",
-    "source": "https://scripts.upnext.fm/script/buddy.js",
-    "screenshots": [
-      {
-        "src": "https://scripts.upnext.fm/images/buddy.png",
-        "description": "Notices and whispers are shown in their own window below chat."
-      }
-    ]
   },
   "rock-paper-scissors.js": {
     "name": "Rock, Paper, Scissors",
