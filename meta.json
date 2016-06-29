@@ -104,10 +104,10 @@
   },
   "scriptster.js": {
     "name": "Scriptster",
-    "version": "1.1",
+    "version": "1.2",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "c5d599ce43c08cbc1dd5cfda7b87acda",
+    "checksum": "f78530f526a8ccce194d5afb357b7d43",
     "description": "Tools for upnext.fm script writers. Turns the script editor into a full IDE and adds a 'Scripting' button to the site navigation bar.",
     "source": "https://scripts.upnext.fm/script/scriptster.js",
     "screenshots": [

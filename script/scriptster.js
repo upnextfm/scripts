@@ -1,6 +1,6 @@
 /**
  * Name: Scriptster
- * Version: 1.1
+ * Version: 1.2
  * Import: https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js
  *
  * Turns the script editor into a full IDE and adds a "Scripting" button
@@ -286,7 +286,7 @@
     
     // Use the reloading event to remove the elements and events
     // we added to the page.
-    $api.on("reloading", function() {
+    $chat.on("reloading", function() {
         $each(elements, function(element, name) {
             if (name != "settings") {
                 element.off();
@@ -301,7 +301,7 @@
     });
     
     // Start!
-    $api.on("loaded", function() {
+    $chat.on("loaded", function() {
         initNavTab();
         initSettingsModel();
         initEditors();
