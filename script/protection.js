@@ -1,6 +1,6 @@
 /**
  * Name: Protection
- * Version: 1.9.6
+ * Version: 1.9.7
  * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
@@ -305,8 +305,26 @@
         return found;
     };
     
+    // Vote skip troll videos.
+    $playlist.on("media_change", function(e, data) {
+        if (isTroll(data.queueby) && settings.vote_skip) {
+            setTimeout(function() {
+                $playlist.skip();
+            }, 2000);
+        }
+    });
+    
+    // Stop trolls from queuing songs.
+    $playlist.on("queue", function(e, data) {
+        if (no_queue.indexOf(data.item.queueby) != -1) {
+            setTimeout(function() {
+                $playlist.dequeueByName(data.item.queueby);
+            }, 1000);
+        }
+    });
+    
     // Add profile menu options for each user.
-    $api.on("profile_menu", function(e, menu) {
+    $chat.on("profile_menu", function(e, menu) {
         setupProfileMenu(menu);
         if (isTroll(menu.data("name"))) {
             setTimeout(function() {
@@ -317,7 +335,7 @@
     });
     
     // Filter messages from users that have been put in troll prison.
-    $api.on("receive", function(e, data) {
+    $chat.on("receive", function(e, data) {
         buffer.push(data);
         if (buffer.length > BUFFER_SIZE) {
             buffer.shift();
@@ -348,26 +366,24 @@
         }
     });
     
-    // Vote skip troll videos.
-    $api.on("media_change", function(e, data) {
-        if (isTroll(data.queueby) && settings.vote_skip) {
-            setTimeout(function() {
-                $api.skip();
-            }, 2000);
-        }
-    });
-    
-    // Stop trolls from queuing songs.
-    $api.on("queue", function(e, data) {
-        if (no_queue.indexOf(data.item.queueby) != -1) {
-            setTimeout(function() {
-                $api.dequeueByName(data.item.queueby);
-            }, 1000);
-        }
-    });
-    
     // Save our settings when the rest of the user options are saved.
-    $api.on("user_options_save", updateSettings);
+    $chat.on("user_options_save", updateSettings);
+    
+    // Set everything up.
+    $chat.on("loaded", function() {
+        addStylesheet();
+        removeOptions();
+        addOptions();
+        splitBlockedPhrases();
+    
+        $("#userlist").find(".user-dropdown").each(function(i, menu) {
+            setupProfileMenu($(menu));
+        });
+        $each(trolls, function(name) {
+            $(".userlist_item_" + name + ":first")
+                .addClass("protection-indicator-active");
+        });
+    });
     
     // Might be deleting the script. Clean up after ourselves.
     $api.on("delete_script", function(e, filename) {
@@ -384,21 +400,5 @@
             stylesheet.remove();
             removeOptions();
         }
-    });
-    
-    // Set everything up.
-    $api.on("loaded", function() {
-        addStylesheet();
-        removeOptions();
-        addOptions();
-        splitBlockedPhrases();
-    
-        $("#userlist").find(".user-dropdown").each(function(i, menu) {
-            setupProfileMenu($(menu));
-        });
-        $each(trolls, function(name) {
-            $(".userlist_item_" + name + ":first")
-                .addClass("protection-indicator-active");
-        });
     });
 })();
