@@ -6,7 +6,20 @@
     <li>
         <code id="topic-api-api" class="signature">$api</code>
         <p>
+            Used to interact with the API.
+        </p>
+    </li>
+    <li>
+        <code id="topic-api-chat" class="signature">$chat</code>
+        <p>
             Provides an interface to the chat API. The rest of this documentation covers the properties,
+            methods, and events related to this object.
+        </p>
+    </li>
+    <li>
+        <code id="topic-api-playlist" class="signature">$playlist</code>
+        <p>
+            Provides an interface to the playlist API. The rest of this documentation covers the properties,
             methods, and events related to this object.
         </p>
     </li>

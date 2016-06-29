@@ -273,8 +273,8 @@
     </code>
 </pre>
 
-<!-- $api.send() -->
-<code id="topic-api-methods-send" class="signature">$api.send(msg, meta)</code>
+<!-- $chat.send() -->
+<code id="topic-api-methods-send" class="signature">$chat.send(msg, meta)</code>
 <p>
     Sends a message to everyone else in the chat room. The value of <code>msg</code> must be a string,
     which contains the message. The <code>meta</code> value is an object which may contain a property
@@ -284,15 +284,15 @@
     <code class="language-javascript line-numbers">
         // Will send the message "Hey everyone, headzoo has arrived!" or whatever
         // your username is.
-        $api.send("Hey everyone, I have arrived!");
+        $chat.send("Hey everyone, I have arrived!");
 
         // Same message, but set the text color to green.
-        $api.send("Hey everyone, I have arrived!", { color: "#00FF00" });
+        $chat.send("Hey everyone, I have arrived!", { color: "#00FF00" });
     </code>
 </pre>
 
-<!-- $api.notice() -->
-<code id="topic-api-methods-notice" class="signature">$api.notice(msg, is_error)</code>
+<!-- $chat.notice() -->
+<code id="topic-api-methods-notice" class="signature">$chat.notice(msg, is_error)</code>
 <p>
     Writes the given notice message to your chat buffer. Set <code>is_error</code> to true
     to show an error notice.
@@ -300,15 +300,15 @@
 <pre>
     <code class="language-javascript line-numbers">
         // Shows a regular notice.
-        $api.notice("Your song has been queued.");
+        $chat.notice("Your song has been queued.");
 
         // Shows an error notice.
-        $api.notice("Could not find song.", true);
+        $chat.notice("Could not find song.", true);
     </code>
 </pre>
 
-<!-- $api.command() -->
-<code id="topic-api-methods-command" class="signature">$api.command(to, data)</code>
+<!-- $chat.command() -->
+<code id="topic-api-methods-command" class="signature">$chat.command(to, data)</code>
 <p>
     Sends a command to other bots. The <code>to</code> argument must be the name of a user
     in the channel, or the pound sign "#" to broadcast the message to the whole room. The
@@ -318,21 +318,21 @@
 <pre>
     <code class="language-javascript line-numbers">
         // Send command to single user (bot)
-        $api.command("headzoo", {
+        $chat.command("headzoo", {
             move: "up",
             pos: 3
         });
 
         // Broadcast command to entire channel
-        $api.command("#", {
+        $chat.command("#", {
             move: "up",
             pos: 3
         });
     </code>
 </pre>
 
-<!-- $api.toast() -->
-<code id="topic-api-methods-toast" class="signature">$api.toast(msg, type, time_out)</code>
+<!-- $chat.toast() -->
+<code id="topic-api-methods-toast" class="signature">$chat.toast(msg, type, time_out)</code>
 <p>
     Displays a popup message in the corner of the page. Valid values for <code>type</code> are
     "success", "warning", and "error". Defaults to "success". The <code>time_out</code> argument
@@ -346,18 +346,140 @@
 <pre>
     <code class="language-javascript line-numbers">
         // Show a success message.
-        $api.toast("Your song has been queued.");
+        $chat.toast("Your song has been queued.");
 
         // Show a warning message.
-        $api.toast("Could not find user.", "warning");
+        $chat.toast("Could not find user.", "warning");
 
         // Show an error message.
-        $api.toast("Failed to complete action.", "error");
+        $chat.toast("Failed to complete action.", "error");
     </code>
 </pre>
 
-<!-- $api.queue() -->
-<code id="topic-api-methods-queue" class="signature">$api.queue(video)</code>
+<!-- $chat.clear() -->
+<code id="topic-api-methods-clear" class="signature">$chat.clear()</code>
+<p>
+    Clears the chat buffer.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.clear();
+    </code>
+</pre>
+
+<!-- $chat.color() -->
+<code id="topic-api-methods-color" class="signature">$chat.color(hex_code)</code>
+<p>
+    Sets the chat text color.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.color("#c13b3b");
+    </code>
+</pre>
+
+<!-- $chat.ignore() -->
+<code id="topic-api-methods-ignore" class="signature">$chat.ignore(name)</code>
+<p>
+    Puts the named user on ignore.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.ignore("az4521");
+    </code>
+</pre>
+
+<!-- $chat.unignore() -->
+<code id="topic-api-methods-unignore" class="signature">$chat.unignore(name)</code>
+<p>
+    Takes the named user off ignore.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.unignore("az4521");
+    </code>
+</pre>
+
+<!-- $chat.kick() -->
+<code id="topic-api-methods-kick" class="signature">$chat.kick(name, reason)</code>
+<p>
+    Kicks the named user from the chat room with the optional reason.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.kick("az4521", "Being a troll.");
+    </code>
+</pre>
+
+<!-- $chat.mute() -->
+<code id="topic-api-methods-mute" class="signature">$chat.mute(name)</code>
+<p>
+    Mutes the named user. Only applicable to moderators.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.mute("az4521");
+    </code>
+</pre>
+
+<!-- $chat.smute() -->
+<code id="topic-api-methods-smute" class="signature">$chat.smute(name)</code>
+<p>
+    Shadow mutes the named user. Only applicable to moderators.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.smute("az4521");
+    </code>
+</pre>
+
+<!-- $chat.unmute() -->
+<code id="topic-api-methods-unmute" class="signature">$chat.unmute(name)</code>
+<p>
+    Unmutes the named user. Only applicable to moderators.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.unmute("az4521");
+    </code>
+</pre>
+
+<!-- $chat.banByName() -->
+<code id="topic-api-methods-ban-by-name" class="signature">$chat.banByName(name, reason)</code>
+<p>
+    Bans the named user by their username with an optional reason. Only applicable to moderators.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.banByName("az4521", "Being a troll.");
+    </code>
+</pre>
+
+<!-- $chat.banByIP() -->
+<code id="topic-api-methods-ban-by-ip" class="signature">$chat.banByIP(name, reason)</code>
+<p>
+    Bans the named user by their IP address with an optional reason. Only applicable to moderators.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        $chat.banByIP("az4521", "Being a troll.");
+    </code>
+</pre>
+
+<!-- $chat.users() -->
+<code id="topic-api-methods-users" class="signature">$chat.users()</code>
+<p>
+    Returns an array of names for each user in the channel.
+</p>
+<pre>
+    <code class="language-javascript line-numbers">
+        var names = $chat.users();
+        console.log(names);
+    </code>
+</pre>
+
+<!-- $playlist.queue() -->
+<code id="topic-api-methods-playlist-queue" class="signature">$playlist.queue(video)</code>
 <p>
     Adds a video to the playlist. The value of the <code>video</code> argument may be one of two things:<br />
     String: A media url, such as the url to a YouTube video.<br />
@@ -366,10 +488,10 @@
 <pre>
     <code class="language-javascript line-numbers">
         // Queue a video from a media url.
-        $api.queue("https://www.youtube.com/watch?v=OsCfufAp2tM");
+        $playlist.queue("https://www.youtube.com/watch?v=OsCfufAp2tM");
 
         // Queue a video using a media object.
-        $api.queue({
+        $playlist.queue({
             type: "yt",                   // It's a YouTube video
             uid: "OsCfufAp2tM",           // The id of the video
             title: "Grimes - California"  // The title of the video
@@ -377,31 +499,31 @@
     </code>
 </pre>
 
-<!-- $api.dequeueByName() -->
-<code id="topic-api-methods-dequeue-by-name" class="signature">$api.dequeueByName(username)</code>
+<!-- $playlist.dequeueByName() -->
+<code id="topic-api-methods-playlist-dequeue-by-name" class="signature">$playlist.dequeueByName(username)</code>
 <p>
     Removes videos from the playlist that have been queued by the given user.
     Only applicable to moderators.
 </p>
 <pre>
     <code class="language-javascript line-numbers">
-        $api.dequeueByName("headzoo");
+        $playlist.dequeueByName("headzoo");
     </code>
 </pre>
 
-<!-- $api.skip() -->
-<code id="topic-api-methods-skip" class="signature">$api.skip()</code>
+<!-- $playlist.skip() -->
+<code id="topic-api-methods-playlist-skip" class="signature">$playlist.skip()</code>
 <p>
     Vote skips the currently playing video.
 </p>
 <pre>
     <code class="language-javascript line-numbers">
-        $api.skip();
+        $playlist.skip();
     </code>
 </pre>
 
-<!-- $api.vote() -->
-<code id="topic-api-methods-vote" class="signature">$api.vote(value)</code>
+<!-- $playlist.vote() -->
+<code id="topic-api-methods-playlist-vote" class="signature">$playlist.vote(value)</code>
 <p>
     Votes for the currently playing video. Valid values for the <code>value</code> are 1 to up vote
     the video, or -1 to down vote the video. Calling the method a second time with the same value
@@ -410,54 +532,54 @@
 <pre>
     <code class="language-javascript line-numbers">
         // Up vote the video.
-        $api.vote(1);
+        $playlist.vote(1);
 
         // Take back the up vote by calling again with the same value.
-        $api.vote(1);
+        $playlist.vote(1);
 
         // Down vote the video.
-        $api.vote(-1);
+        $playlist.vote(-1);
 
         // Take back the down vote by calling again with the same value.
-        $api.vote(-1);
+        $playlist.vote(-1);
     </code>
 </pre>
 
-<!-- $api.playlistClear() -->
-<code id="topic-api-methods-playlist-clear" class="signature">$api.playlistClear()</code>
+<!-- $playlist.clear() -->
+<code id="topic-api-methods-playlist-clear" class="signature">$playlist.clear()</code>
 <p>
     Clears the playlist. Only applicable to chat moderators.
 </p>
 <pre>
     <code class="language-javascript line-numbers">
-        $api.playlistClear();
+        $playlist.clear();
     </code>
 </pre>
 
-<!-- $api.playlistShuffle() -->
-<code id="topic-api-methods-playlist-shuffle" class="signature">$api.playlistShuffle()</code>
+<!-- $playlist.shuffle() -->
+<code id="topic-api-methods-playlist-shuffle" class="signature">$playlist.shuffle()</code>
 <p>
     Shuffles the playlist. Only applicable to chat moderators.
 </p>
 <pre>
     <code class="language-javascript line-numbers">
-        $api.playlistShuffle();
+        $playlist.shuffle();
     </code>
 </pre>
 
-<!-- $api.playlistLock() -->
-<code id="topic-api-methods-playlist-lock" class="signature">$api.playlistLock()</code>
+<!-- $playlist.lock() -->
+<code id="topic-api-methods-playlist-lock" class="signature">$playlist.lock()</code>
 <p>
     Toggles the playlist lock on and off. Only applicable to chat moderators.
 </p>
 <pre>
     <code class="language-javascript line-numbers">
-        $api.playlistLock();
+        $playlist.lock();
     </code>
 </pre>
 
-<!-- $api.search() -->
-<code id="topic-api-methods-search" class="signature">$api.search(query, type)</code>
+<!-- $playlist.search() -->
+<code id="topic-api-methods-playlist-search" class="signature">$playlist.search(query, type)</code>
 <p>
     Searches YouTube for videos matching the given <code>query</code> argument. The <code>type</code>
     argument defaults to "yt" and is currently ignored. Used in conjunction with the
@@ -466,135 +588,13 @@
 <pre>
     <code class="language-javascript line-numbers">
         // Register an event which receives the search results.
-        $api.on("search_results", function(e, data) {
+        $playlist.on("search_results", function(e, data) {
             if (data.results.length > 0) {
-                $api.queue(data.results[0]);
+                $playlist.queue(data.results[0]);
             }
         });
 
         // Now perform the search.
-        $api.search("Grimes");
-    </code>
-</pre>
-
-<!-- $api.clear() -->
-<code id="topic-api-methods-clear" class="signature">$api.clear()</code>
-<p>
-    Clears the chat buffer.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.clear();
-    </code>
-</pre>
-
-<!-- $api.color() -->
-<code id="topic-api-methods-color" class="signature">$api.color(hex_code)</code>
-<p>
-    Sets the chat text color.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.color("#c13b3b");
-    </code>
-</pre>
-
-<!-- $api.ignore() -->
-<code id="topic-api-methods-ignore" class="signature">$api.ignore(name)</code>
-<p>
-    Puts the named user on ignore.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.ignore("az4521");
-    </code>
-</pre>
-
-<!-- $api.unignore() -->
-<code id="topic-api-methods-unignore" class="signature">$api.unignore(name)</code>
-<p>
-    Takes the named user off ignore.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.unignore("az4521");
-    </code>
-</pre>
-
-<!-- $api.kick() -->
-<code id="topic-api-methods-kick" class="signature">$api.kick(name, reason)</code>
-<p>
-    Kicks the named user from the chat room with the optional reason.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.kick("az4521", "Being a troll.");
-    </code>
-</pre>
-
-<!-- $api.mute() -->
-<code id="topic-api-methods-mute" class="signature">$api.mute(name)</code>
-<p>
-    Mutes the named user. Only applicable to moderators.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.mute("az4521");
-    </code>
-</pre>
-
-<!-- $api.smute() -->
-<code id="topic-api-methods-smute" class="signature">$api.smute(name)</code>
-<p>
-    Shadow mutes the named user. Only applicable to moderators.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.smute("az4521");
-    </code>
-</pre>
-
-<!-- $api.unmute() -->
-<code id="topic-api-methods-unmute" class="signature">$api.unmute(name)</code>
-<p>
-    Unmutes the named user. Only applicable to moderators.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.unmute("az4521");
-    </code>
-</pre>
-
-<!-- $api.banByName() -->
-<code id="topic-api-methods-ban-by-name" class="signature">$api.banByName(name, reason)</code>
-<p>
-    Bans the named user by their username with an optional reason. Only applicable to moderators.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.banByName("az4521", "Being a troll.");
-    </code>
-</pre>
-
-<!-- $api.banByIP() -->
-<code id="topic-api-methods-ban-by-ip" class="signature">$api.banByIP(name, reason)</code>
-<p>
-    Bans the named user by their IP address with an optional reason. Only applicable to moderators.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        $api.banByIP("az4521", "Being a troll.");
-    </code>
-</pre>
-
-<!-- $api.users() -->
-<code id="topic-api-methods-users" class="signature">$api.users()</code>
-<p>
-    Returns an array of names for each user in the channel.
-</p>
-<pre>
-    <code class="language-javascript line-numbers">
-        var names = $api.users();
-        console.log(names);
+        $playlist.search("Grimes");
     </code>
 </pre>
