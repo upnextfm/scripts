@@ -1,6 +1,6 @@
 /**
  * Name: Ping
- * Version: 1.1
+ * Version: 1.2
  * Author: headzoo
  * 
  * Displays your server ping time in the top right hand corner of the page.
@@ -31,7 +31,7 @@
         sendPing();
     }, 30000);
     
-    $api.on("reloading", function() {
+    $chat.on("reloading", function() {
         if (timer) {
             clearInterval(timer);
         }

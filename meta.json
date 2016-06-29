@@ -152,10 +152,10 @@
   },
   "ping.js": {
     "name": "Ping",
-    "version": "1.1",
+    "version": "1.2",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "32b0412a5db410b8a67a049003f64622",
+    "checksum": "333730081ac48dfca5935a36d960bdab",
     "description": "Displays your server ping time in the top right hand corner of the page.",
     "source": "https://scripts.upnext.fm/script/ping.js"
   },
