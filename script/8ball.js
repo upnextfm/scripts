@@ -1,6 +1,6 @@
 /**
  * Name: Magic 8 Ball
- * Version: 1.1
+ * Version: 1.2
  * Author: headzoo
  *
  * Creates a /8ball command which finds answers to your questions from beyond
@@ -41,14 +41,15 @@
     var regex = new RegExp('^/8ball\\s+(.*)');
     
     // Wait till the channel is loaded.
-    setTimeout(function() {
-        $api.on("receive", function(e, data) {
+    $chat.on("loaded", function() {
+        $chat.on("receive", function(e, data) {
             var matches = data.msg_clean.match(regex);
             if (matches !== null) {
                 setTimeout(function() {
                     var item = answers[Math.floor(Math.random() * answers.length)];
                     var color = color_map[item.color];
-                    $api.send(sprintf(
+                    
+                    $chat.send(sprintf(
                         "[#FFFFFF]@%s - Magic 8 Ball «[/#] [%s]%s[/#] [#FFFFFF]»[/#]",
                         data.username,
                         color,
@@ -57,5 +58,5 @@
                 }, 2000);
             }
         });
-    }, 5000);
+    });
 })();
