@@ -1,6 +1,6 @@
 /**
  * Name: Rock, Paper, Scissors
- * Version: 1.0
+ * Version: 1.1
  * Author: headzoo
  * 
  * Play rock, paper, scissors against other users. Start a game by
@@ -119,8 +119,8 @@
         return name + " won! " + answer;
     };
     
-    $api.on("loaded", function() {
-        $api.on("receive", function(e, data) {
+    $chat.on("loaded", function() {
+        $chat.on("receive", function(e, data) {
             var match = data.msg_clean.match(command_regex);
             if (match !== null) {
                 if (match[1] == "stop") {
@@ -129,7 +129,7 @@
                 }
             
                 if (game !== null) {
-                    $api.send("[#FFFFFF]Rock-Paper-Scissors: A game is already in progress. Please wait.[/#]");
+                    $chat.send("[#FFFFFF]Rock-Paper-Scissors: A game is already in progress. Please wait.[/#]");
                 } else {
                     (function() {
                         game = new Game(match[1], match[3]);
@@ -137,10 +137,10 @@
                             if (game !== null && !game.isFinished()) {
                                 var winner = game.getWinner();
                                 game = null;
-                                $api.send("[#FFFFFF]Rock-Paper-Scissors: " + winner + "[/#]");
+                                $chat.send("[#FFFFFF]Rock-Paper-Scissors: " + winner + "[/#]");
                             }
                         }, 30000);
-                        $api.send(
+                        $chat.send(
                             "[#FFFFFF]Rock-Paper-Scissors: " + game.player1_name +
                             " vs. " + game.player2_name + ". Each player whisper your answer using `/w " +
                             $user.name + " <answer>`. You have 30 seconds.[/#]"
@@ -150,7 +150,7 @@
             }
         });
     
-        $api.on("whisper", function(e, data) {
+        $chat.on("whisper", function(e, data) {
             if (game !== null && game.isPlaying(data.name)) {
                 e.cancel();
                 
@@ -159,13 +159,13 @@
                     answer     = answer.split(": ");
                     game.setAnswer(data.name, answer[1]);
                 } catch (e) {
-                    return $api.send("/w " + data.name + " " + e);
+                    return $chat.send("/w " + data.name + " " + e);
                 }
                 
                 if (game.isFinished()) {
                     var winner = game.getWinner();
                     game = null;
-                    $api.send("[#FFFFFF]Rock-Paper-Scissors: " + winner + "[/#]");
+                    $chat.send("[#FFFFFF]Rock-Paper-Scissors: " + winner + "[/#]");
                 }
             }
         });
