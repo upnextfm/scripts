@@ -1,10 +1,10 @@
 {
   "gradients.js": {
     "name": "Gradients",
-    "version": "2.2.5",
+    "version": "2.2.6",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "5f6bf2e32f5e48c1d739668268d3cd8c",
+    "checksum": "f25cdf4286b15a113fe8676b23a01868",
     "description": "Applies a color gradient to the messages you send.",
     "source": "https://scripts.upnext.fm/script/gradients.js",
     "screenshots": [

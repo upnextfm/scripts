@@ -1,6 +1,6 @@
 /**
  * Name: Gradients
- * Version: 2.2.5
+ * Version: 2.2.6
  * Author: headzoo
  * Import: https://upnext.fm/js/rainbowvis.js
  *
@@ -31,10 +31,12 @@
     var DEFAULT_MODE        = "stretch";
     var MARK                = "Gradients Script";
     var MARK_VERSION        = "v2.2.5";
-    var REGEX_EMOTE         = new RegExp(':([^:]+):', "g");
-    var REGEX_URL           = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:/~+#-]*[\\w@?^=%&amp;/~+#-])?', "gi");
-    var REGEX_MACRO         = new RegExp('@([^@]+)@', "g");
     var REGEX_HEX_COLOR     = new RegExp('#[a-f0-9]{6}', "gi");
+    var ignore_regexes      = [
+        new RegExp(':([^:]+):', "g"), // Matches emotes
+        new RegExp('@([^@]+)@', "g"), // Matches macros
+        new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:/~+#-]*[\\w@?^=%&amp;/~+#-])?', "gi") // Matches urls
+    ];
     
     var pickers     = [];
     var state       = [];
@@ -108,33 +110,17 @@
         
         getIgnoredPositions: function(msg) {
             var ig_pos = [], matches;
-    
-            matches = REGEX_URL.exec(msg);
-            while(matches !== null) {
-                ig_pos.push({
-                    start: matches.index,
-                    end: REGEX_URL.lastIndex
-                });
-                matches = REGEX_URL.exec(msg);
-            }
             
-            matches = REGEX_EMOTE.exec(msg);
-            while(matches !== null) {
-                ig_pos.push({
-                    start: matches.index,
-                    end: REGEX_EMOTE.lastIndex
-                });
-                matches = REGEX_EMOTE.exec(msg);
-            }
-            
-            matches = REGEX_MACRO.exec(msg);
-            while(matches !== null) {
-                ig_pos.push({
-                    start: matches.index,
-                    end: REGEX_MACRO.lastIndex
-                });
-                matches = REGEX_MACRO.exec(msg);
-            }
+            $each(ignore_regexes, function(regex) {
+                matches = regex.exec(msg);
+                while(matches !== null) {
+                    ig_pos.push({
+                        start: matches.index,
+                        end: regex.lastIndex
+                    });
+                    matches = regex.exec(msg);
+                }
+            });
             
             return ig_pos;
         },
