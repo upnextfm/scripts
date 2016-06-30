@@ -1,6 +1,6 @@
 /**
  * Name: Protection
- * Version: 1.9.8
+ * Version: 1.9.9
  * Author: headzoo
  *
  * Provides protection against trolls and other nasty users.
@@ -353,7 +353,7 @@
             return e.cancel();
         }
         if (isTroll(data.username)) {
-            if (shouldThrottle(data)) {
+            if (settings.throttle && shouldThrottle(data)) {
                 return e.cancel();
             }
             
