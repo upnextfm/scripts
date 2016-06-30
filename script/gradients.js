@@ -33,8 +33,8 @@
     var MARK_VERSION        = "v2.2.5";
     var REGEX_HEX_COLOR     = new RegExp('#[a-f0-9]{6}', "gi");
     var ignore_regexes      = [
-        new RegExp('\\[br\\]', "g");  // Matches [br]
-        new RegExp('`([^`]+)`', "g"); // Matches `code`
+        new RegExp('\\[br\\]', "g"),  // Matches [br]
+        new RegExp('`([^`]+)`', "g"), // Matches `code`
         new RegExp(':([^:]+):', "g"), // Matches :emotes:
         new RegExp('@([^@]+)@', "g"), // Matches @macros@
         new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:/~+#-]*[\\w@?^=%&amp;/~+#-])?', "gi") // Matches urls
