@@ -1,6 +1,6 @@
 /**
  * Name: Greentext
- * Version: 1.A
+ * Version: 1.B
  * Author: az4521
  * 
  * lets you do greentext
@@ -8,7 +8,7 @@
  *
  * probably super shit
  */
-$api.on("send", function(e, data) {
+$chat.on("send", function(e, data) {
     if(data.msg[0]==">"){
         data.msg = '[#789922]' + data.msg + '[/#]';
     }
