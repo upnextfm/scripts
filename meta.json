@@ -35,10 +35,10 @@
   },
   "greentext.js": {
     "name": "Greentext",
-    "version": "1.0",
+    "version": "1.B",
     "author": "az4521",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "fba91942b1f69dd26f39bfd5fc58c3e2",
+    "checksum": "80702f1e609a3e81880db1d796d08d79",
     "description": "Lets you do greentext by prefixing your message with the > character.",
     "source": "https://scripts.upnext.fm/script/greentext.js"
   },
@@ -119,10 +119,10 @@
   },
   "azannoybutton.js": {
     "name": "Az Irritation Button",
-    "version": "1.C",
+    "version": "1.D",
     "author": "az4521",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "4fc25c2a28ea8c9459a87e790c06fd9c",
+    "checksum": "93b81adfaa5e8ede6432dd3601ac0423",
     "description": "Adds a button that sends a message to a bot. bot then adds to a count of irritations per username. super basic.",
     "source": "https://scripts.upnext.fm/script/azannoybutton.js"
   },
