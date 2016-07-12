@@ -271,6 +271,10 @@
         <code class="signature">$chat.unblink</code>
         Triggered when the receives focus and blinking is being turned off.
     </li>
+    <li id="topic-api-events-video-resize">
+        <code class="signature">$chat.video_resize</code>
+        Triggered when the video or window resizes.
+    </li>
 
     <li id="topic-api-events-playlist-loaded">
         <code class="signature">$playlist.loaded</code>
