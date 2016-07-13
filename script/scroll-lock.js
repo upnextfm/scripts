@@ -46,6 +46,7 @@
                 $("body").css("overflow", "hidden");
                 btn.addClass("scroll-lock-indicator-active")
                     .removeClass("scroll-lock-indicator-inactive");
+                window.scrollTo(0, 0);
             }
         });
     });
