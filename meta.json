@@ -173,7 +173,7 @@
     "version": "1.0",
     "author": "headzoo",
     "site": "https://github.com/upnextfm/scripts",
-    "checksum": "0adf6df362c0b5bce18e4a5df69f0091",
+    "checksum": "ec729b2d9186492c61e1c65bccc5e5de",
     "description": "Provides a button which stops the main page from scrolling.",
     "source": "https://scripts.upnext.fm/script/scroll-lock.js"
   }
