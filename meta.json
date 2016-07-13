@@ -167,5 +167,14 @@
     "checksum": "6539cba2d2533500c8a2d79147c7a40a",
     "description": "Creates an /aww command which sends a random cute pictures to the chat room.",
     "source": "https://scripts.upnext.fm/script/aww.js"
+  },
+  "scroll-lock.js": {
+    "name": "Scroll Lock",
+    "version": "1.0",
+    "author": "headzoo",
+    "site": "https://github.com/upnextfm/scripts",
+    "checksum": "12e4521a22a58ca0bd914a47af2948c1",
+    "description": "Provides a button which stops the main page from scrolling.",
+    "source": "https://scripts.upnext.fm/script/scroll-lock.js"
   }
 }
